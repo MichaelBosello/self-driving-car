@@ -2,6 +2,7 @@ from tf_agents.environments import py_environment
 from tf_agents.specs import array_spec
 from tf_agents.trajectories import time_step as ts
 import numpy as np
+import time
 
 from camera.pi_camera import CarCamera
 from motor.car_motor import CarMotor
@@ -49,27 +50,40 @@ class CarEnv(py_environment.PyEnvironment):
     reward = 0
     if action == 0:
       self.motor.forward()
-      reward = 0.7
+      reward = 0.8
     elif action == 1:
       self.motor.backward()
     elif action == 2:
       self.motor.right()
-      reward = 0.5
+      reward = 0.6
     elif action == 3:
       self.motor.left()
-      reward = 0.5
+      reward = 0.6
     elif action == 4:
       self.motor.stop()
     else:
       raise ValueError('`action` should be between 0 and 4.')
 
     if self.sensor.rx_above_line():
-      reward += 0.15
+      reward += 0.1
     if self.sensor.lx_above_line():
-      reward += 0.15
+      reward += 0.1
 
     self._state = np.uint8(camera.capture_as_gray_array((84, 84)))
     return ts.transition(self._state, reward=reward, discount=1.0)
 
-  def stop_and_back():
-    pass
+  def stop_and_back(self):
+    if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
+      motor.backward()
+      while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
+        if self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
+          break
+        time.sleep(0.1)
+      motor.stop()
+    if self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
+      motor.forward()
+      while self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
+        if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
+          break
+        time.sleep(0.1)
+      motor.stop()

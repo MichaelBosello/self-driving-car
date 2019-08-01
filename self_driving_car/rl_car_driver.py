@@ -3,6 +3,8 @@ from __future__ import division
 
 import numpy as np
 import tensorflow as tf
+import random
+import math
 
 import IPython
 
@@ -18,6 +20,8 @@ from tf_agents.environments import tf_py_environment
 from tf_agents.trajectories import policy_step
 from tf_agents.trajectories import time_step as ts
 
+import car_env
+
 class CameraQNetwork(q_network.QNetwork):
     """QNetwork subclass that divides observations by 255."""
     def call(self, observation, step_type=None, network_state=None):
@@ -28,13 +32,28 @@ class CameraQNetwork(q_network.QNetwork):
         return super(CameraQNetwork, self).call(
             state, step_type=step_type, network_state=network_state)
 
+class EgreedyDecayPolicy():
+  def __init__(self, initial_epsilon, final_epsilon, decay_steps, agent_policy, random_policy):
+    self.initial_epsilon = initial_epsilon
+    self.final_epsilon = final_epsilon
+    self.decay_steps = decay_steps
+    self.agent_policy = agent_policy
+    self.random_policy = random_policy
+    self.step = 0
+  def action(self, time_step):
+    self.step += 1
+    self.decay_steps = self.decay_steps * math.ceil(self.step / self.decay_steps)
+    epsilon = (self.initial_epsilon - self.final_epsilon) * (1 - self.step / self.decay_steps) + self.final_epsilon
+
+    if random.uniform(0, 1) < epsilon:
+      action = self.random_policy.action(time_step)
+    else:
+      action = self.agent_policy.action(time_step)
+
+    return action
+
 # Params from env
 FRAME_SKIP = 4
-# Params for collect
-initial_epsilon = 1
-final_epsilon_greedy = 0.01
-epsilon_decay_period = int(1000000 / FRAME_SKIP) # ALE frames
-replay_buffer_capacity = 100000
 # Params for agent
 conv_layer_params = ((32, (8, 8), 4), (64, (4, 4), 2), (64, (3, 3), 1))
 fc_layer_params = (512,)
@@ -47,6 +66,11 @@ n_step_update = 1
 gamma = 0.99
 reward_scale_factor = 1.0
 gradient_clipping = None
+# Params for collect
+initial_epsilon = 1
+final_epsilon = 0.01
+epsilon_decay_steps = int(1000000 / FRAME_SKIP / update_period) # ALE frames
+replay_buffer_capacity = 100000
 # Iteration phases
 initial_collect_steps = int(8000 / FRAME_SKIP) # ALE frames
 train_steps_per_iteration = int(100000 / FRAME_SKIP) # ALE frames
@@ -54,10 +78,7 @@ eval_steps_per_iteration = int(50000 / FRAME_SKIP) # ALE frames
 
 
 # Env
-py_env = suite_atari.load(
-    "Pong-v4",
-    max_episode_steps=108000 / 4,
-    gym_env_wrappers=suite_atari.DEFAULT_ATARI_GYM_WRAPPERS_WITH_STACKING)
+py_env = CarSensorPicar()
 env = tf_py_environment.TFPyEnvironment(py_env)
 
 print('#######################################')
@@ -97,8 +118,9 @@ agent.initialize()
 
 # Policies
 eval_policy = agent.policy
-collect_policy = agent.collect_policy
 random_policy = random_tf_policy.RandomTFPolicy(env.time_step_spec(), env.action_spec())
+
+collect_policy = EgreedyDecayPolicy(initial_epsilon, final_epsilon, epsilon_decay_steps, eval_policy, random_policy)
 
 # Replay buffer
 py_observation_spec = py_env.observation_spec()
