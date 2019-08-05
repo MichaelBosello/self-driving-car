@@ -1,5 +1,7 @@
 import time
 import uuid
+import picamera
+import picamera.array
 from picamera import PiCamera
 import io
 import numpy as np
@@ -10,7 +12,7 @@ class CarCamera():
     self.video_path = "./video/" + self.video_path + ".h264"
 
     self.camera = PiCamera()
-    self.camera.resolution = (640, 360)
+    self.camera.resolution = (640, 368)
     self.camera.framerate = 30
     self.camera.start_preview()
     time.sleep(2)
@@ -24,8 +26,9 @@ class CarCamera():
     self.camera.stop_preview()
     
   def capture_as_rgb_array(self, resize = None):
-    self.camera.capture(self.stream, format='rgb', resize=resize)
-    return self.stream.array
+    with picamera.array.PiRGBArray(self.camera) as stream:
+      self.camera.capture(stream, format='rgb', resize=resize)
+      return stream.array
 
   def capture_as_gray_array(self, resize = None):
     self.camera.capture(self.stream, format='rgb', resize=resize)
@@ -37,5 +40,5 @@ class CarCamera():
 if __name__ == '__main__':
   camera = CarCamera()
   camera.start_recording()
-  time.sleep(20)
+  time.sleep(8)
   camera.stop_recording()

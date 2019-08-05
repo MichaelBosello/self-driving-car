@@ -1,7 +1,7 @@
 import time
-from control.front_wheels import Front_Wheels
-from control.back_wheels import Back_Wheels
-import control
+from motor.car_specific_motor.picar.control.front_wheels import Front_Wheels
+from motor.car_specific_motor.picar.control.back_wheels import Back_Wheels
+from motor.car_specific_motor.picar import control
 
 class CarMotorPicar():
   def __init__(self):
@@ -13,25 +13,25 @@ class CarMotorPicar():
   def forward(self):
     self.front_wheels.turn_straight()
     self.back_wheels.backward()
-    self.back_wheels.speed = 100
+    self.back_wheels.speed = 50
     
   def backward(self):
     self.front_wheels.turn_straight()
     self.back_wheels.forward()
-    self.back_wheels.speed = 100
+    self.back_wheels.speed = 50
     
   def stop(self):
     self.back_wheels.stop()
     
   def right(self):
     self.front_wheels.turn_right()
-    self.back_wheels.forward()
-    self.back_wheels.speed = 100
+    self.back_wheels.backward()
+    self.back_wheels.speed = 50
 
   def left(self):
     self.front_wheels.turn_left()
-    self.back_wheels.forward()
-    self.back_wheels.speed = 100
+    self.back_wheels.backward()
+    self.back_wheels.speed = 50
 
 if __name__ == '__main__':
     car_motor = CarMotorPicar()

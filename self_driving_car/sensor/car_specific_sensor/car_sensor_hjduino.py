@@ -37,8 +37,8 @@ class CarSensorHJduino():
     return self.lx_line_sensor.value == 0
 
 if __name__ == '__main__':
+    carSensor = CarSensorHJduino()
     while True:
-        carSensor = CarSensorHJduino()
         print("distance front", carSensor.front_distance())
         print("front crash", carSensor.front_crash())
         print("rx front crash", carSensor.rx_front_crash())

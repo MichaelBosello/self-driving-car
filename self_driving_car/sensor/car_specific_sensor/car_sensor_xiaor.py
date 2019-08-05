@@ -37,8 +37,8 @@ class CarSensorXiaoR():
     return self.lx_line_sensor.value == 0
 
 if __name__ == '__main__':
+    carSensor = CarSensorXiaoR()
     while True:
-        carSensor = CarSensorXiaoR()
         print("distance front", carSensor.front_distance())
         print("front crash", carSensor.front_crash())
         print("rx front crash", carSensor.rx_front_crash())

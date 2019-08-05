@@ -16,7 +16,7 @@ class CarSensorPicar():
     return self.front_distance_sensor.distance
 
   def front_crash(self):
-    return self.front_distance_sensor.distance < 0.03
+    return self.front_distance_sensor.distance < 0.035
 
   def rx_front_crash(self):
     return self.rx_distance_sensor_front.value == 0
@@ -37,8 +37,8 @@ class CarSensorPicar():
     return self.lx_line_sensor.value == 0
 
 if __name__ == '__main__':
+    carSensor = CarSensorPicar()
     while True:
-        carSensor = CarSensorPicar()
         print("distance front", carSensor.front_distance())
         print("front crash", carSensor.front_crash())
         print("rx front crash", carSensor.rx_front_crash())
