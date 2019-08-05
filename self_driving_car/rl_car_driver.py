@@ -1,181 +1,103 @@
-from __future__ import absolute_import
-from __future__ import division
-
+#!/usr/bin/env python
+#
+import sys
 import numpy as np
-import tensorflow as tf
+import os
 import random
-import math
+import replay
+import time
+import argparse
+import dqn
+from car_env import CarEnv
+from state import State
 
-import IPython
+parser = argparse.ArgumentParser()
+parser.add_argument("--train-epoch-steps", type=int, default=250000, help="how many steps (=4 frames) to run during a training epoch (approx -- will finish current game)")
+parser.add_argument("--eval-epoch-steps", type=int, default=125000, help="how many steps (=4 frames) to run during an eval epoch (approx -- will finish current game)")
+parser.add_argument("--replay-capacity", type=int, default=1000000, help="how many states to store for future training")
+parser.add_argument("--prioritized-replay", action='store_true', help="Prioritize interesting states when training (e.g. terminal or non zero rewards)")
+parser.add_argument("--compress-replay", action='store_true', help="if set replay memory will be compressed with blosc, allowing much larger replay capacity")
+parser.add_argument("--normalize-weights", action='store_true', default=True, help="if set weights/biases are normalized like torch, with std scaled by fan in to the node")
+parser.add_argument("--screen-capture-freq", type=int, default=250, help="record screens for a game this often")
+parser.add_argument("--save-model-freq", type=int, default=10000, help="save the model once per 10000 training sessions")
+parser.add_argument("--observation-steps", type=int, default=50000, help="train only after this many stesp (=4 frames)")
+parser.add_argument("--learning-rate", type=float, default=0.00025, help="learning rate (step size for optimization algo)")
+parser.add_argument("--target-model-update-freq", type=int, default=10000, help="how often (in steps) to update the target model.  Note nature paper says this is in 'number of parameter updates' but their code says steps. see tinyurl.com/hokp4y8")
+parser.add_argument("--model", help="tensorflow model checkpoint file to initialize from")
+args = parser.parse_args()
 
-from tf_agents.agents.dqn import dqn_agent
-from tf_agents.environments import batched_py_environment
-from tf_agents.environments import suite_atari
-from tf_agents.networks import q_network
-from tf_agents.replay_buffers import py_hashed_replay_buffer
-from tf_agents.trajectories import trajectory
-from tf_agents.utils import common
-from tf_agents.policies import random_tf_policy
-from tf_agents.environments import tf_py_environment
-from tf_agents.trajectories import policy_step
-from tf_agents.trajectories import time_step as ts
+print('Arguments: ', (args))
 
-import car_env
+baseOutputDir = 'run-out-' + time.strftime("%Y-%m-%d-%H-%M-%S")
+os.makedirs(baseOutputDir)
 
-class CameraQNetwork(q_network.QNetwork):
-    """QNetwork subclass that divides observations by 255."""
-    def call(self, observation, step_type=None, network_state=None):
-        state = tf.cast(observation, tf.float32)
-        # We divide the grayscale pixel values by 255 here rather than storing
-        # normalized values beause uint8s are 4x cheaper to store than float32s.
-        state = state / 255
-        return super(CameraQNetwork, self).call(
-            state, step_type=step_type, network_state=network_state)
+State.setup(args)
 
-class EgreedyDecayPolicy():
-  def __init__(self, initial_epsilon, final_epsilon, decay_steps, agent_policy, random_policy):
-    self.initial_epsilon = initial_epsilon
-    self.final_epsilon = final_epsilon
-    self.decay_steps = decay_steps
-    self.agent_policy = agent_policy
-    self.random_policy = random_policy
-    self.step = 0
-  def action(self, time_step):
-    self.step += 1
-    self.decay_steps = self.decay_steps * math.ceil(self.step / self.decay_steps)
-    epsilon = (self.initial_epsilon - self.final_epsilon) * (1 - self.step / self.decay_steps) + self.final_epsilon
+environment = CarEnv(args, baseOutputDir)
 
-    if random.uniform(0, 1) < epsilon:
-      action = self.random_policy.action(time_step)
-    else:
-      action = self.agent_policy.action(time_step)
+dqn = dqn.DeepQNetwork(environment.getNumActions(), baseOutputDir, args)
 
-    return action
+replayMemory = replay.ReplayMemory(args)
 
-# Params from env
-FRAME_SKIP = 4
-# Params for agent
-conv_layer_params = ((32, (8, 8), 4), (64, (4, 4), 2), (64, (3, 3), 1))
-fc_layer_params = (512,)
-update_period = int(16 / FRAME_SKIP) # ALE frames
-target_update_tau = 1.0
-target_update_period = int(32000 / FRAME_SKIP) # ALE frames
-batch_size = 32
-learning_rate = 2.5e-4
-n_step_update = 1
-gamma = 0.99
-reward_scale_factor = 1.0
-gradient_clipping = None
-# Params for collect
-initial_epsilon = 1
-final_epsilon = 0.01
-epsilon_decay_steps = int(1000000 / FRAME_SKIP / update_period) # ALE frames
-replay_buffer_capacity = 100000
-# Iteration phases
-initial_collect_steps = int(8000 / FRAME_SKIP) # ALE frames
-train_steps_per_iteration = int(100000 / FRAME_SKIP) # ALE frames
-eval_steps_per_iteration = int(50000 / FRAME_SKIP) # ALE frames
+def runEpoch(minEpochSteps, evalWithEpsilon=None):
+    stepStart = environment.getStepNumber()
+    isTraining = True if evalWithEpsilon is None else False
+    startGameNumber = environment.getGameNumber()
+    epochTotalScore = 0
 
+    while environment.getStepNumber() - stepStart < minEpochSteps:
+    
+        startTime = lastLogTime = time.time()
+        stateReward = 0
+        state = None
+        
+        while not environment.isGameOver():
+            print("...")
+            # Choose next action
+            if evalWithEpsilon is None:
+                epsilon = max(.1, 1.0 - 0.9 * environment.getStepNumber() / 1e6)
+            else:
+                epsilon = evalWithEpsilon
 
-# Env
-py_env = CarSensorPicar()
-env = tf_py_environment.TFPyEnvironment(py_env)
+            if state is None or random.random() > (1 - epsilon):
+                action = random.randrange(environment.getNumActions())
+            else:
+                screens = np.reshape(state.getScreens(), (1, 84, 84, 4))
+                action = dqn.inference(screens)
 
-print('#######################################')
-print(py_env.time_step_spec().observation)
-print('#######################################')
-print(py_env.action_spec())
-time_step = py_env.reset()
-print('#######################################')
-print(time_step)
+            # Make the move
+            oldState = state
+            reward, state, isTerminal = environment.step(action)
+            
+            # Record experience in replay memory and train
+            if isTraining and oldState is not None:
+                clippedReward = min(1, max(-1, reward))
+                replayMemory.addSample(replay.Sample(oldState, action, clippedReward, state, isTerminal))
 
-# Agent
-optimizer = tf.compat.v1.train.RMSPropOptimizer(
-    learning_rate=learning_rate,
-    decay=0.95,
-    momentum=0.0,
-    epsilon=0.00001,
-    centered=True)
-q_net = CameraQNetwork(
-    env.observation_spec(),
-    env.action_spec(),
-    conv_layer_params=conv_layer_params,
-    fc_layer_params=fc_layer_params)
-agent = dqn_agent.DqnAgent(
-    env.time_step_spec(),
-    env.action_spec(),
-    q_network=q_net,
-    optimizer=optimizer,
-    n_step_update=n_step_update,
-    target_update_tau=target_update_tau,
-    target_update_period=(
-        target_update_period / FRAME_SKIP / update_period),
-    td_errors_loss_fn=dqn_agent.element_wise_huber_loss,
-    gamma=gamma,
-    reward_scale_factor=reward_scale_factor,
-    gradient_clipping=gradient_clipping)
-agent.initialize()
+                if environment.getStepNumber() > args.observation_steps and environment.getEpisodeStepNumber() % 4 == 0:
+                    batch = replayMemory.drawBatch(32)
+                    dqn.train(batch, environment.getStepNumber())
+        
+            if time.time() - lastLogTime > 60:
+                print('  ...frame %d' % environment.getEpisodeFrameNumber())
+                lastLogTime = time.time()
 
-# Policies
-eval_policy = agent.policy
-random_policy = random_tf_policy.RandomTFPolicy(env.time_step_spec(), env.action_spec())
+            if isTerminal:
+                state = None
 
-collect_policy = EgreedyDecayPolicy(initial_epsilon, final_epsilon, epsilon_decay_steps, eval_policy, random_policy)
-
-# Replay buffer
-py_observation_spec = py_env.observation_spec()
-py_time_step_spec = ts.time_step_spec(py_observation_spec)
-py_action_spec = policy_step.PolicyStep(py_env.action_spec())
-data_spec = trajectory.from_transition(
-    py_time_step_spec, py_action_spec, py_time_step_spec)
-replay_buffer = py_hashed_replay_buffer.PyHashedReplayBuffer(
-    data_spec=data_spec, capacity=replay_buffer_capacity)
-dataset = replay_buffer.as_dataset(
-    sample_batch_size=batch_size, num_steps=n_step_update + 1).prefetch(4)
-iterator = tf.compat.v1.data.make_one_shot_iterator(dataset)
-
-# (Optional) Optimize by wrapping some of the code in a graph using TF function.
-agent.train = common.function(agent.train)
-
-def train(environment, policy, steps_per_iteration):
-  iteration(environment, policy, steps_per_iteration, True)
-def eval(environment, policy, steps_per_iteration):
-  iteration(environment, policy, steps_per_iteration, False)
-def iteration(environment, policy, steps_per_iteration, train):
-  total_return = 0.0
-  step = 0
-  num_episodes = 0
-  while step < steps_per_iteration:
-    num_episodes += 1
-    time_step = environment.reset()
-    episode_return = 0.0
-    while not time_step.is_last():
-      step += 1
-      time_step = collect_step(environment, policy, train)
-      if train and step % update_period == 0:
-        experience = next(iterator)
-        train_loss = agent.train(experience)
-      episode_return += time_step.reward
-    total_return += episode_return
-
-  avg_return = total_return / num_episodes
-  label = "Train" if train else "Eval"
-  print(label + 'Episodes: {0}, Steps = {1}: Average Return = {2}'
-            .format(num_episodes, step, avg_return.numpy()[0]))
-
-def collect_step(environment, policy, add_to_buffer = True):
-  time_step = environment.current_time_step()
-  action_step = policy.action(time_step)
-  next_time_step = environment.step(action_step.action)
-  if add_to_buffer:
-    traj = trajectory.from_transition(time_step, action_step, next_time_step)
-    replay_buffer.add_batch(traj)
-  return next_time_step
+        episodeTime = time.time() - startTime
+        print('%s %d ended with score: %d (%d frames in %fs for %d fps)' %
+            ('Episode' if isTraining else 'Eval', environment.getGameNumber(), environment.getGameScore(),
+            environment.getEpisodeFrameNumber(), episodeTime, environment.getEpisodeFrameNumber() / episodeTime))
+        epochTotalScore += environment.getGameScore()
+        environment.resetGame()
+    
+    # return the average score
+    return epochTotalScore / (environment.getGameNumber() - startGameNumber)
 
 
-if __name__ == '__main__':
-  for _ in range(initial_collect_steps):
-    collect_step(env, random_policy)
-  while True:
-    train(env, collect_policy, train_steps_per_iteration)
-    eval(env, collect_policy, eval_steps_per_iteration)
+while True:
+    aveScore = runEpoch(args.train_epoch_steps) #train
+    print('Average training score: %d' % (aveScore))
+    aveScore = runEpoch(args.eval_epoch_steps, evalWithEpsilon=.05) #eval
+    print('Average eval score: %d' % (aveScore))
