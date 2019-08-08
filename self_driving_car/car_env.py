@@ -5,9 +5,9 @@ import time
 
 from state import State
 
-from camera.pi_camera import CarCamera
 from motor.car_motor import CarMotor
 from sensor.car_sensor import CarSensor
+
 # Terminology in this class:
 #   Episode: the span of one game life
 #   Game: an ALE game (e.g. in space invaders == 3 Episodes or 3 Lives)
@@ -15,7 +15,12 @@ from sensor.car_sensor import CarSensor
 #   Step: An Environment step (e.g. covers 4 frames)
 #
 
-CAR_INSTANCE = 'picar'
+CAR_INSTANCE = 'hjduino'
+
+if CAR_INSTANCE == 'picar':
+  from camera.pi_camera import CarCamera
+else:
+  from camera.jetson_camera import CarCamera
 
 class CarEnv:
     
@@ -59,6 +64,7 @@ class CarEnv:
           reward = 0.8
         elif action == 1:
           self.motor.backward()
+          reward = -0.4
         elif action == 2:
           self.motor.right()
           reward = 0.6
@@ -112,6 +118,9 @@ class CarEnv:
           self.motor.stop()
           self.car_to_safe()
 
+    def stop(self):
+      self.motor.stop()
+      self.camera.stop_recording()
 
 
     def getNumActions(self):
