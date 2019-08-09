@@ -33,10 +33,7 @@ class CarEnv:
         self.motor = CarMotor(CAR_INSTANCE)
         self.sensor = CarSensor(CAR_INSTANCE)
 
-        def stop_callback(self):
-          self.motor.stop()
-
-        self.sensor.add_callback_to_crash(stop_callback)
+        self.sensor.add_callback_to_crash(self.stop_callback)
 
         self.actionSet = [0, 1, 2, 3, 4]
         self.gameNumber = 0
@@ -48,6 +45,10 @@ class CarEnv:
         self.isTerminal = False
 
         self.resetGame()
+
+    def stop_callback(self, channel):
+          self.motor.stop()
+          time.sleep(0.1)
 
     def step(self, action):
         self.isTerminal = False
@@ -115,8 +116,8 @@ class CarEnv:
               straighten = "lx"
             if self.sensor.lx_front_crash() and not self.sensor.rx_front_crash():
               straighten = "rx"
-          self.motor.backward()
           while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
+            self.motor.backward()
             if self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
               break
             time.sleep(0.001)
@@ -126,8 +127,8 @@ class CarEnv:
             straighten = "lx"
           if self.sensor.lx_back_crash() and not self.sensor.rx_back_crash():
               straighten = "rx"
-          self.motor.forward()
           while self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
+            self.motor.forward()
             if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
               break
             time.sleep(0.001)
