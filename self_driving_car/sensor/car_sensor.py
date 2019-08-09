@@ -3,7 +3,7 @@ def CarSensor(car_type):
       from sensor.car_specific_sensor.hjduino.car_sensor_hjduino_jetson import CarSensorHJduino
       return CarSensorHJduino()
     if car_type == 'xiaor':
-      from sensor.car_specific_sensor.xiaor.car_sensor_xiaor_jetson import CarSensorXiaoR
+      from sensor.car_specific_sensor.xiaor.car_sensor_xiaor_jetson_no_sonar import CarSensorXiaoR
       return CarSensorXiaoR()
     if car_type == 'picar':
       from sensor.car_specific_sensor.picar.car_sensor_picar_raspberry import CarSensorPicar
