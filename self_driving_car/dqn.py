@@ -1,4 +1,5 @@
 import state
+from state import State
 import math
 import numpy as np
 import os
@@ -94,7 +95,7 @@ class DeepQNetwork:
         print("Building network for %s trainable=%s" % (name, trainable))
 
         # First layer takes a screen, and shrinks by 2x
-        x = tf.placeholder(tf.uint8, shape=[None, 84, 84, 4], name="screens")
+        x = tf.placeholder(tf.uint8, shape=[None, State.IMAGE_SIZE, State.IMAGE_SIZE, 4], name="screens")
         print(x)
 
         x_normalized = tf.to_float(x) / 255.0
