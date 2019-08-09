@@ -30,6 +30,13 @@ class CarCamera():
       self.camera.capture(stream, format='rgb', resize=resize)
       return stream.array
 
+  def capture_as_rgb_array_bottom_half(self):
+      self.crop_bottom_half(self.capture_as_rgb_array())
+  
+  def crop_bottom_half(self, image):
+      cropped_img = image[image.shape[0]/2:image.shape[0]]
+      return cropped_img
+
   def capture_as_gray_array(self, resize = None):
     self.camera.capture(self.stream, format='rgb', resize=resize)
     return rgb2gray(self.stream.array)

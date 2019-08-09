@@ -39,13 +39,18 @@ class CarCamera():
   def stop_recording(self):
     self.cap.release()
     self.out.release()
-    self.thread.join()
     
   def capture_as_rgb_array(self):
     ret = False
     while ret == False:
       ret, img = self.cap.read()
     return img
+  def capture_as_rgb_array_bottom_half(self):
+    return self.crop_bottom_half(self.capture_as_rgb_array())
+
+  def crop_bottom_half(self, image):
+    cropped_img = image[0:int(image.shape[0]/2)]
+    return cropped_img
 
   def gstreamer_pipeline (self, capture_width=3280, capture_height=2464, display_width=820, display_height=616, framerate=21, flip_method=0) :   
     return ('nvarguscamerasrc ! ' 
@@ -64,4 +69,7 @@ if __name__ == '__main__':
   print("Img as array test:")
   print(camera.capture_as_rgb_array())
   time.sleep(4)
+  print("show cropped image")
+  cv2.imshow('cropped', camera.capture_as_rgb_array_bottom_half())
+  cv2.waitKey(20000)
   camera.stop_recording()
