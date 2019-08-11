@@ -71,7 +71,7 @@ class CarEnv:
           reward = 0.6
         elif action == 1:
           self.motor.backward()
-          reward = -0.4
+          reward = -0.6
         elif action == 2:
           self.motor.right()
           reward = 0.2
@@ -79,6 +79,7 @@ class CarEnv:
           self.motor.left()
           reward = 0.2
         elif action == 4:
+          reward = -0.1
           self.motor.stop()
         else:
           raise ValueError('`action` should be between 0 and 4.')
@@ -111,11 +112,12 @@ class CarEnv:
         straighten = None
         # front crash
         if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
-          if not self.sensor.front_crash():
-            if self.sensor.rx_front_crash() and not self.sensor.lx_front_crash():
-              straighten = "lx"
-            if self.sensor.lx_front_crash() and not self.sensor.rx_front_crash():
+          if self.sensor.front_crash():
+            straighten = "lx"
+          if self.sensor.lx_front_crash():
               straighten = "rx"
+          if self.sensor.rx_front_crash():#in case of both, keep lx to handle the case of the car between two obstacle
+            straighten = "lx"
           while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
             self.motor.backward()
             if self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
@@ -123,22 +125,23 @@ class CarEnv:
             time.sleep(0.001)
         # back crash
         if self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
-          if self.sensor.rx_back_crash() and not self.sensor.lx_back_crash():
-            straighten = "lx"
-          if self.sensor.lx_back_crash() and not self.sensor.rx_back_crash():
-              straighten = "rx"
+          if self.sensor.rx_back_crash():
+            straighten = "rx"
+          if self.sensor.lx_back_crash():#in case of both, keep lx to handle the case of the car between two obstacle
+              straighten = "lx"
           while self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
             self.motor.forward()
             if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
               break
             time.sleep(0.001)
         # straighten
+        time.sleep(0.01)
         if(straighten == "rx"):
           self.motor.right()
-          time.sleep(0.08)
+          time.sleep(1)
         if(straighten == "lx"):
           self.motor.left()
-          time.sleep(0.08)
+          time.sleep(1)
         self.motor.stop()
 
     def stop(self):
