@@ -35,8 +35,6 @@ class DeepQNetwork:
         self.normalizeWeights = args.normalize_weights
 
         self.staleSess = None
-
-        tf.set_random_seed(123456)
         
         self.sess = tf.Session()
         
@@ -68,16 +66,11 @@ class DeepQNetwork:
         linear_part = difference - quadratic_part
         errors = (0.5 * tf.square(quadratic_part)) + linear_part
         self.loss = tf.reduce_sum(errors)
-        #self.loss = tf.reduce_mean(tf.square(self.y_a - self.y_))
 
-        # (??) learning rate
-        # Note tried gradient clipping with rmsprop with this particular loss function and it seemed to suck
-        # Perhaps I didn't run it long enough
-        #optimizer = GradientClippingOptimizer(tf.train.RMSPropOptimizer(args.learning_rate, decay=.95, epsilon=.01))
         optimizer = tf.train.RMSPropOptimizer(args.learning_rate, decay=.95, epsilon=.01)
         self.train_step = optimizer.minimize(self.loss)
 
-        self.saver = tf.train.Saver(max_to_keep=25)
+        self.saver = tf.train.Saver()
 
         # Initialize variables
         self.sess.run(tf.global_variables_initializer())
@@ -88,6 +81,7 @@ class DeepQNetwork:
 
         if args.model is not None:
             print('Loading from model file %s' % (args.model))
+            self.saver = tf.train.import_meta_graph(args.model + '.meta')
             self.saver.restore(self.sess, args.model)
 
     def buildNetwork(self, name, trainable, numActions):
@@ -187,4 +181,4 @@ class DeepQNetwork:
             dir = self.baseDir + '/models'
             if not os.path.isdir(dir):
                 os.makedirs(dir)
-            savedPath = self.saver.save(self.sess, dir + '/model', global_step=stepNumber)
+            savedPath = self.saver.save(self.sess, dir + '/model.ckpt', global_step=stepNumber)
