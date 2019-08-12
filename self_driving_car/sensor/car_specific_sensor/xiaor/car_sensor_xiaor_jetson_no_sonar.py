@@ -3,6 +3,7 @@ import Jetson.GPIO as GPIO
 
 class CarSensorXiaoR():
   def __init__(self):
+
     self.distance_sensor_front = 5
     self.lx_distance_sensor_front = 8
     self.rx_distance_sensor_front = 27
@@ -10,6 +11,16 @@ class CarSensorXiaoR():
     self.rx_distance_sensor_back = 18
     self.lx_line_sensor = 25
     self.rx_line_sensor = 24
+
+    self.sensor_label = {
+      5 : "front_crash",
+      8 : "front_lx_crash",
+      27 : "front_rx_crash",
+      12 : "back_lx_crash",
+      18 : "back_rx_crash",
+      25 : "on_the_line_lx",
+      24 : "on_the_line_rx"
+    }
 
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(self.distance_sensor_front, GPIO.IN)
@@ -50,6 +61,9 @@ class CarSensorXiaoR():
     GPIO.add_event_detect(self.lx_distance_sensor_front, GPIO.FALLING, callback=callback)
     GPIO.add_event_detect(self.rx_distance_sensor_back, GPIO.FALLING, callback=callback)
     GPIO.add_event_detect(self.lx_distance_sensor_back, GPIO.FALLING, callback=callback)
+
+  def get_channel_label(self, channel):
+    return self.sensor_label[channel]
 
 if __name__ == '__main__':
     carSensor = CarSensorXiaoR()

@@ -35,7 +35,7 @@ class CarEnv:
 
         self.sensor.add_callback_to_crash(self.stop_callback)
 
-        self.actionSet = [0, 1, 2, 3, 4]
+        self.actionSet = [0, 1, 2, 3]
         self.gameNumber = 0
         self.stepNumber = 0
         self.gameScore = 0
@@ -48,6 +48,7 @@ class CarEnv:
 
     def stop_callback(self, channel):
           self.motor.stop()
+          self.camera.add_note_to_video(self.sensor.get_channel_label(channel))
           time.sleep(0.1)
 
     def step(self, action):
@@ -60,7 +61,7 @@ class CarEnv:
         if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
           while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
             self.car_to_safe()
-          reward = -1
+          reward = 0
           self.isTerminal = True
           self.state = self.state.stateByAddingScreen(self.camera.capture_as_rgb_array_bottom_half(), self.frame_number)
           return reward, self.state, self.isTerminal
@@ -68,19 +69,24 @@ class CarEnv:
         reward = 0
         if action == 0:
           self.motor.forward()
-          reward = 0.6
+          self.camera.add_note_to_video("action_forward")
+          reward = 1
         elif action == 1:
-          self.motor.backward()
-          reward = -0.6
-        elif action == 2:
           self.motor.right()
-          reward = 0.2
-        elif action == 3:
+          self.camera.add_note_to_video("action_right")
+          reward = 0.6
+        elif action == 2:
           self.motor.left()
-          reward = 0.2
-        elif action == 4:
-          reward = -0.1
+          self.camera.add_note_to_video("action_left")
+          reward = 0.6
+        elif action == 3:
           self.motor.stop()
+          self.camera.add_note_to_video("action_stop")
+          reward = -0.1
+        #elif action == 4:
+        #  self.motor.backward()
+        #  self.camera.add_note_to_video("action_backward")
+        #  reward = -0.6
         else:
           raise ValueError('`action` should be between 0 and 4.')
         
@@ -109,6 +115,7 @@ class CarEnv:
 
     def car_to_safe(self):
         self.motor.stop()
+        self.camera.add_note_to_video("move_away_from_obstacles")
         straighten = None
         # front crash
         if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
@@ -120,6 +127,7 @@ class CarEnv:
             straighten = "lx"
           while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
             self.motor.backward()
+            self.camera.add_note_to_video("move_away_backward")
             if self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
               break
             time.sleep(0.001)
@@ -131,6 +139,7 @@ class CarEnv:
               straighten = "lx"
           while self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
             self.motor.forward()
+            self.camera.add_note_to_video("move_away_forward")
             if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
               break
             time.sleep(0.001)
@@ -138,11 +147,14 @@ class CarEnv:
         time.sleep(0.01)
         if(straighten == "rx"):
           self.motor.right()
+          self.camera.add_note_to_video("move_away_right")
           time.sleep(1)
         if(straighten == "lx"):
           self.motor.left()
+          self.camera.add_note_to_video("move_away_left")
           time.sleep(1)
         self.motor.stop()
+        self.camera.add_note_to_video("complete_move_away")
 
     def stop(self):
       self.motor.stop()
