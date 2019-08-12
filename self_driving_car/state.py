@@ -1,5 +1,6 @@
 import numpy as np
 import blosc
+import cv2
 
 class State:
 
@@ -12,6 +13,9 @@ class State:
 
     def stateByAddingScreen(self, screen, frameNumber):
         screen = np.dot(screen, np.array([.299, .587, .114])).astype(np.uint8)
+        y_resize = State.IMAGE_SIZE/screen.shape[0]
+        x_resize = State.IMAGE_SIZE/screen.shape[1]
+        screen = cv2.resize(screen, (0,0), fx=x_resize, fy=y_resize) 
         screen.resize((State.IMAGE_SIZE, State.IMAGE_SIZE, 1))
         
         if State.useCompression:
