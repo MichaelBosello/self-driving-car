@@ -40,22 +40,22 @@ class DeepQNetwork:
         
         assert (len(tf.compat.v1.global_variables()) == 0),"Expected zero variables"
         self.x, self.y = self.buildNetwork('policy', True, numActions)
-        assert (len(tf.trainable_variables()) == 10),"Expected 10 trainable_variables"
+        assert (len(tf.compat.v1.trainable_variables()) == 10),"Expected 10 trainable_variables"
         assert (len(tf.compat.v1.global_variables()) == 10),"Expected 10 total variables"
         self.x_target, self.y_target = self.buildNetwork('target', False, numActions)
-        assert (len(tf.trainable_variables()) == 10),"Expected 10 trainable_variables"
+        assert (len(tf.compat.v1.trainable_variables()) == 10),"Expected 10 trainable_variables"
         assert (len(tf.compat.v1.global_variables()) == 20),"Expected 20 total variables"
 
         # build the variable copy ops
         self.update_target = []
-        trainable_variables = tf.trainable_variables()
-        all_variables = tf.global_variables()
+        trainable_variables = tf.compat.v1.trainable_variables()
+        all_variables = tf.compat.v1.global_variables()
         for i in range(0, len(trainable_variables)):
           self.update_target.append(all_variables[len(trainable_variables) + i].assign(trainable_variables[i]))
 
-        self.a = tf.placeholder(tf.float32, shape=[None, numActions])
+        self.a = tf.compat.v1.placeholder(tf.float32, shape=[None, numActions])
         print('a %s' % (self.a.get_shape()))
-        self.y_ = tf.placeholder(tf.float32, [None])
+        self.y_ = tf.compat.v1.placeholder(tf.float32, [None])
         print('y_ %s' % (self.y_.get_shape()))
 
         self.y_a = tf.reduce_sum(tf.multiply(self.y, self.a), reduction_indices=1)
@@ -70,10 +70,10 @@ class DeepQNetwork:
         optimizer = tf.compat.v1.train.RMSPropOptimizer(args.learning_rate, decay=.95, epsilon=.01)
         self.train_step = optimizer.minimize(self.loss)
 
-        self.saver = tf.train.Saver()
+        self.saver = tf.compat.v1.train.Saver()
 
         # Initialize variables
-        self.sess.run(tf.global_variables_initializer())
+        self.sess.run(tf.compat.v1.global_variables_initializer())
         self.sess.run(self.update_target) # is this necessary?
 
 
@@ -81,7 +81,7 @@ class DeepQNetwork:
 
         if args.model is not None:
             print('Loading from model file %s' % (args.model))
-            self.saver = tf.train.import_meta_graph(args.model + '.meta')
+            self.saver = tf.compat.v1.train.import_meta_graph(args.model + '.meta')
             self.saver.restore(self.sess, args.model)
 
     def buildNetwork(self, name, trainable, numActions):
@@ -143,7 +143,7 @@ class DeepQNetwork:
             weights = tf.Variable(tf.compat.v1.random_uniform(shape, minval=-stdv, maxval=stdv), trainable=trainable, name='W_' + name_suffix)
             biases  = tf.Variable(tf.compat.v1.random_uniform([shape[-1]], minval=-stdv, maxval=stdv), trainable=trainable, name='W_' + name_suffix)
         else:
-            weights = tf.Variable(tf.truncated_normal(shape, stddev=0.01), trainable=trainable, name='W_' + name_suffix)
+            weights = tf.Variable(tf.random.truncated_normal(shape, stddev=0.01), trainable=trainable, name='W_' + name_suffix)
             biases  = tf.Variable(tf.fill([shape[-1]], 0.1), trainable=trainable, name='W_' + name_suffix)
         return weights, biases
         
