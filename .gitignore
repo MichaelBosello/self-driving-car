@@ -1,5 +1,8 @@
 *.avi
 *.h264
+self_driving_car/video/*.txt
+
+
 self_driving_car/run-*
 
 # Created by https://www.gitignore.io/api/linux,macos,python

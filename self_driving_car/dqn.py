@@ -1,11 +1,10 @@
-import state
-from state import State
 import math
 import numpy as np
 import os
 import tensorflow as tf
 
-gamma = .999
+import state
+from state import State
 
 class GradientClippingOptimizer(tf.compat.v1.train.Optimizer):
     def __init__(self, optimizer, use_locking=False, name="GradientClipper"):
@@ -33,6 +32,7 @@ class DeepQNetwork:
         self.saveModelFrequency = args.save_model_freq
         self.targetModelUpdateFrequency = args.target_model_update_freq
         self.normalizeWeights = args.normalize_weights
+        self.gamma = args.gamma
 
         self.staleSess = None
         
@@ -166,7 +166,7 @@ class DeepQNetwork:
             if batch[i].terminal:
                 y_[i] = batch[i].reward
             else:
-                y_[i] = batch[i].reward + gamma * np.max(y2[i])
+                y_[i] = batch[i].reward + self.gamma * np.max(y2[i])
 
         self.train_step.run(feed_dict={
             self.x: x,

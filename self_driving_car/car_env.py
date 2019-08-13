@@ -29,9 +29,10 @@ class CarEnv:
         self.outputDir = outputDir
 
         self.camera = CarCamera()
-        self.camera.start_recording()
         self.motor = CarMotor(CAR_INSTANCE)
         self.sensor = CarSensor(CAR_INSTANCE)
+
+        self.camera.start_recording()
 
         self.sensor.add_callback_to_crash(self.stop_callback)
 
@@ -66,6 +67,8 @@ class CarEnv:
           self.state = self.state.stateByAddingScreen(self.camera.capture_as_rgb_array_bottom_half(), self.frame_number)
           return reward, self.state, self.isTerminal
 
+        prevScreenRGB = self.camera.capture_as_rgb_array_bottom_half()
+
         reward = 0
         if action == 0:
           self.motor.forward()
@@ -74,11 +77,11 @@ class CarEnv:
         elif action == 1:
           self.motor.right()
           self.camera.add_note_to_video("action_right")
-          reward = 0.6
+          reward = 0.35
         elif action == 2:
           self.motor.left()
           self.camera.add_note_to_video("action_left")
-          reward = 0.6
+          reward = 0.35
         elif action == 3:
           self.motor.stop()
           self.camera.add_note_to_video("action_stop")
@@ -90,7 +93,6 @@ class CarEnv:
         else:
           raise ValueError('`action` should be between 0 and 4.')
         
-        prevScreenRGB = self.camera.capture_as_rgb_array_bottom_half()
         screenRGB = self.camera.capture_as_rgb_array_bottom_half()
 
         #if self.sensor.rx_above_line():
