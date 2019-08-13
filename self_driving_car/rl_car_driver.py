@@ -14,12 +14,12 @@ from car_env import CarEnv
 from state import State
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--train-epoch-steps", type=int, default=15000, help="how many steps (=4 frames) to run during a training epoch (approx -- will finish current game)")
-parser.add_argument("--eval-epoch-steps", type=int, default=1500, help="how many steps (=4 frames) to run during an eval epoch (approx -- will finish current game)")
-parser.add_argument("--replay-capacity", type=int, default=100000, help="how many states to store for future training")
+parser.add_argument("--train-epoch-steps", type=int, default=10000, help="how many steps (=4 frames) to run during a training epoch (approx -- will finish current game)")
+parser.add_argument("--eval-epoch-steps", type=int, default=1000, help="how many steps (=4 frames) to run during an eval epoch (approx -- will finish current game)")
+parser.add_argument("--replay-capacity", type=int, default=1000000, help="how many states to store for future training")
 parser.add_argument("--prioritized-replay", action='store_true', help="Prioritize interesting states when training (e.g. terminal or non zero rewards)")
 parser.add_argument("--compress-replay", action='store_true', help="if set replay memory will be compressed with blosc, allowing much larger replay capacity")
-parser.add_argument("--normalize-weights", action='store_true', default=True, help="if set weights/biases are normalized like torch, with std scaled by fan in to the node")
+parser.add_argument("--normalize-weights", action='store_true', help="if set weights/biases are normalized like torch, with std scaled by fan in to the node")
 parser.add_argument("--save-model-freq", type=int, default=1000, help="save the model once per X training sessions")
 parser.add_argument("--observation-steps", type=int, default=1000, help="train only after this many stesp (=4 frames)")
 parser.add_argument("--learning-rate", type=float, default=0.0008, help="learning rate (step size for optimization algo)")
@@ -35,9 +35,7 @@ os.makedirs(baseOutputDir)
 State.setup(args)
 
 environment = CarEnv(args, baseOutputDir)
-
 dqn = dqn.DeepQNetwork(environment.getNumActions(), baseOutputDir, args)
-
 replayMemory = replay.ReplayMemory(args)
 
 stop = False
@@ -49,6 +47,7 @@ def stop_handler():
     if user_input == 'q':
       print("Stopping...")
       stop = True
+
 process = Thread(target=stop_handler)
 process.start()
 
