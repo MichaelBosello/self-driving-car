@@ -69,8 +69,8 @@ class CarCamera():
     
   def add_note_to_video(self, note):
     time = datetime.datetime.now()
-    time_difference = self.start_time - time
-    self.text_file.write(time_difference + ": " + note + "\n")
+    time_difference = time - self.start_time
+    self.text_file.write(str(time_difference) + ": " + note + "\n")
     self.text_file.flush()
 
 
