@@ -21,10 +21,10 @@ parser.add_argument("--prioritized-replay", action='store_true', help="Prioritiz
 parser.add_argument("--compress-replay", action='store_true', help="if set replay memory will be compressed with blosc, allowing much larger replay capacity")
 parser.add_argument("--normalize-weights", action='store_true', help="if set weights/biases are normalized like torch, with std scaled by fan in to the node")
 parser.add_argument("--save-model-freq", type=int, default=1000, help="save the model once per X training sessions")
-parser.add_argument("--observation-steps", type=int, default=100, help="train only after this many stesp (=4 frames)")
-parser.add_argument("--learning-rate", type=float, default=0.0008, help="learning rate (step size for optimization algo)")
+parser.add_argument("--observation-steps", type=int, default=300, help="train only after this many stesp (=4 frames)")
+parser.add_argument("--learning-rate", type=float, default=0.005, help="learning rate (step size for optimization algo)")
 parser.add_argument("--gamma", type=float, default=0.999, help="gamma [0, 1] is the discount factor. It determines the importance of future rewards. A factor of 0 will make the agent consider only immediate reward, a factor approaching 1 will make it strive for a long-term high reward")
-parser.add_argument("--target-model-update-freq", type=int, default=200, help="how often (in steps) to update the target model.  Note nature paper says this is in 'number of parameter updates' but their code says steps. see tinyurl.com/hokp4y8")
+parser.add_argument("--target-model-update-freq", type=int, default=400, help="how often (in steps) to update the target model.  Note nature paper says this is in 'number of parameter updates' but their code says steps. see tinyurl.com/hokp4y8")
 parser.add_argument("--model", help="tensorflow model checkpoint file to initialize from")
 args = parser.parse_args()
 

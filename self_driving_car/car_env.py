@@ -56,49 +56,51 @@ class CarEnv:
         self.isTerminal = False
         self.stepNumber += 1
         self.episodeStepNumber += 1
-        self.frame_number += 1
-        self.episode_frame_number +=1
 
-        if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
-          while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
-            self.car_to_safe()
+        for i in range(0, 4):
+          self.frame_number += 1
+          self.episode_frame_number +=1
+
+          if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
+            while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
+              self.car_to_safe()
+            reward = 0
+            self.isTerminal = True
+            self.state = self.state.stateByAddingScreen(self.camera.capture_as_rgb_array_bottom_half(), self.frame_number)
+            return reward, self.state, self.isTerminal
+
+          prevScreenRGB = self.camera.capture_as_rgb_array_bottom_half()
+
           reward = 0
-          self.isTerminal = True
-          self.state = self.state.stateByAddingScreen(self.camera.capture_as_rgb_array_bottom_half(), self.frame_number)
-          return reward, self.state, self.isTerminal
+          if action == 0:
+            self.motor.forward()
+            self.camera.add_note_to_video("action_forward")
+            reward = 1
+          elif action == 1:
+            self.motor.right()
+            self.camera.add_note_to_video("action_right")
+            reward = 0.5
+          elif action == 2:
+            self.motor.left()
+            self.camera.add_note_to_video("action_left")
+            reward = 0.5
+          elif action == 3:
+            self.motor.stop()
+            self.camera.add_note_to_video("action_stop")
+            reward = -0.1
+          #elif action == 4:
+          #  self.motor.backward()
+          #  self.camera.add_note_to_video("action_backward")
+          #  reward = -0.6
+          else:
+            raise ValueError('`action` should be between 0 and 4.')
+          
+          screenRGB = self.camera.capture_as_rgb_array_bottom_half()
 
-        prevScreenRGB = self.camera.capture_as_rgb_array_bottom_half()
-
-        reward = 0
-        if action == 0:
-          self.motor.forward()
-          self.camera.add_note_to_video("action_forward")
-          reward = 1
-        elif action == 1:
-          self.motor.right()
-          self.camera.add_note_to_video("action_right")
-          reward = 0.35
-        elif action == 2:
-          self.motor.left()
-          self.camera.add_note_to_video("action_left")
-          reward = 0.35
-        elif action == 3:
-          self.motor.stop()
-          self.camera.add_note_to_video("action_stop")
-          reward = -0.1
-        #elif action == 4:
-        #  self.motor.backward()
-        #  self.camera.add_note_to_video("action_backward")
-        #  reward = -0.6
-        else:
-          raise ValueError('`action` should be between 0 and 4.')
-        
-        screenRGB = self.camera.capture_as_rgb_array_bottom_half()
-
-        #if self.sensor.rx_above_line():
-        #  reward += 0.02
-        #if self.sensor.lx_above_line():
-        #  reward += 0.02
+          #if self.sensor.rx_above_line():
+          #  reward += 0.02
+          #if self.sensor.lx_above_line():
+          #  reward += 0.02
 
         maxedScreen = np.maximum(screenRGB, prevScreenRGB)
         self.state = self.state.stateByAddingScreen(maxedScreen, self.frame_number)

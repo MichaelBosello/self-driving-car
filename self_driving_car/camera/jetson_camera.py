@@ -16,8 +16,8 @@ class VideoRecording(Thread):
       ret, frame = self.cap.read()
       if ret==True:
           self.out.write(frame)
-          if cv2.waitKey(1) & 0xFF == ord('q'):
-              break
+          #if cv2.waitKey(1) & 0xFF == ord('q'):
+          #    break
       else:
           break
 
