@@ -33,6 +33,7 @@ class DeepQNetwork:
         self.targetModelUpdateFrequency = args.target_model_update_freq
         self.normalizeWeights = args.normalize_weights
         self.gamma = args.gamma
+        self.step_frames = args.frame
 
         self.staleSess = None
         
@@ -89,7 +90,7 @@ class DeepQNetwork:
         print("Building network for %s trainable=%s" % (name, trainable))
 
         # First layer takes a screen, and shrinks by 2x
-        x = tf.compat.v1.placeholder(tf.uint8, shape=[None, State.IMAGE_SIZE, State.IMAGE_SIZE, 4], name="screens")
+        x = tf.compat.v1.placeholder(tf.uint8, shape=[None, State.IMAGE_SIZE, State.IMAGE_SIZE, self.step_frames], name="screens")
         print(x)
 
         x_normalized = tf.to_float(x) / 255.0
@@ -97,38 +98,38 @@ class DeepQNetwork:
 
         # Second layer convolves 32 8x8 filters with stride 4 with relu
         with tf.compat.v1.variable_scope("cnn1_" + name):
-            W_conv1, b_conv1 = self.makeLayerVariables([8, 8, 4, 32], trainable, "conv1")
+            W_conv1, b_conv1 = self.makeLayerVariables([8, 8, self.step_frames, 16], trainable, "conv1")
 
             h_conv1 = tf.nn.relu(tf.nn.conv2d(x_normalized, W_conv1, strides=[1, 4, 4, 1], padding='VALID') + b_conv1, name="h_conv1")
             print(h_conv1)
 
         # Third layer convolves 64 4x4 filters with stride 2 with relu
         with tf.compat.v1.variable_scope("cnn2_" + name):
-            W_conv2, b_conv2 = self.makeLayerVariables([4, 4, 32, 64], trainable, "conv2")
+            W_conv2, b_conv2 = self.makeLayerVariables([4, 4, 16, 32], trainable, "conv2")
 
             h_conv2 = tf.nn.relu(tf.nn.conv2d(h_conv1, W_conv2, strides=[1, 2, 2, 1], padding='VALID') + b_conv2, name="h_conv2")
             print(h_conv2)
 
         # Fourth layer convolves 64 3x3 filters with stride 1 with relu
         with tf.compat.v1.variable_scope("cnn3_" + name):
-            W_conv3, b_conv3 = self.makeLayerVariables([3, 3, 64, 64], trainable, "conv3")
+            W_conv3, b_conv3 = self.makeLayerVariables([3, 3, 32, 32], trainable, "conv3")
 
             h_conv3 = tf.nn.relu(tf.nn.conv2d(h_conv2, W_conv3, strides=[1, 1, 1, 1], padding='VALID') + b_conv3, name="h_conv3")
             print(h_conv3)
 
-        h_conv3_flat = tf.reshape(h_conv3, [-1, 7 * 7 * 64], name="h_conv3_flat")
+        h_conv3_flat = tf.reshape(h_conv3, [-1, 7 * 7 * 32], name="h_conv3_flat")
         print(h_conv3_flat)
 
         # Fifth layer is fully connected with 512 relu units
         with tf.compat.v1.variable_scope("fc1_" + name):
-            W_fc1, b_fc1 = self.makeLayerVariables([7 * 7 * 64, 512], trainable, "fc1")
+            W_fc1, b_fc1 = self.makeLayerVariables([7 * 7 * 32, 256], trainable, "fc1")
 
             h_fc1 = tf.nn.relu(tf.matmul(h_conv3_flat, W_fc1) + b_fc1, name="h_fc1")
             print(h_fc1)
 
         # Sixth (Output) layer is fully connected linear layer
         with tf.compat.v1.variable_scope("fc2_" + name):
-            W_fc2, b_fc2 = self.makeLayerVariables([512, numActions], trainable, "fc2")
+            W_fc2, b_fc2 = self.makeLayerVariables([256, numActions], trainable, "fc2")
 
             y = tf.matmul(h_fc1, W_fc2) + b_fc2
             print(y)

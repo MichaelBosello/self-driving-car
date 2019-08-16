@@ -6,10 +6,12 @@ class State:
 
     IMAGE_SIZE = 84
     useCompression = False
+    step_frames = 4
 
     @staticmethod
     def setup(args):
         State.useCompression = args.compress_replay
+        State.step_frames = args.frame
 
     def stateByAddingScreen(self, screen, frameNumber):
         screen = np.dot(screen, np.array([.299, .587, .114])).astype(np.uint8)
@@ -24,19 +26,23 @@ class State:
 
         newState = State()
         if hasattr(self, 'screens'):
-            newState.screens = self.screens[:3]
+            newState.screens = self.screens[:State.step_frames -1]
             newState.screens.insert(0, screen)
         else:
-            newState.screens = [screen, screen, screen, screen]
+            newState.screens = []
+            for i in range(State.step_frames):
+                newState.screens.append(screen)
         return newState
     
     def getScreens(self):
         if State.useCompression:
             s = []
-            for i in range(4):
+            for i in range(State.step_frames):
                 s.append(np.reshape(np.fromstring(
                     blosc.decompress(
                         self.screens[i]), dtype=np.uint8), (State.IMAGE_SIZE, State.IMAGE_SIZE, 1)))
         else:
             s = self.screens
+        if State.step_frames == 1:
+            return s[0]
         return np.concatenate(s, axis=2)

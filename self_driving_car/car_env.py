@@ -8,13 +8,6 @@ from state import State
 from motor.car_motor import CarMotor
 from sensor.car_sensor import CarSensor
 
-# Terminology in this class:
-#   Episode: the span of one game life
-#   Game: an ALE game (e.g. in space invaders == 3 Episodes or 3 Lives)
-#   Frame: An ALE frame (e.g. 60 fps)
-#   Step: An Environment step (e.g. covers 4 frames)
-#
-
 CAR_INSTANCE = 'xiaor'
 
 if CAR_INSTANCE == 'picar':
@@ -28,9 +21,13 @@ class CarEnv:
         
         self.outputDir = outputDir
 
-        self.camera = CarCamera()
+        if CAR_INSTANCE == 'hjduino':#hjduino car has camera upside down, 2 is flip method
+          self.camera = CarCamera(2)
+        else:
+          self.camera = CarCamera()
         self.motor = CarMotor(CAR_INSTANCE)
         self.sensor = CarSensor(CAR_INSTANCE)
+        self.step_frames = args.frame
 
         self.camera.start_recording()
 
@@ -57,14 +54,14 @@ class CarEnv:
         self.stepNumber += 1
         self.episodeStepNumber += 1
 
-        for i in range(0, 4):
+        for i in range(0, self.step_frames):
           self.frame_number += 1
           self.episode_frame_number +=1
 
           if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
             while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
               self.car_to_safe()
-            reward = 0
+            reward = -1
             self.isTerminal = True
             self.state = self.state.stateByAddingScreen(self.camera.capture_as_rgb_array_bottom_half(), self.frame_number)
             return reward, self.state, self.isTerminal
@@ -79,11 +76,11 @@ class CarEnv:
           elif action == 1:
             self.motor.right()
             self.camera.add_note_to_video("action_right")
-            reward = 0.5
+            reward = 0.2
           elif action == 2:
             self.motor.left()
             self.camera.add_note_to_video("action_left")
-            reward = 0.5
+            reward = 0.2
           elif action == 3:
             self.motor.stop()
             self.camera.add_note_to_video("action_stop")
@@ -102,8 +99,7 @@ class CarEnv:
           #if self.sensor.lx_above_line():
           #  reward += 0.02
 
-        maxedScreen = np.maximum(screenRGB, prevScreenRGB)
-        self.state = self.state.stateByAddingScreen(maxedScreen, self.frame_number)
+        self.state = self.state.stateByAddingScreen(screenRGB, self.frame_number)
         self.gameScore += reward
         return reward, self.state, self.isTerminal
 
