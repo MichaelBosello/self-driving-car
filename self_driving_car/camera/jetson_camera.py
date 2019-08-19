@@ -6,20 +6,36 @@ import datetime
 import numpy as np
 import cv2
 
+current_frame = None
+video_recording = True
+
 class VideoRecording(Thread):
   def __init__(self, cap, out):
     super(VideoRecording, self).__init__()
     self.cap = cap
     self.out = out
   def run(self):
-    while(self.cap.isOpened()):
+    thread = VideoRecordingSupport(self.out)
+    thread.start()
+    global current_frame
+    while(video_recording):
       ret, frame = self.cap.read()
       if ret==True:
-          self.out.write(frame)
-          #if cv2.waitKey(1) & 0xFF == ord('q'):
-          #    break
+        current_frame = frame
       else:
-          break
+        break
+
+class VideoRecordingSupport(Thread):
+  def __init__(self, out):
+    super(VideoRecordingSupport, self).__init__()
+    self.out = out
+  def run(self):
+    while video_recording:
+      frame = current_frame
+      if frame is not None:
+        self.out.write(frame)
+        time.sleep(0.015)
+      
 
 class CarCamera():
   def __init__(self, flip_method=0):
@@ -41,6 +57,8 @@ class CarCamera():
     self.start_time = datetime.datetime.now()
     
   def stop_recording(self):
+    global video_recording
+    video_recording = False
     self.cap.release()
     self.out.release()
     self.text_file.close()
