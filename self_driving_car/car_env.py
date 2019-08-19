@@ -58,8 +58,8 @@ class CarEnv:
           self.frame_number += 1
           self.episode_frame_number +=1
 
-          if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
-            while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash() or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
+          if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():# or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
+            while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():# or self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
               self.car_to_safe()
             reward = -1
             self.isTerminal = True
@@ -116,21 +116,24 @@ class CarEnv:
     def car_to_safe(self):
         self.motor.stop()
         self.camera.add_note_to_video("move_away_from_obstacles")
-        straighten = None
+        #straighten = None
         # front crash
         if self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
+          '''
           if self.sensor.front_crash():
             straighten = "lx"
           if self.sensor.lx_front_crash():
               straighten = "rx"
           if self.sensor.rx_front_crash():#in case of both, keep lx to handle the case of the car between two obstacle
             straighten = "lx"
+          '''
           while self.sensor.front_crash() or self.sensor.rx_front_crash() or self.sensor.lx_front_crash():
             self.motor.backward()
             self.camera.add_note_to_video("move_away_backward")
             if self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
               break
             time.sleep(0.001)
+        '''
         # back crash
         if self.sensor.rx_back_crash() or self.sensor.lx_back_crash():
           if self.sensor.rx_back_crash():
@@ -153,6 +156,8 @@ class CarEnv:
           self.motor.left()
           self.camera.add_note_to_video("move_away_left")
           time.sleep(1)
+        '''
+
         self.motor.stop()
         self.camera.add_note_to_video("complete_move_away")
 
