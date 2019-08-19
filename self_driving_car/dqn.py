@@ -73,17 +73,17 @@ class DeepQNetwork:
 
         self.saver = tf.compat.v1.train.Saver()
 
-        # Initialize variables
-        self.sess.run(tf.compat.v1.global_variables_initializer())
-        self.sess.run(self.update_target) # is this necessary?
-
-
         self.summary_writer = tf.compat.v1.summary.FileWriter(self.baseDir + '/tensorboard', self.sess.graph)
 
         if args.model is not None:
             print('Loading from model file %s' % (args.model))
-            self.saver = tf.compat.v1.train.import_meta_graph(args.model + '.meta')
-            self.saver.restore(self.sess, args.model)
+            #self.saver = tf.compat.v1.train.import_meta_graph(args.model + '.meta')
+            #self.saver.restore(self.sess, args.model)
+            self.saver.restore(self.sess, tf.train.latest_checkpoint(args.model))
+        else:
+            # Initialize variables
+            self.sess.run(tf.compat.v1.global_variables_initializer())
+            self.sess.run(self.update_target) # is this necessary?
 
     def buildNetwork(self, name, trainable, numActions):
         
