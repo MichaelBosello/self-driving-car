@@ -92,10 +92,15 @@ class CarSensorBase(ABC):
     self.GPIO.add_event_detect(self.rx_distance_sensor_back(), self.GPIO.FALLING, callback=callback)
     self.GPIO.add_event_detect(self.lx_distance_sensor_back(), self.GPIO.FALLING, callback=callback)
 
+  def add_callback_to_lx_line_sensor(self, callback):
+    self.GPIO.add_event_detect(self.lx_line_sensor(), self.GPIO.FALLING, callback=callback)
+  def add_callback_to_rx_line_sensor(self, callback):
+    self.GPIO.add_event_detect(self.rx_line_sensor(), self.GPIO.FALLING, callback=callback)
+
   def get_channel_label(self, channel):
     return self.sensor_label[channel]
 
-def test(self):
+  def test(self):
     while True:
         print("distance front", self.front_distance())
         print("front crash", self.front_crash())
