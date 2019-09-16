@@ -33,6 +33,11 @@ class CarEnv:
 
         self.sensor.add_callback_to_crash(self.stop_callback)
 
+        self.above_line_lx = False
+        self.sensor.add_callback_to_lx_line_sensor(self.lx_line_sensor_callback)
+        self.above_line_rx = False
+        self.sensor.add_callback_to_rx_line_sensor(self.rx_line_sensor_callback)
+
         self.actionSet = [0, 1, 2, 3]
         self.gameNumber = 0
         self.stepNumber = 0
@@ -49,6 +54,11 @@ class CarEnv:
           self.camera.add_note_to_video(self.sensor.get_channel_label(channel))
           time.sleep(0.1)
 
+    def lx_line_sensor_callback(self, channel):
+          self.above_line_lx = True
+    def rx_line_sensor_callback(self, channel):
+          self.above_line_rx = True
+
     def step(self, action):
         self.isTerminal = False
         self.stepNumber += 1
@@ -63,6 +73,8 @@ class CarEnv:
               self.car_to_safe()
             reward = -1
             self.isTerminal = True
+            self.above_line_lx = False
+            self.above_line_rx = False
             self.state = self.state.stateByAddingScreen(self.camera.capture_as_rgb_array_bottom_half(), self.frame_number)
             return reward, self.state, self.isTerminal
 
@@ -72,7 +84,7 @@ class CarEnv:
           if action == 0:
             self.motor.forward()
             self.camera.add_note_to_video("action_forward")
-            reward = 1
+            reward = 0.9
           elif action == 1:
             self.motor.right()
             self.camera.add_note_to_video("action_right")
@@ -84,7 +96,7 @@ class CarEnv:
           elif action == 3:
             self.motor.stop()
             self.camera.add_note_to_video("action_stop")
-            reward = -0.1
+            reward = -0.2
           #elif action == 4:
           #  self.motor.backward()
           #  self.camera.add_note_to_video("action_backward")
@@ -94,13 +106,15 @@ class CarEnv:
           
           screenRGB = self.camera.capture_as_rgb_array_bottom_half()
 
-          #if self.sensor.rx_above_line():
-          #  reward += 0.02
-          #if self.sensor.lx_above_line():
-          #  reward += 0.02
+          if self.above_line_lx:
+            reward -= 0.3
+          if self.above_line_rx:
+            reward -= 0.3
 
         self.state = self.state.stateByAddingScreen(screenRGB, self.frame_number)
         self.gameScore += reward
+        self.above_line_lx = False
+        self.above_line_rx = False
         return reward, self.state, self.isTerminal
 
     def resetGame(self):
@@ -111,6 +125,8 @@ class CarEnv:
         self.gameScore = 0
         self.episodeStepNumber = 0
         self.episode_frame_number = 0
+        self.above_line_lx = False
+        self.above_line_rx = False
 
 
     def car_to_safe(self):
