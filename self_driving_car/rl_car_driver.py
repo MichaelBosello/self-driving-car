@@ -8,6 +8,7 @@ import random
 import replay
 import time
 import argparse
+import datetime
 
 import dqn
 from car_env import CarEnv
@@ -20,10 +21,10 @@ parser.add_argument("--replay-capacity", type=int, default=100000, help="how man
 parser.add_argument("--prioritized-replay", action='store_true', help="Prioritize interesting states when training (e.g. terminal or non zero rewards)")
 parser.add_argument("--compress-replay", action='store_true', help="if set replay memory will be compressed with blosc, allowing much larger replay capacity")
 parser.add_argument("--normalize-weights", action='store_true', help="if set weights/biases are normalized like torch, with std scaled by fan in to the node")
-parser.add_argument("--save-model-freq", type=int, default=2500, help="save the model once per X training sessions")
-parser.add_argument("--observation-steps", type=int, default=200, help="train only after this many stesp (=X frames)")
-parser.add_argument("--learning-rate", type=float, default=0.00025, help="learning rate (step size for optimization algo)")
-parser.add_argument("--gamma", type=float, default=0.999, help="gamma [0, 1] is the discount factor. It determines the importance of future rewards. A factor of 0 will make the agent consider only immediate reward, a factor approaching 1 will make it strive for a long-term high reward")
+parser.add_argument("--save-model-freq", type=int, default=2000, help="save the model once per X training sessions")
+parser.add_argument("--observation-steps", type=int, default=250, help="train only after this many stesp (=X frames)")
+parser.add_argument("--learning-rate", type=float, default=0.0006, help="learning rate (step size for optimization algo)")
+parser.add_argument("--gamma", type=float, default=0.99, help="gamma [0, 1] is the discount factor. It determines the importance of future rewards. A factor of 0 will make the agent consider only immediate reward, a factor approaching 1 will make it strive for a long-term high reward")
 parser.add_argument("--target-model-update-freq", type=int, default=300, help="how often (in steps) to update the target model.  Note nature paper says this is in 'number of parameter updates' but their code says steps. see tinyurl.com/hokp4y8")
 parser.add_argument("--model", help="tensorflow model checkpoint file to initialize from")
 parser.add_argument("--frame", type=int, default=1, help="frame per step")
@@ -57,6 +58,7 @@ process = Thread(target=stop_handler)
 process.start()
 
 train_epsilon = args.epsilon#don't want to reset epsilon between epoch
+startTime = datetime.datetime.now()
 
 def runEpoch(minEpochSteps, evalWithEpsilon=None):
     global train_epsilon
@@ -66,8 +68,6 @@ def runEpoch(minEpochSteps, evalWithEpsilon=None):
     epochTotalScore = 0
 
     while environment.getStepNumber() - stepStart < minEpochSteps and not stop:
-    
-        startTime = lastLogTime = time.time()
         stateReward = 0
         state = None
         
@@ -101,18 +101,13 @@ def runEpoch(minEpochSteps, evalWithEpsilon=None):
                 if environment.getStepNumber() > args.observation_steps and environment.getEpisodeStepNumber() % args.frame == 0:
                     batch = replayMemory.drawBatch(32)
                     dqn.train(batch, environment.getStepNumber())
-        
-            if time.time() - lastLogTime > 60:
-                print('  ...frame %d' % environment.getEpisodeFrameNumber())
-                lastLogTime = time.time()
 
             if isTerminal:
                 state = None
 
-        episodeTime = time.time() - startTime
-        print('%s %d ended with score: %d (%d frames in %fs for %d fps)' %
-            ('Episode' if isTraining else 'Eval', environment.getGameNumber(), environment.getGameScore(),
-            environment.getEpisodeFrameNumber(), episodeTime, environment.getEpisodeFrameNumber() / episodeTime))
+        episodeTime = datetime.datetime.now() - startTime
+        print('%s %d ended with score: %d (%fs elapsed)' %
+            ('Episode' if isTraining else 'Eval', environment.getGameNumber(), environment.getGameScore(), episodeTime))
         if isTraining:
           print("epsilon " + str(train_epsilon))
         epochTotalScore += environment.getGameScore()
@@ -128,13 +123,7 @@ while not stop:
     aveScore = runEpoch(args.train_epoch_steps) #train
     print('Average training score: %d' % (aveScore))
     print('\a')
-    print('\a')
-    print('\a')
-    print('\a')
-    aveScore = runEpoch(args.eval_epoch_steps, evalWithEpsilon=.05) #eval
+    aveScore = runEpoch(args.eval_epoch_steps, evalWithEpsilon=.01) #eval
     print('Average eval score: %d' % (aveScore))
-    print('\a')
-    print('\a')
-    print('\a')
     print('\a')
 environment.stop()
