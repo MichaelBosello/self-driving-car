@@ -106,8 +106,8 @@ def runEpoch(minEpochSteps, evalWithEpsilon=None):
                 state = None
 
         episodeTime = datetime.datetime.now() - startTime
-        print('%s %d ended with score: %d (%fs elapsed)' %
-            ('Episode' if isTraining else 'Eval', environment.getGameNumber(), environment.getGameScore(), episodeTime))
+        print('%s %d ended with score: %d (%s elapsed)' %
+            ('Episode' if isTraining else 'Eval', environment.getGameNumber(), environment.getGameScore(), str(episodeTime)))
         if isTraining:
           print("epsilon " + str(train_epsilon))
         epochTotalScore += environment.getGameScore()
