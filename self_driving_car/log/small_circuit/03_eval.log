@@ -1,0 +1,189 @@
+Arguments:  Namespace(compress_replay=False, epsilon=0.6, epsilon_decay=0.99993, epsilon_min=0.1, eval_epoch_steps=500, frame=1, gamma=0.999, learning_rate=0.00025, model='run-out-2019-09-12-17-20-55/models/', normalize_weights=False, observation_steps=200, prioritized_replay=False, replay_capacity=100000, save_model_freq=2500, target_model_update_freq=300, train_epoch_steps=5000)
+Building network for policy trainable=True
+Tensor("screens:0", shape=(?, 84, 84, 1), dtype=uint8)
+Tensor("truediv:0", shape=(?, 84, 84, 1), dtype=float32)
+Tensor("cnn1_policy/h_conv1:0", shape=(?, 20, 20, 16), dtype=float32)
+Tensor("cnn2_policy/h_conv2:0", shape=(?, 9, 9, 32), dtype=float32)
+Tensor("cnn3_policy/h_conv3:0", shape=(?, 7, 7, 32), dtype=float32)
+Tensor("h_conv3_flat:0", shape=(?, 1568), dtype=float32)
+Tensor("fc1_policy/h_fc1:0", shape=(?, 256), dtype=float32)
+Tensor("fc2_policy/add:0", shape=(?, 4), dtype=float32)
+Building network for target trainable=False
+Tensor("screens_1:0", shape=(?, 84, 84, 1), dtype=uint8)
+Tensor("truediv_1:0", shape=(?, 84, 84, 1), dtype=float32)
+Tensor("cnn1_target/h_conv1:0", shape=(?, 20, 20, 16), dtype=float32)
+Tensor("cnn2_target/h_conv2:0", shape=(?, 9, 9, 32), dtype=float32)
+Tensor("cnn3_target/h_conv3:0", shape=(?, 7, 7, 32), dtype=float32)
+Tensor("h_conv3_flat_1:0", shape=(?, 1568), dtype=float32)
+Tensor("fc1_target/h_fc1:0", shape=(?, 256), dtype=float32)
+Tensor("fc2_target/add:0", shape=(?, 4), dtype=float32)
+a (?, 4)
+y_ (?,)
+y_a (?,)
+Loading from model file run-out-2019-09-12-17-20-55/models/
+Eval 0 ended with score: 1 (3 frames in 14.662614s for 0 fps)
+Eval 1 ended with score: 1 (3 frames in 0.478554s for 6 fps)
+Eval 2 ended with score: 20 (41 frames in 5.727279s for 7 fps)
+Eval 3 ended with score: 24 (48 frames in 6.729239s for 7 fps)
+Eval 4 ended with score: 5 (22 frames in 3.066520s for 7 fps)
+Eval 5 ended with score: -19 (367 frames in 50.587178s for 7 fps)
+Eval 6 ended with score: 10 (23 frames in 3.187122s for 7 fps)
+Average eval score: 6
+Eval 7 ended with score: 0 (3 frames in 0.485447s for 6 fps)
+Eval 8 ended with score: -1 (17 frames in 2.437286s for 6 fps)
+Eval 9 ended with score: 0 (4 frames in 0.598833s for 6 fps)
+Eval 10 ended with score: 0 (3 frames in 0.406125s for 7 fps)
+Eval 11 ended with score: 80 (156 frames in 21.411756s for 7 fps)
+Eval 12 ended with score: 0 (3 frames in 0.494169s for 6 fps)
+Eval 13 ended with score: 12 (28 frames in 3.904966s for 7 fps)
+Eval 14 ended with score: 7 (20 frames in 2.718739s for 7 fps)
+Eval 15 ended with score: 21 (36 frames in 5.019620s for 7 fps)
+Eval 16 ended with score: 37 (77 frames in 10.653445s for 7 fps)
+Eval 17 ended with score: 1 (5 frames in 0.786051s for 6 fps)
+Eval 18 ended with score: 7 (18 frames in 2.569164s for 7 fps)
+Eval 19 ended with score: 37 (66 frames in 9.191170s for 7 fps)
+Eval 20 ended with score: 1 (5 frames in 0.673823s for 7 fps)
+Eval 21 ended with score: 24 (51 frames in 6.962372s for 7 fps)
+Eval 22 ended with score: 1 (10 frames in 1.543184s for 6 fps)
+Average eval score: 14
+Eval 23 ended with score: 7 (20 frames in 2.683217s for 7 fps)
+Eval 24 ended with score: 0 (2 frames in 0.276152s for 7 fps)
+Eval 25 ended with score: 0 (19 frames in 2.639559s for 7 fps)
+Eval 26 ended with score: 0 (2 frames in 0.308050s for 6 fps)
+Eval 27 ended with score: 12 (25 frames in 3.412610s for 7 fps)
+Eval 28 ended with score: 21 (47 frames in 6.562566s for 7 fps)
+Eval 29 ended with score: 13 (31 frames in 4.302741s for 7 fps)
+Eval 30 ended with score: 0 (6 frames in 0.825784s for 7 fps)
+Eval 31 ended with score: 0 (7 frames in 1.027694s for 6 fps)
+Eval 32 ended with score: 0 (3 frames in 0.473341s for 6 fps)
+Eval 33 ended with score: 0 (4 frames in 0.582628s for 6 fps)
+Eval 34 ended with score: 1 (7 frames in 0.996317s for 7 fps)
+Eval 35 ended with score: 1 (4 frames in 0.623770s for 6 fps)
+Eval 36 ended with score: 6 (21 frames in 2.948441s for 7 fps)
+Eval 37 ended with score: 1 (10 frames in 1.322196s for 7 fps)
+Eval 38 ended with score: 24 (66 frames in 9.111406s for 7 fps)
+Eval 39 ended with score: 2 (10 frames in 1.355922s for 7 fps)
+Eval 40 ended with score: 0 (3 frames in 0.454500s for 6 fps)
+Eval 41 ended with score: -4 (65 frames in 8.958670s for 7 fps)
+Eval 42 ended with score: 0 (3 frames in 0.483495s for 6 fps)
+Eval 43 ended with score: 0 (7 frames in 0.894889s for 7 fps)
+Eval 44 ended with score: 0 (12 frames in 1.721961s for 6 fps)
+Eval 45 ended with score: 0 (3 frames in 0.424941s for 7 fps)
+Eval 46 ended with score: 27 (52 frames in 7.170637s for 7 fps)
+Eval 47 ended with score: 29 (49 frames in 6.748477s for 7 fps)
+Eval 48 ended with score: 1 (3 frames in 0.467052s for 6 fps)
+Eval 49 ended with score: 5 (14 frames in 1.904778s for 7 fps)
+Eval 50 ended with score: 8 (22 frames in 3.024228s for 7 fps)
+Average eval score: 5
+Eval 51 ended with score: 56 (95 frames in 13.015346s for 7 fps)
+Eval 52 ended with score: 0 (3 frames in 0.432550s for 6 fps)
+Eval 53 ended with score: 92 (169 frames in 23.233442s for 7 fps)
+Eval 54 ended with score: 7 (17 frames in 2.467551s for 6 fps)
+Eval 55 ended with score: 1 (6 frames in 0.753637s for 7 fps)
+Eval 56 ended with score: 0 (2 frames in 0.262360s for 7 fps)
+Eval 57 ended with score: 11 (24 frames in 3.422216s for 7 fps)
+Eval 58 ended with score: 0 (4 frames in 0.562673s for 7 fps)
+Eval 59 ended with score: 0 (4 frames in 0.558546s for 7 fps)
+Eval 60 ended with score: 0 (2 frames in 0.209505s for 9 fps)
+Eval 61 ended with score: 25 (48 frames in 6.704775s for 7 fps)
+Eval 62 ended with score: 10 (25 frames in 3.433631s for 7 fps)
+Eval 63 ended with score: 55 (136 frames in 18.812078s for 7 fps)
+Average eval score: 20
+Eval 64 ended with score: 3 (15 frames in 2.100399s for 7 fps)
+Eval 65 ended with score: 34 (71 frames in 9.736833s for 7 fps)
+Eval 66 ended with score: 1 (3 frames in 0.427560s for 7 fps)
+Eval 67 ended with score: 0 (3 frames in 0.361078s for 8 fps)
+Eval 68 ended with score: 17 (43 frames in 5.918571s for 7 fps)
+Eval 69 ended with score: -3 (76 frames in 10.542507s for 7 fps)
+Eval 70 ended with score: 10 (28 frames in 3.849528s for 7 fps)
+Eval 71 ended with score: 3 (225 frames in 30.986661s for 7 fps)
+Eval 72 ended with score: 0 (3 frames in 0.357794s for 8 fps)
+Eval 73 ended with score: 80 (159 frames in 21.974168s for 7 fps)
+Average eval score: 14
+Eval 74 ended with score: 0 (3 frames in 0.386871s for 7 fps)
+Eval 75 ended with score: 64 (122 frames in 16.734697s for 7 fps)
+Eval 76 ended with score: 198 (381 frames in 52.514269s for 7 fps)
+Average eval score: 87
+Eval 77 ended with score: 54 (104 frames in 14.464242s for 7 fps)
+Eval 78 ended with score: 1 (4 frames in 0.594396s for 6 fps)
+Eval 79 ended with score: 5 (26 frames in 3.532307s for 7 fps)
+Eval 80 ended with score: 97 (168 frames in 23.169802s for 7 fps)
+Eval 81 ended with score: 71 (133 frames in 18.357598s for 7 fps)
+Eval 82 ended with score: 0 (3 frames in 0.388636s for 7 fps)
+Eval 83 ended with score: 32 (65 frames in 8.963712s for 7 fps)
+Average eval score: 37
+Eval 84 ended with score: 67 (145 frames in 20.023360s for 7 fps)
+Eval 85 ended with score: 86 (157 frames in 21.606115s for 7 fps)
+Eval 86 ended with score: 0 (3 frames in 0.474266s for 6 fps)
+Eval 87 ended with score: 1 (4 frames in 0.648006s for 6 fps)
+Eval 88 ended with score: 0 (3 frames in 0.388527s for 7 fps)
+Eval 89 ended with score: 19 (45 frames in 6.166790s for 7 fps)
+Eval 90 ended with score: 0 (3 frames in 0.502269s for 5 fps)
+Eval 91 ended with score: -22 (232 frames in 31.982543s for 7 fps)
+Average eval score: 19
+Eval 92 ended with score: 1 (3 frames in 0.475488s for 6 fps)
+Eval 93 ended with score: 1 (4 frames in 0.756093s for 6 fps)
+Average eval score: 1
+  ...frame 437
+Eval 94 ended with score: -1 (3 frames in 4.225888s for 6 fps)
+Eval 95 ended with score: 42 (96 frames in 13.227153s for 7 fps)
+Average eval score: 20
+Eval 96 ended with score: 0 (3 frames in 0.430667s for 6 fps)
+Eval 97 ended with score: 0 (3 frames in 0.443714s for 6 fps)
+Eval 98 ended with score: 0 (3 frames in 0.457079s for 6 fps)
+Eval 99 ended with score: 0 (4 frames in 0.621048s for 6 fps)
+Eval 100 ended with score: 20 (55 frames in 7.514140s for 7 fps)
+Eval 101 ended with score: 4 (12 frames in 1.582574s for 7 fps)
+Eval 102 ended with score: 21 (48 frames in 6.727645s for 7 fps)
+Eval 103 ended with score: 0 (4 frames in 0.602564s for 6 fps)
+Eval 104 ended with score: 1 (4 frames in 0.619982s for 6 fps)
+Eval 105 ended with score: 2 (8 frames in 1.128157s for 7 fps)
+Eval 106 ended with score: 1 (8 frames in 1.147990s for 6 fps)
+Eval 107 ended with score: 0 (11 frames in 1.559186s for 7 fps)
+Eval 108 ended with score: 61 (188 frames in 25.855184s for 7 fps)
+Eval 109 ended with score: 66 (128 frames in 17.674020s for 7 fps)
+Eval 110 ended with score: 0 (3 frames in 0.432040s for 6 fps)
+Eval 111 ended with score: 88 (188 frames in 25.946867s for 7 fps)
+Average eval score: 17
+Eval 112 ended with score: 22 (48 frames in 6.542017s for 7 fps)
+Eval 113 ended with score: 1 (10 frames in 1.379024s for 7 fps)
+Eval 114 ended with score: 1 (6 frames in 0.914469s for 6 fps)
+Eval 115 ended with score: 1 (16 frames in 2.248160s for 7 fps)
+Eval 116 ended with score: 17 (49 frames in 6.796765s for 7 fps)
+Eval 117 ended with score: 2 (12 frames in 1.627489s for 7 fps)
+Eval 118 ended with score: 11 (29 frames in 4.062612s for 7 fps)
+Eval 119 ended with score: 112 (224 frames in 30.862246s for 7 fps)
+Eval 120 ended with score: 38 (84 frames in 11.606763s for 7 fps)
+Eval 121 ended with score: 88 (179 frames in 24.689777s for 7 fps)
+Average eval score: 29
+Eval 122 ended with score: 37 (72 frames in 9.873810s for 7 fps)
+Stopping...
+nvbuf_utils: Could not get EGL display connection
+GST_ARGUS: Creating output stream
+CONSUMER: Waiting until producer is connected...
+GST_ARGUS: Available Sensor modes :
+GST_ARGUS: 3264 x 2464 FR = 21.000000 fps Duration = 47619048 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 3264 x 1848 FR = 28.000001 fps Duration = 35714284 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1920 x 1080 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 59.999999 fps Duration = 16666667 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 120.000005 fps Duration = 8333333 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: Running with following settings:
+   Camera index = 0 
+   Camera mode  = 4 
+   Output Stream W = 1280 H = 720 
+   seconds to Run    = 0 
+   Frame Rate = 120.000005 
+GST_ARGUS: PowerService: requested_clock_Hz=1545600
+GST_ARGUS: Setup Complete, Starting captures for 0 seconds
+GST_ARGUS: Starting repeat capture requests.
+CONSUMER: Producer has connected; continuing.
+GST_ARGUS: Cleaning up
+CONSUMER: Done Success
+GST_ARGUS: Done Success
+GST_ARGUS: 
+PowerServiceHwVic::cleanupResources

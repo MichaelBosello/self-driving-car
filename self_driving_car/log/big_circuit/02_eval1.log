@@ -1,0 +1,128 @@
+Arguments:  Namespace(compress_replay=False, epsilon=0.1, epsilon_decay=1, epsilon_min=0.1, eval_epoch_steps=500, frame=2, gamma=0.996, learning_rate=0.0002, model='run-out-2019-09-22-22-19-14/models/', normalize_weights=False, observation_steps=350, prioritized_replay=False, replay_capacity=100000, save_model_freq=2000, target_model_update_freq=300, tensorboard_logging_freq=300, train_epoch_steps=5000)
+Building network for policy trainable=True
+Tensor("screens:0", shape=(?, 84, 84, 2), dtype=uint8)
+Tensor("truediv:0", shape=(?, 84, 84, 2), dtype=float32)
+Tensor("cnn1_policy/h_conv1:0", shape=(?, 20, 20, 16), dtype=float32)
+Tensor("cnn2_policy/h_conv2:0", shape=(?, 9, 9, 32), dtype=float32)
+Tensor("cnn3_policy/h_conv3:0", shape=(?, 7, 7, 32), dtype=float32)
+Tensor("h_conv3_flat:0", shape=(?, 1568), dtype=float32)
+Tensor("fc1_policy/h_fc1:0", shape=(?, 256), dtype=float32)
+Tensor("fc2_policy/add:0", shape=(?, 4), dtype=float32)
+Building network for target trainable=False
+Tensor("screens_1:0", shape=(?, 84, 84, 2), dtype=uint8)
+Tensor("truediv_1:0", shape=(?, 84, 84, 2), dtype=float32)
+Tensor("cnn1_target/h_conv1:0", shape=(?, 20, 20, 16), dtype=float32)
+Tensor("cnn2_target/h_conv2:0", shape=(?, 9, 9, 32), dtype=float32)
+Tensor("cnn3_target/h_conv3:0", shape=(?, 7, 7, 32), dtype=float32)
+Tensor("h_conv3_flat_1:0", shape=(?, 1568), dtype=float32)
+Tensor("fc1_target/h_fc1:0", shape=(?, 256), dtype=float32)
+Tensor("fc2_target/add:0", shape=(?, 4), dtype=float32)
+a (?, 4)
+y_ (?,)
+y_a (?,)
+Loading from model file run-out-2019-09-22-22-19-14/models/
+Eval 0 ended with score: 4 (0:00:11.114632 elapsed)
+Eval 1 ended with score: 2 (0:00:14.198223 elapsed)
+Eval 2 ended with score: 0 (0:00:14.684571 elapsed)
+Eval 3 ended with score: 0 (0:00:15.067349 elapsed)
+Eval 4 ended with score: 4 (0:00:18.455098 elapsed)
+Eval 5 ended with score: 8 (0:00:25.590015 elapsed)
+Eval 6 ended with score: 0 (0:00:25.778179 elapsed)
+Eval 7 ended with score: 30 (0:00:43.650952 elapsed)
+Eval 8 ended with score: 0 (0:00:44.109967 elapsed)
+Eval 9 ended with score: 28 (0:01:02.035820 elapsed)
+Eval 10 ended with score: 34 (0:01:22.897501 elapsed)
+Eval 11 ended with score: 3 (0:01:25.651566 elapsed)
+Eval 12 ended with score: 29 (0:01:42.024249 elapsed)
+Eval 13 ended with score: 11 (0:01:50.364298 elapsed)
+Eval 14 ended with score: 1 (0:01:51.873735 elapsed)
+Eval 15 ended with score: 0 (0:01:51.996594 elapsed)
+Eval 16 ended with score: 1 (0:01:52.944224 elapsed)
+Eval 17 ended with score: 15 (0:02:00.026557 elapsed)
+Eval 18 ended with score: 0 (0:02:01.744464 elapsed)
+Eval 19 ended with score: 24 (0:02:16.849659 elapsed)
+Eval 20 ended with score: 15 (0:02:27.743421 elapsed)
+Average eval score: 10
+
+Eval 21 ended with score: 0 (0:02:28.318905 elapsed)
+Eval 22 ended with score: 0 (0:02:28.899939 elapsed)
+Eval 23 ended with score: 9 (0:02:36.621889 elapsed)
+Eval 24 ended with score: 16 (0:02:46.275730 elapsed)
+Eval 25 ended with score: 5 (0:02:50.118085 elapsed)
+Eval 26 ended with score: 0 (0:02:50.327761 elapsed)
+Eval 27 ended with score: 0 (0:02:50.928624 elapsed)
+Eval 28 ended with score: 0 (0:02:51.674055 elapsed)
+Eval 29 ended with score: 0 (0:02:52.276656 elapsed)
+Eval 30 ended with score: 2 (0:02:53.868258 elapsed)
+Eval 31 ended with score: 14 (0:03:00.836336 elapsed)
+Eval 32 ended with score: 4 (0:03:04.867281 elapsed)
+Eval 33 ended with score: 0 (0:03:06.049237 elapsed)
+Eval 34 ended with score: 0 (0:03:06.583423 elapsed)
+Eval 35 ended with score: 29 (0:03:22.886681 elapsed)
+Eval 36 ended with score: 9 (0:03:28.355056 elapsed)
+Eval 37 ended with score: 0 (0:03:29.014698 elapsed)
+Eval 38 ended with score: 2 (0:03:32.873492 elapsed)
+Eval 39 ended with score: 13 (0:03:40.811476 elapsed)
+Eval 40 ended with score: 7 (0:03:44.223950 elapsed)
+Eval 41 ended with score: 0 (0:03:44.894008 elapsed)
+Eval 42 ended with score: 23 (0:04:01.579273 elapsed)
+Eval 43 ended with score: 0 (0:04:02.259578 elapsed)
+Eval 44 ended with score: 33 (0:04:22.254318 elapsed)
+Eval 45 ended with score: 17 (0:04:33.890653 elapsed)
+Eval 46 ended with score: 8 (0:04:39.762187 elapsed)
+Eval 47 ended with score: 40 (0:05:02.460787 elapsed)
+Average eval score: 9
+
+Eval 48 ended with score: 16 (0:05:11.663822 elapsed)
+Eval 49 ended with score: 8 (0:05:16.894266 elapsed)
+Eval 50 ended with score: 1 (0:05:20.874559 elapsed)
+Eval 51 ended with score: 51 (0:05:48.758434 elapsed)
+Eval 52 ended with score: 35 (0:06:09.413754 elapsed)
+Eval 53 ended with score: 0 (0:06:10.762597 elapsed)
+Eval 54 ended with score: 42 (0:06:32.376102 elapsed)
+Eval 55 ended with score: 0 (0:06:33.329717 elapsed)
+Eval 56 ended with score: 48 (0:07:01.184347 elapsed)
+Eval 57 ended with score: 6 (0:07:06.696722 elapsed)
+Eval 58 ended with score: 0 (0:07:07.439149 elapsed)
+Eval 59 ended with score: 0 (0:07:09.736122 elapsed)
+Eval 60 ended with score: 4 (0:07:14.448239 elapsed)
+Eval 61 ended with score: 3 (0:07:17.105662 elapsed)
+Eval 62 ended with score: 34 (0:07:35.826883 elapsed)
+Average eval score: 17
+
+Eval 63 ended with score: 4 (0:07:40.894931 elapsed)
+Eval 64 ended with score: 14 (0:07:47.901180 elapsed)
+Eval 65 ended with score: 2 (0:07:49.301872 elapsed)
+Stopping...
+Eval 66 ended with score: 7 (0:07:53.762146 elapsed)
+Average eval score: 9
+
+nvbuf_utils: Could not get EGL display connection
+GST_ARGUS: Creating output stream
+CONSUMER: Waiting until producer is connected...
+GST_ARGUS: Available Sensor modes :
+GST_ARGUS: 3264 x 2464 FR = 21.000000 fps Duration = 47619048 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 3264 x 1848 FR = 28.000001 fps Duration = 35714284 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1920 x 1080 FR = 29.999999 fps Duration = 33333334 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 59.999999 fps Duration = 16666667 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: 1280 x 720 FR = 120.000005 fps Duration = 8333333 ; Analog Gain range min 1.000000, max 10.625000; Exposure Range min 13000, max 683709000;
+
+GST_ARGUS: Running with following settings:
+   Camera index = 0 
+   Camera mode  = 4 
+   Output Stream W = 1280 H = 720 
+   seconds to Run    = 0 
+   Frame Rate = 120.000005 
+GST_ARGUS: PowerService: requested_clock_Hz=1545600
+GST_ARGUS: Setup Complete, Starting captures for 0 seconds
+GST_ARGUS: Starting repeat capture requests.
+CONSUMER: Producer has connected; continuing.
+GST_ARGUS: Cleaning up
+CONSUMER: Done Success
+GST_ARGUS: Done Success
+GST_ARGUS: 
+PowerServiceHwVic::cleanupResources

@@ -1,0 +1,3441 @@
+Arguments:  Namespace(compress_replay=False, epsilon=0.6, epsilon_decay=0.99993, epsilon_min=0.1, eval_epoch_steps=500, frame=1, gamma=0.999, learning_rate=0.00025, model='run-out-2019-09-12-12-02-19/models/', normalize_weights=False, observation_steps=200, prioritized_replay=False, replay_capacity=100000, save_model_freq=2500, target_model_update_freq=300, train_epoch_steps=5000)
+Building network for policy trainable=True
+Tensor("screens:0", shape=(?, 84, 84, 1), dtype=uint8)
+Tensor("truediv:0", shape=(?, 84, 84, 1), dtype=float32)
+Tensor("cnn1_policy/h_conv1:0", shape=(?, 20, 20, 16), dtype=float32)
+Tensor("cnn2_policy/h_conv2:0", shape=(?, 9, 9, 32), dtype=float32)
+Tensor("cnn3_policy/h_conv3:0", shape=(?, 7, 7, 32), dtype=float32)
+Tensor("h_conv3_flat:0", shape=(?, 1568), dtype=float32)
+Tensor("fc1_policy/h_fc1:0", shape=(?, 256), dtype=float32)
+Tensor("fc2_policy/add:0", shape=(?, 4), dtype=float32)
+Building network for target trainable=False
+Tensor("screens_1:0", shape=(?, 84, 84, 1), dtype=uint8)
+Tensor("truediv_1:0", shape=(?, 84, 84, 1), dtype=float32)
+Tensor("cnn1_target/h_conv1:0", shape=(?, 20, 20, 16), dtype=float32)
+Tensor("cnn2_target/h_conv2:0", shape=(?, 9, 9, 32), dtype=float32)
+Tensor("cnn3_target/h_conv3:0", shape=(?, 7, 7, 32), dtype=float32)
+Tensor("h_conv3_flat_1:0", shape=(?, 1568), dtype=float32)
+Tensor("fc1_target/h_fc1:0", shape=(?, 256), dtype=float32)
+Tensor("fc2_target/add:0", shape=(?, 4), dtype=float32)
+a (?, 4)
+y_ (?,)
+y_a (?,)
+Loading from model file run-out-2019-09-12-12-02-19/models/
+Episode 0 ended with score: 3 (13 frames in 19.461994s for 0 fps)
+epsilon 0.5994542292611513
+Episode 1 ended with score: 1 (7 frames in 1.070196s for 6 fps)
+epsilon 0.5991605583654575
+Episode 2 ended with score: 2 (10 frames in 1.382855s for 7 fps)
+epsilon 0.5987412780648463
+Episode 3 ended with score: 0 (3 frames in 0.485365s for 6 fps)
+epsilon 0.5986155511977441
+Episode 4 ended with score: 1 (7 frames in 0.998314s for 7 fps)
+epsilon 0.5983222911680113
+Episode 5 ended with score: 0 (5 frames in 0.679733s for 7 fps)
+epsilon 0.5981129076818426
+Episode 6 ended with score: 0 (3 frames in 0.369385s for 8 fps)
+epsilon 0.5979873127632839
+Episode 7 ended with score: 2 (12 frames in 1.720278s for 6 fps)
+epsilon 0.5974851967645424
+Episode 8 ended with score: 4 (36 frames in 4.991406s for 7 fps)
+epsilon 0.5959813770430894
+Episode 9 ended with score: 1 (6 frames in 0.808493s for 7 fps)
+epsilon 0.5957311086652742
+Episode 10 ended with score: 0 (6 frames in 0.891105s for 6 fps)
+epsilon 0.5954809453817846
+Episode 11 ended with score: 5 (34 frames in 4.656003s for 7 fps)
+epsilon 0.5940653364277776
+Episode 12 ended with score: 0 (9 frames in 1.276934s for 7 fps)
+epsilon 0.593691180041839
+Episode 13 ended with score: 1 (8 frames in 1.086649s for 7 fps)
+epsilon 0.5933587944240427
+Episode 14 ended with score: 2 (19 frames in 2.540312s for 7 fps)
+epsilon 0.5925701242056346
+Episode 15 ended with score: 0 (4 frames in 0.573060s for 6 fps)
+epsilon 0.5924042219916057
+Episode 16 ended with score: 3 (13 frames in 1.832139s for 7 fps)
+epsilon 0.5918653605083833
+Episode 17 ended with score: 4 (34 frames in 6.452316s for 5 fps)
+epsilon 0.5904583467149105
+Episode 18 ended with score: 2 (15 frames in 1.774172s for 8 fps)
+epsilon 0.5898386691495484
+Episode 19 ended with score: 1 (4 frames in 0.635784s for 6 fps)
+epsilon 0.589673531662634
+Episode 20 ended with score: 9 (47 frames in 5.111486s for 9 fps)
+epsilon 0.5877366259081033
+Episode 21 ended with score: 2 (4 frames in 0.622650s for 6 fps)
+epsilon 0.5875720769314993
+Episode 22 ended with score: 1 (4 frames in 0.728816s for 5 fps)
+epsilon 0.5874075740237714
+Episode 23 ended with score: 1 (4 frames in 0.688912s for 5 fps)
+epsilon 0.5872431171720215
+Episode 24 ended with score: 1 (5 frames in 0.652681s for 7 fps)
+epsilon 0.5870376108539098
+Episode 25 ended with score: 7 (29 frames in 3.196533s for 9 fps)
+epsilon 0.585847091621087
+Episode 26 ended with score: 0 (5 frames in 0.545710s for 9 fps)
+epsilon 0.5856420738435176
+Episode 27 ended with score: 0 (4 frames in 0.621471s for 6 fps)
+epsilon 0.5854781112799149
+Episode 28 ended with score: 2 (6 frames in 0.846742s for 7 fps)
+epsilon 0.5852322535018022
+Episode 29 ended with score: 3 (14 frames in 1.739506s for 8 fps)
+epsilon 0.5846589867753786
+Episode 30 ended with score: 1 (4 frames in 0.679878s for 5 fps)
+epsilon 0.5844952994472536
+Episode 31 ended with score: 2 (22 frames in 2.479673s for 8 fps)
+epsilon 0.5835958379676944
+Episode 32 ended with score: 1 (5 frames in 0.626737s for 7 fps)
+epsilon 0.5833916080186001
+Episode 33 ended with score: 0 (7 frames in 0.808105s for 8 fps)
+epsilon 0.5831058061546643
+Episode 34 ended with score: 1 (7 frames in 0.927058s for 7 fps)
+epsilon 0.5828201443042363
+Episode 35 ended with score: 0 (5 frames in 0.710335s for 7 fps)
+epsilon 0.5826161858099179
+Episode 36 ended with score: 0 (12 frames in 1.459504s for 8 fps)
+epsilon 0.5821269765879546
+Episode 37 ended with score: 0 (3 frames in 0.475149s for 6 fps)
+epsilon 0.582004738479938
+Episode 38 ended with score: 0 (12 frames in 1.453291s for 8 fps)
+epsilon 0.581516042676036
+Episode 39 ended with score: 0 (3 frames in 0.491766s for 6 fps)
+epsilon 0.5813939328551603
+Episode 40 ended with score: 4 (29 frames in 3.058061s for 9 fps)
+epsilon 0.5802148590682117
+Episode 41 ended with score: 1 (6 frames in 0.752367s for 7 fps)
+epsilon 0.579971211469215
+Episode 42 ended with score: 0 (8 frames in 1.005386s for 7 fps)
+epsilon 0.5796465071517032
+Episode 43 ended with score: 0 (7 frames in 0.839650s for 8 fps)
+epsilon 0.5793625400018664
+Episode 44 ended with score: 1 (37 frames in 4.099077s for 9 fps)
+epsilon 0.5778638801718277
+Episode 45 ended with score: 0 (4 frames in 0.637671s for 6 fps)
+epsilon 0.5777020952737848
+Episode 46 ended with score: 6 (23 frames in 2.654925s for 8 fps)
+epsilon 0.5767727107268774
+Episode 47 ended with score: 2 (8 frames in 1.153055s for 6 fps)
+epsilon 0.5764497971310085
+Episode 48 ended with score: 4 (23 frames in 2.502841s for 9 fps)
+epsilon 0.5755224272323974
+Episode 49 ended with score: 0 (4 frames in 0.582834s for 6 fps)
+epsilon 0.575361297872342
+Episode 50 ended with score: 0 (10 frames in 1.134503s for 8 fps)
+epsilon 0.5749586718073185
+Episode 51 ended with score: 0 (7 frames in 0.888561s for 7 fps)
+epsilon 0.5746770012144783
+Episode 52 ended with score: 0 (3 frames in 0.501977s for 5 fps)
+epsilon 0.574556327491778
+Episode 53 ended with score: 0 (9 frames in 1.010932s for 8 fps)
+epsilon 0.574194458340642
+Episode 54 ended with score: 0 (6 frames in 0.766074s for 7 fps)
+epsilon 0.5739533388674928
+Episode 55 ended with score: 1 (6 frames in 0.735102s for 8 fps)
+epsilon 0.5737123206468018
+Episode 56 ended with score: 9 (42 frames in 4.543428s for 9 fps)
+epsilon 0.5720280246014775
+Episode 57 ended with score: 4 (14 frames in 1.576313s for 8 fps)
+epsilon 0.571467692133259
+Episode 58 ended with score: 9 (38 frames in 4.087313s for 9 fps)
+epsilon 0.5699495549543865
+Episode 59 ended with score: 0 (3 frames in 0.457666s for 6 fps)
+epsilon 0.569829873925909
+Episode 60 ended with score: 1 (4 frames in 0.580152s for 6 fps)
+epsilon 0.5696703383134263
+Episode 61 ended with score: 0 (3 frames in 0.463690s for 6 fps)
+epsilon 0.569550715916339
+Episode 62 ended with score: 1 (4 frames in 0.508227s for 7 fps)
+epsilon 0.5693912584598919
+Episode 63 ended with score: 1 (6 frames in 0.746829s for 8 fps)
+epsilon 0.5691521559776904
+Episode 64 ended with score: 1 (4 frames in 0.568590s for 7 fps)
+epsilon 0.5689928101063092
+Episode 65 ended with score: 1 (8 frames in 0.977942s for 8 fps)
+epsilon 0.568674252187535
+Episode 66 ended with score: 0 (3 frames in 0.492961s for 6 fps)
+epsilon 0.568554838953892
+Episode 67 ended with score: 19 (92 frames in 9.781938s for 9 fps)
+epsilon 0.5649049831949514
+Episode 68 ended with score: 0 (5 frames in 0.651775s for 7 fps)
+epsilon 0.5647072941292398
+Episode 69 ended with score: 0 (3 frames in 0.454036s for 6 fps)
+epsilon 0.5645887138984761
+Episode 70 ended with score: 4 (41 frames in 7.883355s for 5 fps)
+epsilon 0.5629706107440606
+Episode 71 ended with score: 0 (5 frames in 0.717882s for 6 fps)
+epsilon 0.5627735986139291
+Episode 72 ended with score: 1 (4 frames in 0.597291s for 6 fps)
+epsilon 0.5626160385510888
+Episode 73 ended with score: 1 (3 frames in 0.575602s for 5 fps)
+epsilon 0.5624978974532557
+Episode 74 ended with score: 0 (5 frames in 0.636536s for 7 fps)
+epsilon 0.5623010507496149
+Episode 75 ended with score: 0 (2 frames in 0.318127s for 6 fps)
+epsilon 0.5622223313577851
+Episode 76 ended with score: 7 (47 frames in 5.025105s for 9 fps)
+epsilon 0.5603755947985537
+Episode 77 ended with score: 0 (7 frames in 0.789678s for 8 fps)
+epsilon 0.5601010684130243
+Episode 78 ended with score: -1 (9 frames in 1.065692s for 8 fps)
+epsilon 0.5597483035256164
+Episode 79 ended with score: 4 (50 frames in 5.357476s for 9 fps)
+epsilon 0.5577925405924856
+Episode 80 ended with score: 0 (16 frames in 1.875285s for 8 fps)
+epsilon 0.5571681408219192
+Episode 81 ended with score: 2 (25 frames in 2.676053s for 9 fps)
+epsilon 0.5561939151732668
+Episode 82 ended with score: 0 (3 frames in 0.526996s for 5 fps)
+epsilon 0.5560771226269401
+Episode 83 ended with score: 0 (3 frames in 0.529018s for 5 fps)
+epsilon 0.5559603546053314
+Episode 84 ended with score: 0 (4 frames in 0.541157s for 7 fps)
+epsilon 0.5558047020505135
+Episode 85 ended with score: 1 (15 frames in 1.694098s for 8 fps)
+epsilon 0.5552213929881563
+Episode 86 ended with score: 0 (3 frames in 0.456234s for 6 fps)
+epsilon 0.5551048046571928
+Episode 87 ended with score: 12 (50 frames in 5.439029s for 9 fps)
+epsilon 0.553165266128691
+Episode 88 ended with score: 6 (25 frames in 2.718338s for 9 fps)
+epsilon 0.5521980396296824
+Episode 89 ended with score: 1 (3 frames in 0.525674s for 5 fps)
+epsilon 0.5520820861584819
+Episode 90 ended with score: 0 (5 frames in 0.661669s for 7 fps)
+epsilon 0.551888884478455
+Episode 91 ended with score: 2 (21 frames in 4.970610s for 4 fps)
+epsilon 0.5510781754602467
+Episode 92 ended with score: 1 (13 frames in 1.555365s for 8 fps)
+epsilon 0.5505769048886062
+Episode 93 ended with score: 1 (6 frames in 0.806108s for 7 fps)
+epsilon 0.5503457030521787
+Episode 94 ended with score: 5 (46 frames in 4.881211s for 9 fps)
+epsilon 0.5485763781032315
+Episode 95 ended with score: 1 (8 frames in 1.103967s for 7 fps)
+epsilon 0.5482692505856366
+Episode 96 ended with score: 2 (14 frames in 1.635436s for 8 fps)
+epsilon 0.5477321911248821
+Episode 97 ended with score: 0 (11 frames in 1.276531s for 8 fps)
+epsilon 0.5473105849205466
+Episode 98 ended with score: 0 (10 frames in 1.127102s for 8 fps)
+epsilon 0.5469275881705615
+Episode 99 ended with score: 3 (19 frames in 2.130713s for 8 fps)
+epsilon 0.5462006325671908
+Episode 100 ended with score: 3 (24 frames in 2.604398s for 9 fps)
+epsilon 0.5452837538071623
+Episode 101 ended with score: 3 (23 frames in 2.513750s for 9 fps)
+epsilon 0.5444065226206839
+Episode 102 ended with score: 1 (7 frames in 0.969416s for 7 fps)
+epsilon 0.5441398194374957
+Episode 103 ended with score: 1 (8 frames in 1.028335s for 7 fps)
+epsilon 0.543835175784143
+Episode 104 ended with score: 0 (10 frames in 1.111627s for 8 fps)
+epsilon 0.5434546110543688
+Episode 105 ended with score: 0 (10 frames in 1.164413s for 8 fps)
+epsilon 0.5430743126360065
+Episode 106 ended with score: 0 (8 frames in 1.070856s for 7 fps)
+epsilon 0.5427702655202955
+Episode 107 ended with score: 6 (30 frames in 3.328604s for 9 fps)
+epsilon 0.5416316041220293
+Episode 108 ended with score: 0 (8 frames in 1.060358s for 7 fps)
+epsilon 0.5413283647251742
+Episode 109 ended with score: 4 (35 frames in 6.363002s for 5 fps)
+epsilon 0.5400036872598775
+Episode 110 ended with score: 0 (3 frames in 0.499043s for 6 fps)
+epsilon 0.5398902944234218
+Episode 111 ended with score: 0 (7 frames in 0.830383s for 8 fps)
+epsilon 0.5396258037273848
+Episode 112 ended with score: 1 (3 frames in 0.494542s for 6 fps)
+epsilon 0.5395124902409163
+Episode 113 ended with score: 1 (3 frames in 0.504930s for 5 fps)
+epsilon 0.5393992005486141
+Episode 114 ended with score: 0 (4 frames in 0.503778s for 7 fps)
+epsilon 0.539248184630057
+Episode 115 ended with score: 0 (3 frames in 0.476649s for 6 fps)
+epsilon 0.539134950438048
+Episode 116 ended with score: 0 (7 frames in 0.885058s for 7 fps)
+epsilon 0.5388708297828478
+Episode 117 ended with score: 1 (14 frames in 1.608569s for 8 fps)
+epsilon 0.5383429765848972
+Episode 118 ended with score: 0 (5 frames in 0.727428s for 6 fps)
+epsilon 0.5381545829200518
+Episode 119 ended with score: 0 (4 frames in 0.516749s for 7 fps)
+epsilon 0.5380039154578405
+Episode 120 ended with score: 0 (3 frames in 0.470490s for 6 fps)
+epsilon 0.5378909425440674
+Episode 121 ended with score: 1 (8 frames in 1.033388s for 7 fps)
+epsilon 0.5375897974045492
+Episode 122 ended with score: 3 (24 frames in 2.617114s for 9 fps)
+epsilon 0.5366873732082764
+Episode 123 ended with score: 0 (19 frames in 2.332887s for 8 fps)
+epsilon 0.5359740285139322
+Episode 124 ended with score: 0 (9 frames in 1.025939s for 8 fps)
+epsilon 0.535636459406346
+Episode 125 ended with score: -1 (28 frames in 3.126206s for 8 fps)
+epsilon 0.5345876034501453
+Episode 126 ended with score: 2 (12 frames in 1.512155s for 7 fps)
+epsilon 0.5341387227085446
+Episode 127 ended with score: 1 (4 frames in 0.547852s for 7 fps)
+epsilon 0.5339891795691316
+Episode 128 ended with score: 5 (19 frames in 2.054224s for 9 fps)
+epsilon 0.5332794212124076
+Episode 129 ended with score: 4 (23 frames in 2.554472s for 9 fps)
+epsilon 0.5324215021269253
+Episode 130 ended with score: 0 (6 frames in 0.770852s for 7 fps)
+epsilon 0.53219792422536
+Episode 131 ended with score: 0 (11 frames in 1.315899s for 8 fps)
+epsilon 0.5317882752209315
+Episode 132 ended with score: 1 (10 frames in 1.209869s for 8 fps)
+epsilon 0.5314161406657055
+Episode 133 ended with score: 1 (14 frames in 1.673060s for 8 fps)
+epsilon 0.5308955897399745
+Episode 134 ended with score: 0 (3 frames in 0.540601s for 5 fps)
+epsilon 0.5307841094701121
+Episode 135 ended with score: 1 (9 frames in 1.037761s for 8 fps)
+epsilon 0.5304498090961712
+Episode 136 ended with score: 2 (14 frames in 1.659056s for 8 fps)
+epsilon 0.5299302047446119
+Episode 137 ended with score: 1 (3 frames in 0.517745s for 5 fps)
+epsilon 0.5298189271914078
+Episode 138 ended with score: 1 (3 frames in 0.546417s for 5 fps)
+epsilon 0.529707673004854
+Episode 139 ended with score: 2 (27 frames in 5.197494s for 5 fps)
+epsilon 0.528707436015882
+Episode 140 ended with score: 0 (4 frames in 0.489040s for 8 fps)
+epsilon 0.5285594134770708
+Episode 141 ended with score: 0 (3 frames in 0.418139s for 7 fps)
+epsilon 0.5284484237698828
+Episode 142 ended with score: 6 (32 frames in 3.404986s for 9 fps)
+epsilon 0.5272659827431042
+Episode 143 ended with score: -1 (10 frames in 1.265209s for 7 fps)
+epsilon 0.5268970127956337
+Episode 144 ended with score: 3 (25 frames in 2.826694s for 8 fps)
+epsilon 0.5259757171463412
+Episode 145 ended with score: 2 (14 frames in 1.617615s for 8 fps)
+epsilon 0.5254604954104535
+Episode 146 ended with score: 0 (6 frames in 0.852562s for 7 fps)
+epsilon 0.525239840620123
+Episode 147 ended with score: 3 (21 frames in 2.237952s for 9 fps)
+epsilon 0.5244682782866736
+Episode 148 ended with score: 6 (60 frames in 6.420449s for 9 fps)
+epsilon 0.5222700540814574
+Episode 149 ended with score: 1 (7 frames in 0.778819s for 8 fps)
+epsilon 0.5220141954902765
+Episode 150 ended with score: 1 (4 frames in 0.605350s for 6 fps)
+epsilon 0.5218680468620404
+Episode 151 ended with score: 0 (7 frames in 0.853327s for 8 fps)
+epsilon 0.5216123852130355
+Episode 152 ended with score: 0 (15 frames in 1.712184s for 8 fps)
+epsilon 0.5210649604967456
+Episode 153 ended with score: 1 (10 frames in 1.216100s for 8 fps)
+epsilon 0.5207003298977773
+Episode 154 ended with score: 1 (6 frames in 0.677787s for 8 fps)
+epsilon 0.5204816740271225
+Episode 155 ended with score: 1 (4 frames in 0.494254s for 8 fps)
+epsilon 0.520335954459842
+Episode 156 ended with score: 0 (3 frames in 0.437363s for 6 fps)
+epsilon 0.5202266915581655
+Episode 157 ended with score: 1 (11 frames in 1.332908s for 8 fps)
+epsilon 0.5198262571773209
+Episode 158 ended with score: 2 (17 frames in 1.949938s for 8 fps)
+epsilon 0.519208010222283
+Episode 159 ended with score: 0 (6 frames in 0.746096s for 8 fps)
+epsilon 0.5189899810162169
+Episode 160 ended with score: 9 (38 frames in 6.405989s for 5 fps)
+epsilon 0.5176112539306981
+Episode 161 ended with score: 0 (1 frames in 0.142490s for 7 fps)
+epsilon 0.5175750211429229
+Episode 162 ended with score: 0 (9 frames in 1.022517s for 8 fps)
+epsilon 0.5172490401649257
+Episode 163 ended with score: 0 (3 frames in 0.487071s for 6 fps)
+epsilon 0.5171404254698745
+Episode 164 ended with score: 0 (3 frames in 0.483025s for 6 fps)
+epsilon 0.5170318335823126
+Episode 165 ended with score: 0 (5 frames in 0.708232s for 7 fps)
+epsilon 0.5168508977733453
+Episode 166 ended with score: 1 (5 frames in 0.783377s for 6 fps)
+epsilon 0.5166700252830458
+Episode 167 ended with score: 1 (8 frames in 1.016112s for 7 fps)
+epsilon 0.5163807609460914
+Episode 168 ended with score: 1 (7 frames in 0.873610s for 8 fps)
+epsilon 0.5161277875026096
+Episode 169 ended with score: 11 (60 frames in 6.345802s for 9 fps)
+epsilon 0.5139645211194086
+Episode 170 ended with score: 0 (3 frames in 0.494284s for 6 fps)
+epsilon 0.5138565961250757
+Episode 171 ended with score: 2 (12 frames in 1.544617s for 7 fps)
+epsilon 0.5134251227267843
+Episode 172 ended with score: 0 (8 frames in 0.847346s for 9 fps)
+epsilon 0.5131376750901232
+Episode 173 ended with score: 5 (17 frames in 2.034122s for 8 fps)
+epsilon 0.5125273830920575
+Episode 174 ended with score: 2 (19 frames in 2.024864s for 9 fps)
+epsilon 0.5118461509489395
+Episode 175 ended with score: 12 (46 frames in 4.941264s for 9 fps)
+epsilon 0.5102005995075921
+Episode 176 ended with score: 5 (30 frames in 3.177366s for 9 fps)
+epsilon 0.5091302650310442
+Episode 177 ended with score: 0 (8 frames in 0.924145s for 8 fps)
+epsilon 0.5088452219255206
+Episode 178 ended with score: 4 (34 frames in 3.717554s for 9 fps)
+epsilon 0.5076355680181237
+Episode 179 ended with score: 0 (6 frames in 0.695854s for 8 fps)
+epsilon 0.5074223983872881
+Episode 180 ended with score: 0 (11 frames in 4.055375s for 2 fps)
+epsilon 0.5070318198621525
+Episode 181 ended with score: 1 (3 frames in 0.518620s for 5 fps)
+epsilon 0.5069253506331752
+Episode 182 ended with score: 5 (22 frames in 2.589225s for 8 fps)
+epsilon 0.5061452591143253
+Episode 183 ended with score: 1 (7 frames in 0.955145s for 7 fps)
+epsilon 0.5058973000136306
+Episode 184 ended with score: 1 (3 frames in 0.505467s for 5 fps)
+epsilon 0.5057910690171445
+Episode 185 ended with score: 17 (54 frames in 5.621711s for 9 fps)
+epsilon 0.5038827210333391
+Episode 186 ended with score: 0 (2 frames in 0.347429s for 5 fps)
+epsilon 0.5038121799214197
+Episode 187 ended with score: 1 (5 frames in 2.954352s for 1 fps)
+epsilon 0.503635870343516
+Episode 188 ended with score: 0 (10 frames in 1.187023s for 8 fps)
+epsilon 0.5032834362652578
+Episode 189 ended with score: 1 (17 frames in 1.936422s for 8 fps)
+epsilon 0.502684864246827
+Episode 190 ended with score: 3 (21 frames in 2.348656s for 8 fps)
+epsilon 0.5019464345298618
+Episode 191 ended with score: 6 (16 frames in 1.870918s for 8 fps)
+epsilon 0.5013845495712996
+Episode 192 ended with score: 0 (13 frames in 1.480758s for 8 fps)
+epsilon 0.5009284812111882
+Episode 193 ended with score: 0 (3 frames in 0.455989s for 6 fps)
+epsilon 0.5008232935936107
+Episode 194 ended with score: 6 (50 frames in 5.331535s for 9 fps)
+epsilon 0.49907341489368523
+Episode 195 ended with score: -1 (14 frames in 1.515867s for 9 fps)
+epsilon 0.4985845454216267
+Episode 196 ended with score: 1 (5 frames in 0.631216s for 7 fps)
+epsilon 0.4984100652596617
+Episode 197 ended with score: 0 (3 frames in 0.487866s for 6 fps)
+epsilon 0.4983054064724141
+Episode 198 ended with score: 0 (3 frames in 0.472351s for 6 fps)
+epsilon 0.49820076966197346
+Episode 199 ended with score: 0 (13 frames in 1.477086s for 8 fps)
+epsilon 0.49774759732505114
+Episode 200 ended with score: 0 (8 frames in 0.985161s for 8 fps)
+epsilon 0.4974689269519595
+Episode 201 ended with score: 0 (3 frames in 0.467838s for 6 fps)
+epsilon 0.49736446578992216
+Episode 202 ended with score: 1 (7 frames in 0.973914s for 7 fps)
+epsilon 0.4971208083745181
+Episode 203 ended with score: 3 (13 frames in 4.019528s for 3 fps)
+epsilon 0.49666861838971216
+Episode 204 ended with score: 3 (34 frames in 3.656505s for 9 fps)
+epsilon 0.49548791135144393
+Episode 205 ended with score: 4 (17 frames in 1.841594s for 9 fps)
+epsilon 0.49489861081454045
+Episode 206 ended with score: 5 (33 frames in 3.669585s for 8 fps)
+epsilon 0.49375667449957356
+Episode 207 ended with score: 2 (26 frames in 2.805184s for 9 fps)
+epsilon 0.49285882321933316
+Episode 208 ended with score: 0 (3 frames in 0.455080s for 6 fps)
+epsilon 0.49275533011131273
+Episode 209 ended with score: 0 (8 frames in 0.934908s for 8 fps)
+epsilon 0.4924794547230176
+Episode 210 ended with score: -1 (27 frames in 2.973901s for 9 fps)
+epsilon 0.4915495150751202
+Episode 211 ended with score: 0 (3 frames in 0.484471s for 6 fps)
+epsilon 0.49144629690256364
+Episode 212 ended with score: 11 (59 frames in 6.251160s for 9 fps)
+epsilon 0.4894207384584157
+Episode 213 ended with score: 12 (41 frames in 4.274706s for 9 fps)
+epsilon 0.48801806564324796
+Episode 214 ended with score: 0 (1 frames in 0.050820s for 19 fps)
+epsilon 0.4879839043786529
+Episode 215 ended with score: 0 (1 frames in 0.069144s for 14 fps)
+epsilon 0.4879497455053464
+Episode 216 ended with score: 0 (1 frames in 0.067525s for 14 fps)
+epsilon 0.48791558902316107
+Episode 217 ended with score: 1 (3 frames in 0.398953s for 7 fps)
+epsilon 0.487813133921658
+Episode 218 ended with score: 0 (6 frames in 0.783463s for 7 fps)
+epsilon 0.48760828825632996
+Episode 219 ended with score: 0 (14 frames in 1.645483s for 8 fps)
+epsilon 0.4871306494975073
+Episode 220 ended with score: 8 (24 frames in 5.255445s for 4 fps)
+epsilon 0.48631292846378427
+Episode 221 ended with score: 1 (6 frames in 0.827136s for 7 fps)
+epsilon 0.4861087127744938
+Episode 222 ended with score: 1 (6 frames in 0.708215s for 8 fps)
+epsilon 0.4859045828407843
+Episode 223 ended with score: 0 (2 frames in 0.275772s for 7 fps)
+epsilon 0.48583655858011904
+Episode 224 ended with score: 9 (33 frames in 3.588526s for 9 fps)
+epsilon 0.4847155321774217
+Episode 225 ended with score: 0 (3 frames in 0.499428s for 6 fps)
+epsilon 0.48461374904081644
+Episode 226 ended with score: 0 (6 frames in 0.832720s for 7 fps)
+epsilon 0.4844102468820056
+Episode 227 ended with score: 0 (3 frames in 0.477226s for 6 fps)
+epsilon 0.48430852785082484
+Episode 228 ended with score: 1 (3 frames in 0.494527s for 6 fps)
+epsilon 0.4842068301791454
+Episode 229 ended with score: 2 (7 frames in 0.869562s for 8 fps)
+epsilon 0.48396961865142796
+Episode 230 ended with score: 1 (6 frames in 0.782311s for 7 fps)
+epsilon 0.48376638698004143
+Episode 231 ended with score: 0 (3 frames in 0.452257s for 6 fps)
+epsilon 0.48366480314997556
+Episode 232 ended with score: 2 (21 frames in 2.300896s for 9 fps)
+epsilon 0.48295431335985395
+Episode 233 ended with score: 0 (25 frames in 2.760222s for 9 fps)
+epsilon 0.4821098528734586
+Episode 234 ended with score: 1 (3 frames in 0.449478s for 6 fps)
+epsilon 0.4820086168912046
+Episode 235 ended with score: 0 (2 frames in 0.282152s for 7 fps)
+epsilon 0.48194113804668204
+Episode 236 ended with score: 0 (3 frames in 0.426812s for 7 fps)
+epsilon 0.4818399374920616
+Episode 237 ended with score: 4 (30 frames in 3.363026s for 8 fps)
+epsilon 0.480829099994471
+Episode 238 ended with score: 0 (7 frames in 0.956066s for 7 fps)
+epsilon 0.480593543207016
+Episode 239 ended with score: 1 (3 frames in 0.558145s for 5 fps)
+epsilon 0.4804926256275028
+Episode 240 ended with score: 2 (12 frames in 1.286544s for 9 fps)
+epsilon 0.4800891671770384
+Episode 241 ended with score: 0 (3 frames in 0.442133s for 6 fps)
+epsilon 0.4799883555090773
+Episode 242 ended with score: 0 (2 frames in 0.279908s for 7 fps)
+epsilon 0.47992115949124897
+Episode 243 ended with score: 0 (3 frames in 0.431250s for 6 fps)
+epsilon 0.4798203831024322
+Episode 244 ended with score: 0 (2 frames in 0.247048s for 8 fps)
+epsilon 0.4797532105999177
+Episode 245 ended with score: 0 (20 frames in 2.261713s for 8 fps)
+epsilon 0.4790820025677794
+Episode 246 ended with score: 0 (7 frames in 0.815285s for 8 fps)
+epsilon 0.4788473016783083
+Episode 247 ended with score: 0 (3 frames in 0.554842s for 5 fps)
+epsilon 0.4787467507838469
+Episode 248 ended with score: 0 (37 frames in 3.883051s for 9 fps)
+epsilon 0.4775083577663089
+Episode 249 ended with score: 0 (4 frames in 0.595925s for 6 fps)
+epsilon 0.4773746694642249
+Episode 250 ended with score: 0 (3 frames in 0.507351s for 5 fps)
+epsilon 0.47727442780088136
+Episode 251 ended with score: 1 (6 frames in 0.829467s for 7 fps)
+epsilon 0.4770740076176015
+Episode 252 ended with score: 0 (6 frames in 0.817900s for 7 fps)
+epsilon 0.476873671596069
+Episode 253 ended with score: 2 (9 frames in 0.964262s for 9 fps)
+epsilon 0.4765733252897409
+Episode 254 ended with score: 5 (15 frames in 4.244009s for 3 fps)
+epsilon 0.47607316842080166
+Episode 255 ended with score: 0 (3 frames in 0.522160s for 5 fps)
+epsilon 0.47597320005354554
+Episode 256 ended with score: 0 (12 frames in 1.325762s for 9 fps)
+epsilon 0.47557353645932215
+Episode 257 ended with score: 2 (14 frames in 1.520266s for 9 fps)
+epsilon 0.4751076863924669
+Episode 258 ended with score: 3 (17 frames in 1.849833s for 9 fps)
+epsilon 0.4745426247466351
+Episode 259 ended with score: 0 (3 frames in 0.514071s for 5 fps)
+epsilon 0.4744429777710521
+Episode 260 ended with score: 0 (3 frames in 0.436185s for 6 fps)
+epsilon 0.4743433517198692
+Episode 261 ended with score: 0 (3 frames in 0.484051s for 6 fps)
+epsilon 0.47424374658869256
+Episode 262 ended with score: 0 (3 frames in 0.515392s for 5 fps)
+epsilon 0.4741441623731293
+Episode 263 ended with score: 4 (14 frames in 1.503759s for 9 fps)
+epsilon 0.473679712455699
+Episode 264 ended with score: 0 (3 frames in 0.431626s for 6 fps)
+epsilon 0.47358024667901266
+Episode 265 ended with score: 0 (4 frames in 0.545377s for 7 fps)
+epsilon 0.47344765813255196
+Episode 266 ended with score: 0 (3 frames in 0.439795s for 6 fps)
+epsilon 0.4733482410838623
+Episode 267 ended with score: 0 (3 frames in 0.418126s for 7 fps)
+epsilon 0.4732488449112915
+Episode 268 ended with score: 0 (3 frames in 0.502334s for 5 fps)
+epsilon 0.4731494696104558
+Episode 269 ended with score: 1 (15 frames in 1.666117s for 9 fps)
+epsilon 0.4726529060289402
+Episode 270 ended with score: 1 (5 frames in 0.672072s for 7 fps)
+epsilon 0.4724875006702013
+Episode 271 ended with score: 0 (3 frames in 0.451125s for 6 fps)
+epsilon 0.4723882852404647
+Episode 272 ended with score: 0 (10 frames in 1.160404s for 8 fps)
+epsilon 0.4720577175829721
+Episode 273 ended with score: 0 (4 frames in 0.568756s for 7 fps)
+epsilon 0.47192555529989805
+Episode 274 ended with score: 2 (8 frames in 0.954898s for 8 fps)
+epsilon 0.47166134172805224
+Episode 275 ended with score: 0 (5 frames in 0.714277s for 7 fps)
+epsilon 0.4714962833682354
+Episode 276 ended with score: 0 (3 frames in 0.461139s for 6 fps)
+epsilon 0.47139727607956167
+Episode 277 ended with score: 0 (5 frames in 0.640507s for 7 fps)
+epsilon 0.47123231012978345
+Episode 278 ended with score: 0 (4 frames in 0.677581s for 5 fps)
+epsilon 0.4711003789365305
+Episode 279 ended with score: 2 (24 frames in 2.549019s for 9 fps)
+epsilon 0.4703095670891367
+Episode 280 ended with score: 2 (13 frames in 1.484695s for 8 fps)
+epsilon 0.4698817650892737
+Episode 281 ended with score: 1 (29 frames in 3.184849s for 9 fps)
+epsilon 0.4689288393002804
+Episode 282 ended with score: 1 (15 frames in 1.641474s for 9 fps)
+epsilon 0.46843670520973485
+Episode 283 ended with score: 0 (24 frames in 2.700372s for 8 fps)
+epsilon 0.4676503647336983
+Episode 284 ended with score: 7 (18 frames in 1.992044s for 9 fps)
+epsilon 0.46706147574075696
+Episode 285 ended with score: 3 (12 frames in 1.480865s for 8 fps)
+epsilon 0.46666929511357697
+Episode 286 ended with score: 0 (3 frames in 0.566659s for 5 fps)
+epsilon 0.4665713014214817
+Episode 287 ended with score: 0 (3 frames in 0.416200s for 7 fps)
+epsilon 0.46647332830662125
+Episode 288 ended with score: 0 (3 frames in 0.514422s for 5 fps)
+epsilon 0.46637537576467475
+Episode 289 ended with score: 2 (24 frames in 2.608641s for 9 fps)
+epsilon 0.4655924955357944
+Episode 290 ended with score: 0 (6 frames in 0.741119s for 8 fps)
+epsilon 0.4653969809055239
+Episode 291 ended with score: 0 (7 frames in 0.864336s for 8 fps)
+epsilon 0.4651689842686428
+Episode 292 ended with score: 4 (31 frames in 3.513729s for 8 fps)
+epsilon 0.464160626743471
+Episode 293 ended with score: 1 (8 frames in 0.953748s for 8 fps)
+epsilon 0.4639007604664177
+Episode 294 ended with score: 10 (33 frames in 3.654145s for 9 fps)
+epsilon 0.46283034904609544
+Episode 295 ended with score: 1 (5 frames in 0.754118s for 6 fps)
+epsilon 0.462668381101029
+Episode 296 ended with score: 1 (7 frames in 0.873547s for 8 fps)
+epsilon 0.46244172119731186
+Episode 297 ended with score: 4 (23 frames in 2.592702s for 8 fps)
+epsilon 0.46169776303437254
+Episode 298 ended with score: 3 (12 frames in 1.386330s for 8 fps)
+epsilon 0.46131008619164593
+Episode 299 ended with score: 2 (22 frames in 2.458200s for 8 fps)
+epsilon 0.4606001905722048
+Episode 300 ended with score: 0 (3 frames in 0.432607s for 6 fps)
+epsilon 0.46050347130284947
+Episode 301 ended with score: 1 (3 frames in 0.430860s for 6 fps)
+epsilon 0.4604067723431189
+Episode 302 ended with score: 0 (9 frames in 1.099576s for 8 fps)
+epsilon 0.46011679727903343
+Episode 303 ended with score: 0 (6 frames in 0.783800s for 7 fps)
+epsilon 0.4599235820396046
+Episode 304 ended with score: 0 (9 frames in 1.099421s for 8 fps)
+epsilon 0.4596339113001896
+Episode 305 ended with score: 1 (7 frames in 0.930090s for 7 fps)
+epsilon 0.45940873797446447
+Episode 306 ended with score: 1 (3 frames in 0.484312s for 6 fps)
+epsilon 0.45931226889264065
+Episode 307 ended with score: 4 (18 frames in 2.037199s for 8 fps)
+epsilon 0.45873387965172163
+Episode 308 ended with score: 3 (19 frames in 2.116822s for 8 fps)
+epsilon 0.45812414781247723
+Episode 309 ended with score: 0 (4 frames in 0.569677s for 7 fps)
+epsilon 0.4579958865193111
+Episode 310 ended with score: 2 (17 frames in 1.891039s for 8 fps)
+epsilon 0.45745117651601513
+Episode 311 ended with score: 1 (3 frames in 0.534554s for 5 fps)
+epsilon 0.45735511849332217
+Episode 312 ended with score: 1 (10 frames in 1.188045s for 8 fps)
+epsilon 0.45703507073835803
+Episode 313 ended with score: 2 (13 frames in 4.137229s for 3 fps)
+epsilon 0.45661934345796373
+Episode 314 ended with score: 6 (16 frames in 1.718808s for 9 fps)
+epsilon 0.45610819819777704
+Episode 315 ended with score: 0 (5 frames in 0.692001s for 7 fps)
+epsilon 0.45594858267614513
+Episode 316 ended with score: 12 (34 frames in 3.649625s for 9 fps)
+epsilon 0.45486467747110215
+Episode 317 ended with score: 3 (7 frames in 0.885219s for 7 fps)
+epsilon 0.45464184057925633
+Episode 318 ended with score: 1 (3 frames in 0.474631s for 6 fps)
+epsilon 0.45454637247581375
+Episode 319 ended with score: 0 (3 frames in 0.452298s for 6 fps)
+epsilon 0.4544509244192696
+Episode 320 ended with score: 5 (17 frames in 1.906229s for 8 fps)
+epsilon 0.45391043055933644
+Episode 321 ended with score: 4 (27 frames in 3.008827s for 8 fps)
+epsilon 0.45305332007092286
+Episode 322 ended with score: 0 (3 frames in 0.474445s for 6 fps)
+epsilon 0.45295818553343636
+Episode 323 ended with score: 14 (69 frames in 7.427094s for 9 fps)
+epsilon 0.45077559630205316
+Episode 324 ended with score: 8 (24 frames in 2.626478s for 9 fps)
+epsilon 0.45001890261635413
+Episode 325 ended with score: 0 (15 frames in 1.661169s for 9 fps)
+epsilon 0.4495466142331149
+Episode 326 ended with score: 0 (7 frames in 0.892414s for 7 fps)
+epsilon 0.44932638264509084
+Episode 327 ended with score: 3 (8 frames in 1.096909s for 7 fps)
+epsilon 0.44907482150975936
+Episode 328 ended with score: 0 (5 frames in 0.717014s for 6 fps)
+epsilon 0.4489176673253569
+Episode 329 ended with score: 1 (5 frames in 0.686699s for 7 fps)
+epsilon 0.44876056813721893
+Episode 330 ended with score: 0 (3 frames in 0.489853s for 6 fps)
+epsilon 0.4486663350145365
+Episode 331 ended with score: 1 (7 frames in 0.849152s for 8 fps)
+epsilon 0.4484465346727593
+Episode 332 ended with score: 0 (3 frames in 0.443874s for 6 fps)
+epsilon 0.44835236749248825
+Episode 333 ended with score: 1 (3 frames in 0.477387s for 6 fps)
+epsilon 0.44825822008594085
+Episode 334 ended with score: 14 (31 frames in 3.355861s for 9 fps)
+epsilon 0.44728652041392936
+Episode 335 ended with score: 1 (3 frames in 0.532903s for 5 fps)
+epsilon 0.44719259681960083
+Episode 336 ended with score: 1 (10 frames in 1.242461s for 8 fps)
+epsilon 0.44687966058939044
+Episode 337 ended with score: 0 (24 frames in 2.607174s for 9 fps)
+epsilon 0.4461295068095289
+Episode 338 ended with score: 0 (3 frames in 0.499653s for 6 fps)
+epsilon 0.4460358261710496
+Episode 339 ended with score: 5 (24 frames in 2.762856s for 8 fps)
+epsilon 0.44528708889239477
+Episode 340 ended with score: 0 (5 frames in 0.577349s for 8 fps)
+epsilon 0.4451312602288225
+Episode 341 ended with score: 1 (15 frames in 1.710388s for 8 fps)
+epsilon 0.44466410135616075
+Episode 342 ended with score: 0 (4 frames in 0.615279s for 6 fps)
+epsilon 0.44453960848029556
+Episode 343 ended with score: 3 (12 frames in 1.316944s for 9 fps)
+epsilon 0.4441663389397418
+Episode 344 ended with score: 0 (3 frames in 0.494968s for 6 fps)
+epsilon 0.44407307053765727
+Episode 345 ended with score: 0 (3 frames in 0.472535s for 6 fps)
+epsilon 0.44397982172056616
+Episode 346 ended with score: 2 (12 frames in 1.389878s for 8 fps)
+epsilon 0.4436070222198978
+Episode 347 ended with score: 0 (7 frames in 0.794155s for 8 fps)
+epsilon 0.44338970042084747
+Episode 348 ended with score: 0 (3 frames in 0.333502s for 8 fps)
+epsilon 0.44329659510143554
+Episode 349 ended with score: 0 (8 frames in 0.971860s for 8 fps)
+epsilon 0.4430484098199574
+Episode 350 ended with score: 2 (13 frames in 1.420130s for 9 fps)
+epsilon 0.44264540505666883
+Episode 351 ended with score: 1 (9 frames in 1.109901s for 8 fps)
+epsilon 0.4423666165213804
+Episode 352 ended with score: 7 (34 frames in 3.519566s for 9 fps)
+epsilon 0.441314999088181
+Episode 353 ended with score: 0 (1 frames in 0.031610s for 31 fps)
+epsilon 0.44128410703824483
+Episode 354 ended with score: 0 (4 frames in 0.484662s for 8 fps)
+epsilon 0.44116056046142144
+Episode 355 ended with score: 0 (1 frames in 0.059312s for 16 fps)
+epsilon 0.44112967922218915
+Episode 356 ended with score: 0 (3 frames in 0.353151s for 8 fps)
+epsilon 0.4410370484740075
+Episode 357 ended with score: 5 (25 frames in 2.725636s for 9 fps)
+epsilon 0.440265881615839
+Episode 358 ended with score: 8 (25 frames in 2.753480s for 9 fps)
+epsilon 0.43949606316666506
+Episode 359 ended with score: 1 (3 frames in 0.535284s for 5 fps)
+epsilon 0.43940377545384146
+Episode 360 ended with score: 1 (6 frames in 0.763493s for 7 fps)
+epsilon 0.43921925816131413
+Episode 361 ended with score: 0 (3 frames in 0.455363s for 6 fps)
+epsilon 0.4391270285734727
+Episode 362 ended with score: 1 (8 frames in 0.915545s for 8 fps)
+epsilon 0.43888117767726575
+Episode 363 ended with score: 3 (18 frames in 2.056242s for 8 fps)
+epsilon 0.4383285162998059
+Episode 364 ended with score: 0 (12 frames in 1.394487s for 8 fps)
+epsilon 0.4379604620684851
+Episode 365 ended with score: 0 (11 frames in 3.967679s for 2 fps)
+epsilon 0.4376233505182539
+Episode 366 ended with score: 0 (3 frames in 0.615494s for 4 fps)
+epsilon 0.4375314560475583
+Episode 367 ended with score: 2 (26 frames in 2.892246s for 8 fps)
+epsilon 0.4367358451763617
+Episode 368 ended with score: 4 (10 frames in 1.193820s for 8 fps)
+epsilon 0.4364302263670182
+Episode 369 ended with score: 0 (3 frames in 0.493780s for 6 fps)
+epsilon 0.4363385824348558
+Episode 370 ended with score: 0 (3 frames in 0.495718s for 6 fps)
+epsilon 0.43624695774657196
+Episode 371 ended with score: 0 (5 frames in 0.697986s for 7 fps)
+epsilon 0.4360942926859653
+Episode 372 ended with score: 0 (4 frames in 0.488925s for 8 fps)
+epsilon 0.43597219910458707
+Episode 373 ended with score: 0 (10 frames in 1.230165s for 8 fps)
+epsilon 0.43566711467914127
+Episode 374 ended with score: 0 (3 frames in 0.569875s for 5 fps)
+epsilon 0.4355756309892157
+Episode 375 ended with score: 3 (12 frames in 1.366577s for 8 fps)
+epsilon 0.43520988829148044
+Episode 376 ended with score: 0 (4 frames in 0.499378s for 8 fps)
+epsilon 0.4350880423173324
+Episode 377 ended with score: 0 (3 frames in 0.492378s for 6 fps)
+epsilon 0.4349966802240907
+Episode 378 ended with score: 2 (17 frames in 1.927450s for 8 fps)
+epsilon 0.4344793239549779
+Episode 379 ended with score: 1 (3 frames in 0.523414s for 5 fps)
+epsilon 0.4343880896836444
+Episode 380 ended with score: 2 (10 frames in 1.273735s for 7 fps)
+epsilon 0.4340841137855624
+Episode 381 ended with score: 0 (8 frames in 0.905482s for 8 fps)
+epsilon 0.43384108622984563
+Episode 382 ended with score: 0 (3 frames in 0.521745s for 5 fps)
+epsilon 0.4337499859790525
+Episode 383 ended with score: 1 (13 frames in 1.575589s for 8 fps)
+epsilon 0.43335543922851355
+Episode 384 ended with score: 0 (10 frames in 1.199838s for 8 fps)
+epsilon 0.4330521859580931
+Episode 385 ended with score: 1 (10 frames in 1.199271s for 8 fps)
+epsilon 0.43274914489810706
+Episode 386 ended with score: 1 (13 frames in 1.447191s for 8 fps)
+epsilon 0.4323555085305286
+Episode 387 ended with score: 0 (3 frames in 0.491177s for 6 fps)
+epsilon 0.43226472022921486
+Episode 388 ended with score: 0 (20 frames in 2.225786s for 8 fps)
+epsilon 0.4316599518903744
+Episode 389 ended with score: -1 (22 frames in 2.406312s for 9 fps)
+epsilon 0.430995683932427
+Episode 390 ended with score: 1 (3 frames in 0.442030s for 6 fps)
+epsilon 0.43090518117428983
+Episode 391 ended with score: -1 (22 frames in 2.461592s for 8 fps)
+epsilon 0.4302420747093188
+Episode 392 ended with score: 0 (4 frames in 0.661911s for 6 fps)
+epsilon 0.4301216195769269
+Episode 393 ended with score: 3 (15 frames in 1.709238s for 8 fps)
+epsilon 0.4296702131068315
+Episode 394 ended with score: 1 (10 frames in 1.065137s for 9 fps)
+epsilon 0.4293695386822556
+Episode 395 ended with score: 0 (2 frames in 0.215754s for 9 fps)
+epsilon 0.4293094290507508
+Episode 396 ended with score: 0 (2 frames in 0.371871s for 5 fps)
+epsilon 0.4292493278342999
+Episode 397 ended with score: 0 (4 frames in 0.553354s for 7 fps)
+epsilon 0.4291291506418476
+Episode 398 ended with score: 0 (12 frames in 3.688347s for 3 fps)
+epsilon 0.42876882090329865
+Episode 399 ended with score: 1 (7 frames in 0.865656s for 8 fps)
+epsilon 0.42855876829622064
+Episode 400 ended with score: 3 (23 frames in 2.525208s for 9 fps)
+epsilon 0.4278693197033304
+Episode 401 ended with score: 1 (6 frames in 0.653741s for 9 fps)
+epsilon 0.427689646034515
+Episode 402 ended with score: 0 (3 frames in 0.484346s for 6 fps)
+epsilon 0.4275998374957388
+Episode 403 ended with score: 12 (39 frames in 4.242432s for 9 fps)
+epsilon 0.4264340411720817
+Episode 404 ended with score: 1 (8 frames in 0.970519s for 8 fps)
+epsilon 0.4261952966075855
+Episode 405 ended with score: 1 (13 frames in 1.525047s for 8 fps)
+epsilon 0.42580762173771314
+Episode 406 ended with score: 0 (11 frames in 1.311294s for 8 fps)
+epsilon 0.4254798646000339
+Episode 407 ended with score: 0 (8 frames in 0.870016s for 9 fps)
+epsilon 0.42524165424352334
+Episode 408 ended with score: 0 (3 frames in 0.466603s for 6 fps)
+epsilon 0.4251523597470387
+Episode 409 ended with score: 2 (17 frames in 1.889725s for 8 fps)
+epsilon 0.4246467116613339
+Episode 410 ended with score: 0 (3 frames in 0.497234s for 6 fps)
+epsilon 0.42455754209404595
+Episode 411 ended with score: 2 (8 frames in 0.882057s for 9 fps)
+epsilon 0.4243198481116139
+Episode 412 ended with score: 0 (3 frames in 0.496713s for 6 fps)
+epsilon 0.4242307471808666
+Episode 413 ended with score: 0 (3 frames in 0.460907s for 6 fps)
+epsilon 0.42414166496000505
+Episode 414 ended with score: 3 (8 frames in 0.932974s for 8 fps)
+epsilon 0.4239042038117176
+Episode 415 ended with score: 7 (16 frames in 1.923901s for 8 fps)
+epsilon 0.4234296802777153
+Episode 416 ended with score: 3 (21 frames in 4.924010s for 4 fps)
+epsilon 0.4228076741637443
+Average training score: 1
+Eval 417 ended with score: 4 (69 frames in 9.406547s for 7 fps)
+Eval 418 ended with score: 2 (135 frames in 18.488050s for 7 fps)
+Eval 419 ended with score: 9 (21 frames in 2.865255s for 7 fps)
+Eval 420 ended with score: 8 (46 frames in 6.295681s for 7 fps)
+Eval 421 ended with score: 2 (20 frames in 2.742136s for 7 fps)
+Eval 422 ended with score: 4 (14 frames in 2.012106s for 6 fps)
+Eval 423 ended with score: 1 (7 frames in 1.014935s for 6 fps)
+Eval 424 ended with score: 2 (32 frames in 4.423296s for 7 fps)
+Eval 425 ended with score: 0 (3 frames in 0.395026s for 7 fps)
+Eval 426 ended with score: 0 (5 frames in 0.715101s for 6 fps)
+Eval 427 ended with score: 0 (4 frames in 0.569120s for 7 fps)
+Eval 428 ended with score: -13 (168 frames in 23.135884s for 7 fps)
+Average eval score: 1
+Episode 429 ended with score: 0 (3 frames in 0.686685s for 4 fps)
+epsilon 0.407493961201672
+Episode 430 ended with score: 2 (15 frames in 1.742929s for 8 fps)
+epsilon 0.4070663021344709
+Episode 431 ended with score: 0 (3 frames in 0.485651s for 6 fps)
+epsilon 0.4069808241947577
+Episode 432 ended with score: 2 (17 frames in 1.887041s for 9 fps)
+epsilon 0.4064967881310861
+Episode 433 ended with score: 2 (11 frames in 1.363851s for 8 fps)
+epsilon 0.40618389513210706
+Episode 434 ended with score: 7 (40 frames in 4.304029s for 9 fps)
+epsilon 0.4050481312849828
+Episode 435 ended with score: 1 (3 frames in 0.483413s for 6 fps)
+epsilon 0.40496307713148155
+Episode 436 ended with score: 1 (14 frames in 1.643855s for 8 fps)
+epsilon 0.40456639383837795
+Episode 437 ended with score: 1 (3 frames in 0.472209s for 6 fps)
+epsilon 0.4044814408426591
+Episode 438 ended with score: 4 (16 frames in 1.929521s for 8 fps)
+epsilon 0.4040286593863273
+Episode 439 ended with score: 6 (21 frames in 2.333329s for 9 fps)
+epsilon 0.40343515281826403
+Episode 440 ended with score: 3 (14 frames in 1.591811s for 8 fps)
+epsilon 0.4030399662098767
+Episode 441 ended with score: 5 (32 frames in 5.886174s for 5 fps)
+epsilon 0.4021381355485644
+Episode 442 ended with score: 0 (2 frames in 0.351618s for 5 fps)
+epsilon 0.4020818381800645
+Episode 443 ended with score: 2 (9 frames in 1.144973s for 7 fps)
+epsilon 0.4018285975376637
+Episode 444 ended with score: 0 (4 frames in 0.627288s for 6 fps)
+epsilon 0.40171609734356256
+Episode 445 ended with score: 5 (16 frames in 1.774509s for 9 fps)
+epsilon 0.40126641144645886
+Episode 446 ended with score: 20 (60 frames in 6.396950s for 9 fps)
+epsilon 0.3995845679968156
+Episode 447 ended with score: 0 (3 frames in 0.494216s for 6 fps)
+epsilon 0.39950066111129234
+Episode 448 ended with score: 7 (20 frames in 2.253146s for 8 fps)
+epsilon 0.3989417319646857
+Episode 449 ended with score: 4 (22 frames in 2.565641s for 8 fps)
+epsilon 0.39832781304894743
+Episode 450 ended with score: 1 (4 frames in 0.582224s for 6 fps)
+epsilon 0.39821629297158495
+Episode 451 ended with score: 12 (56 frames in 5.907406s for 9 fps)
+epsilon 0.39665828626056726
+Episode 452 ended with score: 0 (21 frames in 2.329042s for 9 fps)
+epsilon 0.3960756065602461
+Episode 453 ended with score: 14 (62 frames in 6.584700s for 9 fps)
+epsilon 0.394360303292042
+Episode 454 ended with score: 17 (46 frames in 7.572507s for 6 fps)
+epsilon 0.3930924610619321
+Episode 455 ended with score: 0 (5 frames in 0.735307s for 6 fps)
+epsilon 0.39295489796074273
+Episode 456 ended with score: 0 (4 frames in 0.657785s for 6 fps)
+epsilon 0.39284488214164864
+Episode 457 ended with score: 19 (61 frames in 6.423555s for 9 fps)
+epsilon 0.3911709522903787
+Episode 458 ended with score: 0 (10 frames in 1.134671s for 8 fps)
+epsilon 0.39089721886087175
+Episode 459 ended with score: -2 (10 frames in 1.062758s for 9 fps)
+epsilon 0.39062367698441847
+Episode 460 ended with score: 0 (1 frames in 0.051327s for 19 fps)
+epsilon 0.39059633332702953
+Episode 461 ended with score: 0 (1 frames in 0.068764s for 14 fps)
+epsilon 0.3905689915836966
+Episode 462 ended with score: 0 (1 frames in 0.068068s for 14 fps)
+epsilon 0.39054165175428573
+Episode 463 ended with score: 0 (1 frames in 0.068285s for 14 fps)
+epsilon 0.3905143138386629
+Episode 464 ended with score: 0 (3 frames in 0.455971s for 6 fps)
+epsilon 0.39043231157318325
+Episode 465 ended with score: 0 (7 frames in 0.897304s for 7 fps)
+epsilon 0.39024103991131043
+Episode 466 ended with score: 4 (20 frames in 2.358994s for 8 fps)
+epsilon 0.389695065617296
+Episode 467 ended with score: 1 (3 frames in 0.566402s for 5 fps)
+epsilon 0.3896132353819001
+Episode 468 ended with score: 1 (3 frames in 0.526657s for 5 fps)
+epsilon 0.3895314223296508
+Episode 469 ended with score: 2 (13 frames in 1.504169s for 8 fps)
+epsilon 0.38917709757603486
+Episode 470 ended with score: 0 (11 frames in 1.291937s for 8 fps)
+epsilon 0.3888775360721067
+Episode 471 ended with score: 9 (47 frames in 5.090693s for 9 fps)
+epsilon 0.3876001866626768
+Episode 472 ended with score: 7 (23 frames in 2.552648s for 9 fps)
+epsilon 0.3869766306347347
+Episode 473 ended with score: 0 (4 frames in 0.529982s for 7 fps)
+epsilon 0.3868682885547389
+Episode 474 ended with score: 8 (22 frames in 2.451382s for 8 fps)
+epsilon 0.38627294908229654
+Episode 475 ended with score: 5 (14 frames in 3.818112s for 3 fps)
+epsilon 0.3858945737830862
+Episode 476 ended with score: 1 (4 frames in 0.564630s for 7 fps)
+epsilon 0.385786534647198
+Episode 477 ended with score: 1 (5 frames in 0.678550s for 7 fps)
+epsilon 0.3856515282622885
+Episode 478 ended with score: 1 (23 frames in 2.496655s for 9 fps)
+epsilon 0.3850311071598024
+Episode 479 ended with score: 0 (10 frames in 1.178466s for 8 fps)
+epsilon 0.3847616702683036
+Episode 480 ended with score: 0 (6 frames in 0.918633s for 6 fps)
+epsilon 0.38460009864413436
+Episode 481 ended with score: 4 (29 frames in 3.159610s for 9 fps)
+epsilon 0.3838201250855144
+Episode 482 ended with score: 0 (11 frames in 1.194787s for 9 fps)
+epsilon 0.383524687007003
+Episode 483 ended with score: 0 (3 frames in 0.483009s for 6 fps)
+epsilon 0.38344415246041286
+Episode 484 ended with score: 0 (3 frames in 0.401814s for 7 fps)
+epsilon 0.3833636348248936
+Episode 485 ended with score: 12 (38 frames in 3.995329s for 9 fps)
+epsilon 0.38234520702037
+Episode 486 ended with score: 6 (20 frames in 2.255015s for 8 fps)
+epsilon 0.381810279544469
+Episode 487 ended with score: 4 (19 frames in 2.103932s for 9 fps)
+epsilon 0.3813027916646425
+Episode 488 ended with score: 2 (7 frames in 0.866065s for 8 fps)
+epsilon 0.38111599252820677
+Episode 489 ended with score: 0 (3 frames in 0.510512s for 5 fps)
+epsilon 0.3810359637720502
+Episode 490 ended with score: 1 (3 frames in 0.566180s for 5 fps)
+epsilon 0.38095595182075603
+Episode 491 ended with score: 0 (5 frames in 0.541466s for 9 fps)
+epsilon 0.3808226359031538
+Episode 492 ended with score: 3 (16 frames in 1.764925s for 9 fps)
+epsilon 0.38039633840152026
+Episode 493 ended with score: 1 (6 frames in 0.882130s for 6 fps)
+epsilon 0.3802365998959131
+Episode 494 ended with score: 3 (8 frames in 1.179712s for 6 fps)
+epsilon 0.3800237195611299
+Episode 495 ended with score: 8 (22 frames in 2.483381s for 8 fps)
+epsilon 0.3794389129811845
+Episode 496 ended with score: 1 (3 frames in 0.530707s for 5 fps)
+epsilon 0.3793592363870803
+Episode 497 ended with score: 7 (15 frames in 1.787673s for 8 fps)
+epsilon 0.37896110431000857
+Episode 498 ended with score: 0 (3 frames in 0.421736s for 7 fps)
+epsilon 0.37888152804870173
+Episode 499 ended with score: 6 (20 frames in 2.272863s for 8 fps)
+epsilon 0.3783514465000298
+Episode 500 ended with score: 0 (3 frames in 0.594385s for 5 fps)
+epsilon 0.37827199825790125
+Episode 501 ended with score: 1 (5 frames in 0.565340s for 8 fps)
+epsilon 0.37813962159254144
+Episode 502 ended with score: 0 (6 frames in 3.278589s for 1 fps)
+epsilon 0.37798083074214084
+Episode 503 ended with score: 4 (11 frames in 1.199625s for 9 fps)
+epsilon 0.3776898873469144
+Episode 504 ended with score: 3 (17 frames in 1.923578s for 8 fps)
+epsilon 0.3772406879854416
+Episode 505 ended with score: 0 (5 frames in 0.673609s for 7 fps)
+epsilon 0.37710867222814654
+Episode 506 ended with score: 0 (8 frames in 0.939413s for 8 fps)
+epsilon 0.3768975431037657
+Episode 507 ended with score: 0 (3 frames in 0.437689s for 6 fps)
+epsilon 0.37681840015997853
+Episode 508 ended with score: 0 (4 frames in 0.557208s for 7 fps)
+epsilon 0.37671290208587765
+Episode 509 ended with score: -1 (12 frames in 1.388432s for 8 fps)
+epsilon 0.37639658504865575
+Episode 510 ended with score: 6 (47 frames in 5.088105s for 9 fps)
+epsilon 0.37516023192710596
+Episode 511 ended with score: 0 (4 frames in 0.612489s for 6 fps)
+epsilon 0.3750551980913625
+Episode 512 ended with score: 3 (14 frames in 1.703227s for 8 fps)
+epsilon 0.37468781118752836
+Episode 513 ended with score: 1 (12 frames in 1.439109s for 8 fps)
+epsilon 0.37437319457189944
+Episode 514 ended with score: 12 (48 frames in 5.146925s for 9 fps)
+epsilon 0.37311736765442693
+Episode 515 ended with score: 1 (14 frames in 1.518027s for 9 fps)
+epsilon 0.37275187896058415
+Episode 516 ended with score: 0 (35 frames in 3.817919s for 9 fps)
+epsilon 0.37183972277889826
+Episode 517 ended with score: 8 (15 frames in 1.844206s for 8 fps)
+epsilon 0.3714494823234986
+Episode 518 ended with score: 1 (4 frames in 0.643501s for 6 fps)
+epsilon 0.3713454873885532
+Episode 519 ended with score: 2 (10 frames in 1.266939s for 7 fps)
+epsilon 0.37108562741377843
+Episode 520 ended with score: 7 (17 frames in 2.010043s for 8 fps)
+epsilon 0.37064428272208727
+Episode 521 ended with score: 1 (9 frames in 0.999827s for 9 fps)
+epsilon 0.37041084219494586
+Episode 522 ended with score: 0 (3 frames in 0.467531s for 6 fps)
+epsilon 0.3703330613629972
+Episode 523 ended with score: 1 (7 frames in 3.507376s for 1 fps)
+epsilon 0.3701516362657558
+Episode 524 ended with score: 0 (3 frames in 0.436375s for 6 fps)
+epsilon 0.37007390986324207
+Episode 525 ended with score: 34 (136 frames in 14.112871s for 9 fps)
+epsilon 0.3665674009783049
+Episode 526 ended with score: 1 (10 frames in 1.201977s for 8 fps)
+epsilon 0.3663108846106458
+Episode 527 ended with score: 0 (17 frames in 1.941479s for 8 fps)
+epsilon 0.36587521868211514
+Episode 528 ended with score: 6 (18 frames in 2.055531s for 8 fps)
+epsilon 0.3654144901008498
+Episode 529 ended with score: 15 (89 frames in 9.398153s for 9 fps)
+epsilon 0.3631449553345289
+Episode 530 ended with score: 10 (66 frames in 9.867766s for 6 fps)
+epsilon 0.3614710367824078
+Episode 531 ended with score: 0 (3 frames in 0.508963s for 5 fps)
+epsilon 0.3613951331781837
+Episode 532 ended with score: 0 (3 frames in 0.483886s for 6 fps)
+epsilon 0.3613192455126008
+Episode 533 ended with score: 0 (9 frames in 1.039952s for 8 fps)
+epsilon 0.3610916781142335
+Episode 534 ended with score: 1 (12 frames in 1.318111s for 9 fps)
+epsilon 0.3607884778544224
+Episode 535 ended with score: 1 (12 frames in 1.402428s for 8 fps)
+epsilon 0.3604855321847975
+Episode 536 ended with score: 2 (10 frames in 1.146740s for 8 fps)
+epsilon 0.36023327178449216
+Episode 537 ended with score: 1 (11 frames in 1.305323s for 8 fps)
+epsilon 0.3599559892277002
+Episode 538 ended with score: 1 (8 frames in 0.978597s for 8 fps)
+epsilon 0.35975446325278093
+Episode 539 ended with score: 0 (45 frames in 4.802969s for 9 fps)
+epsilon 0.35862298011273575
+Episode 540 ended with score: 0 (8 frames in 1.035084s for 7 fps)
+epsilon 0.3584222004400576
+Episode 541 ended with score: 4 (18 frames in 1.993118s for 9 fps)
+epsilon 0.357970857076335
+Episode 542 ended with score: 1 (3 frames in 0.539346s for 5 fps)
+epsilon 0.3578956884583978
+Episode 543 ended with score: 0 (5 frames in 0.650555s for 7 fps)
+epsilon 0.35777044250309853
+Episode 544 ended with score: 19 (87 frames in 9.212032s for 9 fps)
+epsilon 0.35559816577435294
+Episode 545 ended with score: 1 (13 frames in 2.088307s for 6 fps)
+epsilon 0.3552747073182398
+Episode 546 ended with score: 4 (15 frames in 3.944086s for 3 fps)
+epsilon 0.3549018516089582
+Episode 547 ended with score: 0 (9 frames in 1.077552s for 8 fps)
+epsilon 0.35467832603690685
+Episode 548 ended with score: 3 (29 frames in 3.263843s for 8 fps)
+epsilon 0.3539590341877897
+Episode 549 ended with score: 10 (50 frames in 5.315313s for 9 fps)
+epsilon 0.352722299829595
+Episode 550 ended with score: 12 (33 frames in 3.622206s for 9 fps)
+epsilon 0.3519084232203817
+Episode 551 ended with score: 1 (10 frames in 1.178266s for 8 fps)
+epsilon 0.3516621649054518
+Episode 552 ended with score: 0 (3 frames in 0.451888s for 6 fps)
+epsilon 0.3515883210201349
+Episode 553 ended with score: 1 (3 frames in 0.444686s for 6 fps)
+epsilon 0.35151449264094836
+Episode 554 ended with score: 12 (43 frames in 4.652910s for 9 fps)
+epsilon 0.3504579878773677
+Episode 555 ended with score: 8 (18 frames in 2.182327s for 8 fps)
+epsilon 0.3500166734529324
+Episode 556 ended with score: 1 (5 frames in 0.655524s for 7 fps)
+epsilon 0.34989418476684037
+Episode 557 ended with score: 0 (3 frames in 0.466075s for 6 fps)
+epsilon 0.3498207121313638
+Episode 558 ended with score: 0 (6 frames in 0.663513s for 9 fps)
+epsilon 0.34967381314169127
+Episode 559 ended with score: 0 (3 frames in 0.479420s for 6 fps)
+epsilon 0.34960038678101657
+Episode 560 ended with score: 0 (3 frames in 0.447600s for 6 fps)
+epsilon 0.3495269758387983
+Episode 561 ended with score: -1 (17 frames in 1.931826s for 8 fps)
+epsilon 0.349111271580823
+Episode 562 ended with score: 22 (53 frames in 6.064146s for 8 fps)
+epsilon 0.3478184232296884
+Episode 563 ended with score: 1 (3 frames in 0.498821s for 6 fps)
+epsilon 0.3477453864736217
+Episode 564 ended with score: 1 (7 frames in 0.900654s for 7 fps)
+epsilon 0.34757502701307535
+Episode 565 ended with score: 0 (6 frames in 0.746246s for 8 fps)
+epsilon 0.34742907104611015
+Episode 566 ended with score: 0 (5 frames in 0.714162s for 7 fps)
+epsilon 0.34730748789407684
+Episode 567 ended with score: 0 (4 frames in 0.591449s for 6 fps)
+epsilon 0.34721025200783007
+Episode 568 ended with score: 1 (10 frames in 1.205791s for 8 fps)
+epsilon 0.3469672813769957
+Episode 569 ended with score: 4 (15 frames in 1.686517s for 8 fps)
+epsilon 0.34660314419207794
+Episode 570 ended with score: 1 (4 frames in 0.687751s for 5 fps)
+epsilon 0.346506105501361
+Episode 571 ended with score: 10 (32 frames in 3.534513s for 9 fps)
+epsilon 0.3457307733842717
+Episode 572 ended with score: 1 (4 frames in 0.559667s for 7 fps)
+epsilon 0.3456339789317345
+Episode 573 ended with score: 8 (61 frames in 6.578490s for 9 fps)
+epsilon 0.34416121687920886
+Episode 574 ended with score: 1 (10 frames in 1.200832s for 8 fps)
+epsilon 0.3439203799007778
+Episode 575 ended with score: 0 (3 frames in 0.528584s for 5 fps)
+epsilon 0.34384816167651017
+Episode 576 ended with score: 17 (36 frames in 3.955062s for 9 fps)
+epsilon 0.34298272492675524
+Episode 577 ended with score: 7 (27 frames in 2.784148s for 9 fps)
+epsilon 0.34233507712867056
+Episode 578 ended with score: 1 (3 frames in 0.395237s for 7 fps)
+epsilon 0.34226319179468173
+Episode 579 ended with score: 0 (8 frames in 0.975252s for 8 fps)
+epsilon 0.342071571359213
+Episode 580 ended with score: 13 (52 frames in 5.575364s for 9 fps)
+epsilon 0.3408286508245099
+Episode 581 ended with score: 0 (16 frames in 1.823756s for 8 fps)
+epsilon 0.34044712307738156
+Episode 582 ended with score: 0 (4 frames in 0.522221s for 7 fps)
+epsilon 0.3403518078915982
+Episode 583 ended with score: 10 (22 frames in 2.451769s for 8 fps)
+epsilon 0.33982805117193543
+Episode 584 ended with score: 1 (6 frames in 0.836848s for 7 fps)
+epsilon 0.33968534836547387
+Episode 585 ended with score: 3 (16 frames in 1.800110s for 8 fps)
+epsilon 0.3393051004450574
+Episode 586 ended with score: 9 (29 frames in 3.204467s for 9 fps)
+epsilon 0.33861698567965537
+Episode 587 ended with score: 1 (3 frames in 0.479946s for 6 fps)
+epsilon 0.33854588109021616
+Episode 588 ended with score: 14 (59 frames in 6.175142s for 9 fps)
+epsilon 0.33715052116483724
+Episode 589 ended with score: 1 (3 frames in 0.491529s for 6 fps)
+epsilon 0.3370797245113896
+Episode 590 ended with score: 1 (9 frames in 1.176446s for 7 fps)
+epsilon 0.33686742373609974
+Episode 591 ended with score: 12 (35 frames in 3.780740s for 9 fps)
+epsilon 0.33604307992909793
+Episode 592 ended with score: 8 (17 frames in 2.016042s for 8 fps)
+epsilon 0.33564341252473123
+Episode 593 ended with score: 4 (17 frames in 2.009880s for 8 fps)
+epsilon 0.3352442204583305
+Episode 594 ended with score: 0 (7 frames in 0.911229s for 7 fps)
+epsilon 0.33507998528291183
+Episode 595 ended with score: 0 (12 frames in 1.431314s for 8 fps)
+epsilon 0.3347986264348603
+Episode 596 ended with score: 0 (9 frames in 1.088294s for 8 fps)
+epsilon 0.3345877623490388
+Episode 597 ended with score: 3 (40 frames in 4.279893s for 9 fps)
+epsilon 0.33365219427575826
+Episode 598 ended with score: 0 (4 frames in 0.549178s for 7 fps)
+epsilon 0.3335587814702778
+Episode 599 ended with score: 3 (58 frames in 8.732577s for 6 fps)
+epsilon 0.3322072310167106
+Episode 600 ended with score: 3 (15 frames in 1.779706s for 8 fps)
+epsilon 0.3318585842929282
+Episode 601 ended with score: 6 (62 frames in 6.558987s for 9 fps)
+epsilon 0.3304213887050382
+Episode 602 ended with score: 1 (3 frames in 0.461060s for 6 fps)
+epsilon 0.3303520050704912
+Episode 603 ended with score: 0 (3 frames in 0.486350s for 6 fps)
+epsilon 0.3302826360054876
+Episode 604 ended with score: 0 (4 frames in 0.580824s for 6 fps)
+epsilon 0.33019016657726236
+Episode 605 ended with score: 9 (32 frames in 3.538539s for 9 fps)
+epsilon 0.3294513425368489
+Episode 606 ended with score: 3 (13 frames in 1.569440s for 8 fps)
+epsilon 0.32915166769913046
+Episode 607 ended with score: 2 (6 frames in 0.956258s for 6 fps)
+epsilon 0.3290134481890865
+Episode 608 ended with score: 14 (31 frames in 3.367016s for 9 fps)
+epsilon 0.32830023815663834
+Episode 609 ended with score: 10 (40 frames in 4.335048s for 9 fps)
+epsilon 0.327382251141473
+Episode 610 ended with score: 8 (16 frames in 1.823327s for 8 fps)
+epsilon 0.32701577545808896
+Episode 611 ended with score: 0 (4 frames in 0.588116s for 6 fps)
+epsilon 0.3269242206547759
+Episode 612 ended with score: 2 (9 frames in 1.070097s for 8 fps)
+epsilon 0.3267183160557775
+Episode 613 ended with score: 0 (4 frames in 0.591477s for 6 fps)
+epsilon 0.32662684453235213
+Episode 614 ended with score: 1 (4 frames in 0.461428s for 8 fps)
+epsilon 0.3265353986182642
+Episode 615 ended with score: 1 (7 frames in 0.879227s for 7 fps)
+epsilon 0.32637542986951396
+Episode 616 ended with score: 0 (3 frames in 3.079089s for 0 fps)
+epsilon 0.3263068958268482
+Episode 617 ended with score: -1 (8 frames in 0.879612s for 9 fps)
+epsilon 0.32612420872822406
+Episode 618 ended with score: 0 (3 frames in 0.459884s for 6 fps)
+epsilon 0.3260557274383052
+Episode 619 ended with score: 11 (40 frames in 4.343156s for 9 fps)
+epsilon 0.3251440164822324
+Episode 620 ended with score: 9 (33 frames in 3.720666s for 8 fps)
+epsilon 0.3243937744085999
+Episode 621 ended with score: 13 (84 frames in 8.702378s for 9 fps)
+epsilon 0.32249186952793574
+Episode 622 ended with score: 27 (63 frames in 6.616979s for 9 fps)
+epsilon 0.3210727621457488
+Episode 623 ended with score: 1 (3 frames in 0.503536s for 5 fps)
+epsilon 0.3210053415853577
+Episode 624 ended with score: 8 (29 frames in 3.132661s for 9 fps)
+epsilon 0.32035433894782567
+Episode 625 ended with score: 3 (12 frames in 1.435066s for 8 fps)
+epsilon 0.32008534488153256
+Episode 626 ended with score: 9 (32 frames in 6.010547s for 5 fps)
+epsilon 0.3193691311001414
+Episode 627 ended with score: 3 (13 frames in 1.501171s for 8 fps)
+epsilon 0.31907862722239816
+Episode 628 ended with score: 2 (26 frames in 2.983926s for 8 fps)
+epsilon 0.31849841196912737
+Episode 629 ended with score: 12 (30 frames in 3.207528s for 9 fps)
+epsilon 0.3178302437400321
+Episode 630 ended with score: 1 (3 frames in 0.476269s for 6 fps)
+epsilon 0.31776350406084225
+Episode 631 ended with score: 7 (14 frames in 1.669046s for 8 fps)
+epsilon 0.3174522374779432
+Episode 632 ended with score: 0 (3 frames in 0.421127s for 7 fps)
+epsilon 0.3173855771745119
+Episode 633 ended with score: 0 (3 frames in 0.393778s for 7 fps)
+epsilon 0.31731893086876434
+Episode 634 ended with score: 40 (105 frames in 11.011452s for 9 fps)
+epsilon 0.31499510591070323
+Episode 635 ended with score: 4 (32 frames in 3.555717s for 8 fps)
+epsilon 0.31429028190194547
+Episode 636 ended with score: 2 (11 frames in 1.160285s for 9 fps)
+epsilon 0.31404836306832706
+Episode 637 ended with score: 2 (5 frames in 0.701366s for 7 fps)
+epsilon 0.3139384615285457
+Episode 638 ended with score: 2 (17 frames in 1.896368s for 8 fps)
+epsilon 0.3135650838947124
+Episode 639 ended with score: 2 (18 frames in 2.070376s for 8 fps)
+epsilon 0.3131702268810082
+Episode 640 ended with score: 0 (3 frames in 0.485081s for 6 fps)
+epsilon 0.3131044657368581
+Episode 641 ended with score: 0 (13 frames in 3.835432s for 3 fps)
+epsilon 0.3128196603108547
+Episode 642 ended with score: 13 (36 frames in 4.082726s for 8 fps)
+epsilon 0.3120323196755031
+Episode 643 ended with score: 13 (30 frames in 3.222010s for 9 fps)
+epsilon 0.311377716466749
+Episode 644 ended with score: 10 (22 frames in 2.429871s for 9 fps)
+epsilon 0.3108985470674063
+Episode 645 ended with score: 3 (10 frames in 1.300381s for 7 fps)
+epsilon 0.31068098662479365
+Episode 646 ended with score: 2 (7 frames in 0.926242s for 7 fps)
+epsilon 0.31052878490669156
+Episode 647 ended with score: 8 (25 frames in 2.762945s for 9 fps)
+epsilon 0.3099858157655367
+Episode 648 ended with score: 0 (3 frames in 0.471621s for 6 fps)
+epsilon 0.3099207233009111
+Episode 649 ended with score: 7 (17 frames in 2.056000s for 8 fps)
+epsilon 0.3095521240990848
+Episode 650 ended with score: 6 (15 frames in 1.695536s for 8 fps)
+epsilon 0.3092272535850484
+Episode 651 ended with score: 1 (5 frames in 0.719833s for 6 fps)
+epsilon 0.3091190391973684
+Episode 652 ended with score: 5 (16 frames in 1.860580s for 8 fps)
+epsilon 0.3087730075761001
+Episode 653 ended with score: 7 (26 frames in 2.767509s for 9 fps)
+epsilon 0.3082115321480732
+Episode 654 ended with score: 0 (5 frames in 0.653789s for 7 fps)
+epsilon 0.3081036732131293
+Episode 655 ended with score: 5 (16 frames in 1.861300s for 8 fps)
+epsilon 0.30775877820492326
+Episode 656 ended with score: 5 (32 frames in 3.566485s for 8 fps)
+epsilon 0.3070701459953603
+Episode 657 ended with score: 22 (48 frames in 7.822346s for 6 fps)
+epsilon 0.306040085722658
+Episode 658 ended with score: 0 (6 frames in 0.778742s for 7 fps)
+epsilon 0.3059115713785015
+Episode 659 ended with score: 10 (37 frames in 4.160923s for 8 fps)
+epsilon 0.3051202579056498
+Episode 660 ended with score: 3 (15 frames in 1.830425s for 8 fps)
+epsilon 0.3048000385716129
+Episode 661 ended with score: 1 (3 frames in 0.538882s for 5 fps)
+epsilon 0.3047360350439689
+Episode 662 ended with score: 0 (5 frames in 0.703486s for 7 fps)
+epsilon 0.30462939236272396
+Episode 663 ended with score: 10 (31 frames in 3.352780s for 9 fps)
+epsilon 0.3039690402099242
+Episode 664 ended with score: 2 (8 frames in 1.039638s for 7 fps)
+epsilon 0.3037988592461208
+Episode 665 ended with score: 1 (6 frames in 0.730663s for 8 fps)
+epsilon 0.3036712860523696
+Episode 666 ended with score: 0 (3 frames in 0.369578s for 8 fps)
+epsilon 0.3036075195461624
+Episode 667 ended with score: 1 (4 frames in 0.582294s for 6 fps)
+epsilon 0.3035225183663339
+Episode 668 ended with score: 31 (90 frames in 9.406202s for 9 fps)
+epsilon 0.30161627076625186
+Episode 669 ended with score: 0 (3 frames in 0.517477s for 5 fps)
+epsilon 0.30155293578304665
+Episode 670 ended with score: 5 (24 frames in 2.674355s for 8 fps)
+epsilon 0.3010467344618506
+Episode 671 ended with score: 1 (3 frames in 0.452836s for 6 fps)
+epsilon 0.30098351907289733
+Episode 672 ended with score: 0 (7 frames in 0.888203s for 7 fps)
+epsilon 0.30083606811614266
+Episode 673 ended with score: 0 (3 frames in 0.443664s for 6 fps)
+epsilon 0.30077289696402526
+Episode 674 ended with score: 3 (25 frames in 2.717544s for 9 fps)
+epsilon 0.3002469862933082
+Episode 675 ended with score: 2 (15 frames in 4.276455s for 3 fps)
+epsilon 0.29993188138792637
+Episode 676 ended with score: 40 (127 frames in 15.684703s for 8 fps)
+epsilon 0.2972772115396006
+Episode 677 ended with score: 4 (13 frames in 1.488578s for 8 fps)
+epsilon 0.2970068028672925
+Episode 678 ended with score: 1 (5 frames in 0.769720s for 6 fps)
+epsilon 0.2969028650386035
+Episode 679 ended with score: 1 (6 frames in 0.737590s for 8 fps)
+epsilon 0.29677818765561126
+Episode 680 ended with score: 5 (26 frames in 2.840105s for 9 fps)
+epsilon 0.2962385237087814
+Episode 681 ended with score: 2 (11 frames in 1.258551s for 8 fps)
+epsilon 0.2960104998650444
+Episode 682 ended with score: 0 (7 frames in 0.806320s for 8 fps)
+epsilon 0.2958654851760376
+Episode 683 ended with score: 1 (3 frames in 0.537349s for 5 fps)
+epsilon 0.29580335777327177
+Episode 684 ended with score: 1 (12 frames in 1.388238s for 8 fps)
+epsilon 0.29555497859323027
+Episode 685 ended with score: 1 (3 frames in 0.445548s for 6 fps)
+epsilon 0.2954929163922825
+Episode 686 ended with score: 0 (4 frames in 0.570701s for 7 fps)
+epsilon 0.295410187062779
+Episode 687 ended with score: 10 (22 frames in 2.420849s for 9 fps)
+epsilon 0.29495558959350326
+Episode 688 ended with score: 18 (61 frames in 8.998546s for 6 fps)
+epsilon 0.2936987704553035
+Episode 689 ended with score: 1 (12 frames in 1.222982s for 9 fps)
+epsilon 0.2934521584481444
+Episode 690 ended with score: 1 (8 frames in 0.995970s for 8 fps)
+epsilon 0.2932878654954133
+Episode 691 ended with score: 1 (7 frames in 0.943064s for 7 fps)
+epsilon 0.2931441846171212
+Episode 692 ended with score: 2 (30 frames in 3.208423s for 9 fps)
+epsilon 0.29252920625822093
+Episode 693 ended with score: 4 (15 frames in 1.728827s for 8 fps)
+epsilon 0.29222220105228236
+Episode 694 ended with score: 0 (5 frames in 0.702796s for 7 fps)
+epsilon 0.29211993759979965
+Episode 695 ended with score: 2 (10 frames in 1.150915s for 8 fps)
+epsilon 0.29191551804390387
+Episode 696 ended with score: 0 (3 frames in 0.469343s for 6 fps)
+epsilon 0.2918542200761726
+Episode 697 ended with score: 5 (38 frames in 4.052531s for 9 fps)
+epsilon 0.29107889235702455
+Episode 698 ended with score: 2 (33 frames in 3.567182s for 9 fps)
+epsilon 0.2904072526505485
+Episode 699 ended with score: 1 (3 frames in 0.602533s for 4 fps)
+epsilon 0.2903462713963789
+Episode 700 ended with score: 0 (14 frames in 1.655269s for 8 fps)
+epsilon 0.2900618614795695
+Episode 701 ended with score: 0 (3 frames in 0.445778s for 6 fps)
+epsilon 0.2900009527524687
+Episode 702 ended with score: 0 (3 frames in 0.513249s for 5 fps)
+epsilon 0.28994005681530516
+Episode 703 ended with score: 0 (23 frames in 2.607601s for 8 fps)
+epsilon 0.28947361258645765
+Episode 704 ended with score: 0 (3 frames in 0.457891s for 6 fps)
+epsilon 0.2894128273829773
+Episode 705 ended with score: 4 (12 frames in 1.396141s for 8 fps)
+epsilon 0.2891698141822483
+Episode 706 ended with score: 1 (3 frames in 0.508853s for 5 fps)
+epsilon 0.28910909277196706
+Episode 707 ended with score: 1 (6 frames in 0.753190s for 7 fps)
+epsilon 0.28898768820053794
+Episode 708 ended with score: 1 (3 frames in 0.470957s for 6 fps)
+epsilon 0.2889270050340357
+Episode 709 ended with score: 4 (38 frames in 4.170084s for 9 fps)
+epsilon 0.28815945363198686
+Episode 710 ended with score: 1 (3 frames in 0.603742s for 4 fps)
+epsilon 0.2880989443825693
+Episode 711 ended with score: 22 (44 frames in 7.463297s for 5 fps)
+epsilon 0.28721293377991114
+Average training score: 4
+Eval 712 ended with score: 0 (3 frames in 0.378309s for 7 fps)
+Eval 713 ended with score: 0 (3 frames in 0.365963s for 8 fps)
+Eval 714 ended with score: 1 (11 frames in 1.574072s for 6 fps)
+Eval 715 ended with score: 6 (27 frames in 3.834900s for 7 fps)
+Eval 716 ended with score: 1 (4 frames in 0.705701s for 5 fps)
+Eval 717 ended with score: 2 (8 frames in 1.232037s for 6 fps)
+Eval 718 ended with score: 2 (9 frames in 1.261621s for 7 fps)
+Eval 719 ended with score: 0 (4 frames in 0.546615s for 7 fps)
+  ...frame 437
+Eval 720 ended with score: -44 (478 frames in 65.662793s for 7 fps)
+Average eval score: -3
+Episode 721 ended with score: 0 (3 frames in 0.604506s for 4 fps)
+epsilon 0.2763650184748728
+Episode 722 ended with score: 4 (14 frames in 1.681193s for 8 fps)
+epsilon 0.27609430395343104
+Episode 723 ended with score: 8 (32 frames in 6.042600s for 5 fps)
+epsilon 0.27547652326269606
+Episode 724 ended with score: 1 (11 frames in 1.316001s for 8 fps)
+epsilon 0.2752644805651184
+Episode 725 ended with score: 9 (35 frames in 3.735464s for 9 fps)
+epsilon 0.2745908845037219
+Episode 726 ended with score: 6 (43 frames in 4.661609s for 9 fps)
+epsilon 0.2737655797621322
+Episode 727 ended with score: 6 (51 frames in 5.414708s for 9 fps)
+epsilon 0.27278994503898146
+Episode 728 ended with score: 4 (24 frames in 2.671907s for 8 fps)
+epsilon 0.2723320266631276
+Episode 729 ended with score: 1 (3 frames in 0.336912s for 8 fps)
+epsilon 0.27227484094071575
+Episode 730 ended with score: 1 (7 frames in 0.862101s for 8 fps)
+epsilon 0.27214145428246744
+Episode 731 ended with score: 1 (3 frames in 0.521608s for 5 fps)
+epsilon 0.27208430857745414
+Episode 732 ended with score: 0 (3 frames in 0.457884s for 6 fps)
+epsilon 0.2720271748721989
+Episode 733 ended with score: 14 (84 frames in 8.769778s for 9 fps)
+epsilon 0.270432292811019
+Episode 734 ended with score: 4 (17 frames in 4.226242s for 4 fps)
+epsilon 0.2701106585355936
+Episode 735 ended with score: 7 (17 frames in 1.839058s for 9 fps)
+epsilon 0.2697894067906939
+Episode 736 ended with score: 11 (34 frames in 3.652031s for 9 fps)
+epsilon 0.26914804907318646
+Episode 737 ended with score: 19 (44 frames in 4.825477s for 9 fps)
+epsilon 0.2683203194691276
+Episode 738 ended with score: 0 (3 frames in 0.411866s for 7 fps)
+epsilon 0.2682639761462557
+Episode 739 ended with score: 1 (11 frames in 1.308431s for 8 fps)
+epsilon 0.26805748516658434
+Episode 740 ended with score: 0 (10 frames in 1.162959s for 8 fps)
+epsilon 0.26786990402261124
+Episode 741 ended with score: 9 (28 frames in 2.976306s for 9 fps)
+epsilon 0.267345374858498
+Episode 742 ended with score: 1 (7 frames in 0.936443s for 7 fps)
+epsilon 0.2672144031314471
+Episode 743 ended with score: 0 (6 frames in 0.642315s for 9 fps)
+epsilon 0.2671021927205575
+Episode 744 ended with score: 14 (33 frames in 3.571307s for 9 fps)
+epsilon 0.26648587720257116
+Episode 745 ended with score: 7 (29 frames in 3.179525s for 9 fps)
+epsilon 0.2659454406850132
+Episode 746 ended with score: 4 (16 frames in 1.832709s for 8 fps)
+epsilon 0.2656477381162938
+Episode 747 ended with score: 2 (6 frames in 0.891074s for 6 fps)
+epsilon 0.2655361855895714
+Episode 748 ended with score: 4 (11 frames in 1.259003s for 8 fps)
+epsilon 0.2653317942736436
+Episode 749 ended with score: 5 (14 frames in 1.761638s for 7 fps)
+epsilon 0.2650718873935815
+Episode 750 ended with score: 0 (3 frames in 0.522953s for 5 fps)
+epsilon 0.26501622619369464
+Episode 751 ended with score: 7 (46 frames in 7.617416s for 6 fps)
+epsilon 0.2641642165963092
+Episode 752 ended with score: 12 (34 frames in 3.851278s for 8 fps)
+epsilon 0.26353623137991866
+Episode 753 ended with score: 1 (4 frames in 0.645699s for 6 fps)
+epsilon 0.2634624489827359
+Episode 754 ended with score: 1 (3 frames in 0.479514s for 6 fps)
+epsilon 0.2634071257412572
+Episode 755 ended with score: 11 (44 frames in 4.779534s for 9 fps)
+epsilon 0.2625970515956452
+Episode 756 ended with score: 0 (7 frames in 0.793055s for 8 fps)
+epsilon 0.26246840605844773
+Episode 757 ended with score: 24 (60 frames in 6.537510s for 9 fps)
+epsilon 0.2613683120638461
+Episode 758 ended with score: 1 (5 frames in 0.691178s for 7 fps)
+epsilon 0.2612768459607745
+Episode 759 ended with score: 0 (3 frames in 0.429920s for 6 fps)
+epsilon 0.2612219816638027
+Episode 760 ended with score: 0 (13 frames in 1.475229s for 8 fps)
+epsilon 0.26098436947390913
+Episode 761 ended with score: 3 (12 frames in 1.487368s for 8 fps)
+epsilon 0.26076522698620525
+Episode 762 ended with score: 0 (14 frames in 1.602275s for 8 fps)
+epsilon 0.26050979330642265
+Episode 763 ended with score: 0 (3 frames in 0.478226s for 6 fps)
+epsilon 0.2604550900792329
+Episode 764 ended with score: 0 (3 frames in 0.476035s for 6 fps)
+epsilon 0.2604003983389167
+Episode 765 ended with score: 0 (7 frames in 0.867862s for 8 fps)
+epsilon 0.2602728289358057
+Episode 766 ended with score: 46 (147 frames in 18.025670s for 8 fps)
+epsilon 0.25760826097928846
+Episode 767 ended with score: 1 (5 frames in 0.594334s for 8 fps)
+epsilon 0.25751811070986685
+Episode 768 ended with score: 7 (32 frames in 3.496607s for 9 fps)
+epsilon 0.25694189557600483
+Episode 769 ended with score: 3 (22 frames in 2.534565s for 8 fps)
+epsilon 0.25654649575367244
+Episode 770 ended with score: 4 (18 frames in 2.023537s for 8 fps)
+epsilon 0.25622343943014514
+Episode 771 ended with score: 0 (3 frames in 0.387263s for 7 fps)
+epsilon 0.2561696362742614
+Episode 772 ended with score: 0 (4 frames in 0.532116s for 7 fps)
+epsilon 0.25609791630714046
+Episode 773 ended with score: 6 (15 frames in 1.696459s for 8 fps)
+epsilon 0.25582914521743627
+Episode 774 ended with score: 2 (9 frames in 1.152905s for 7 fps)
+epsilon 0.2556680179768403
+Episode 775 ended with score: 9 (20 frames in 2.283670s for 8 fps)
+epsilon 0.2553103206786557
+Episode 776 ended with score: 4 (11 frames in 1.321995s for 8 fps)
+epsilon 0.2551138005234173
+Episode 777 ended with score: 8 (23 frames in 2.646833s for 8 fps)
+epsilon 0.25470338341423754
+Episode 778 ended with score: 12 (29 frames in 3.123116s for 9 fps)
+epsilon 0.25418684193373725
+Episode 779 ended with score: 2 (5 frames in 0.805331s for 6 fps)
+epsilon 0.2540978889933439
+Episode 780 ended with score: 12 (32 frames in 5.759387s for 5 fps)
+epsilon 0.25352932684943574
+Episode 781 ended with score: 7 (16 frames in 1.728757s for 9 fps)
+epsilon 0.2532455230299216
+Episode 782 ended with score: 2 (13 frames in 1.613040s for 8 fps)
+epsilon 0.25301516636956467
+Episode 783 ended with score: 2 (34 frames in 3.599655s for 9 fps)
+epsilon 0.2524136852679609
+Episode 784 ended with score: 1 (15 frames in 1.666085s for 9 fps)
+epsilon 0.2521487807258858
+Episode 785 ended with score: 0 (3 frames in 0.345995s for 8 fps)
+epsilon 0.252095833188434
+Episode 786 ended with score: 1 (4 frames in 0.542978s for 7 fps)
+epsilon 0.2520252537664128
+Episode 787 ended with score: 1 (7 frames in 0.882226s for 7 fps)
+epsilon 0.25190178732244056
+Episode 788 ended with score: 2 (23 frames in 2.481409s for 9 fps)
+epsilon 0.25149653757453216
+Episode 789 ended with score: 1 (7 frames in 0.850952s for 8 fps)
+epsilon 0.2513733301470953
+Episode 790 ended with score: 0 (20 frames in 2.169146s for 9 fps)
+epsilon 0.25102164141519684
+Episode 791 ended with score: 0 (3 frames in 0.514667s for 5 fps)
+epsilon 0.2509689305604317
+Episode 792 ended with score: 0 (4 frames in 0.562953s for 7 fps)
+epsilon 0.250898666638017
+Episode 793 ended with score: 0 (3 frames in 0.471544s for 6 fps)
+epsilon 0.2508459816061474
+Episode 794 ended with score: 6 (30 frames in 3.254892s for 9 fps)
+epsilon 0.25031973937382607
+Episode 795 ended with score: 0 (3 frames in 0.458098s for 6 fps)
+epsilon 0.2502671759081719
+Episode 796 ended with score: 2 (18 frames in 4.753284s for 3 fps)
+epsilon 0.24995202682180084
+Episode 797 ended with score: 26 (112 frames in 14.399541s for 7 fps)
+epsilon 0.24799999656715857
+Episode 798 ended with score: 4 (15 frames in 1.712935s for 8 fps)
+epsilon 0.24773972412806528
+Episode 799 ended with score: 1 (6 frames in 0.783188s for 7 fps)
+epsilon 0.2476356916511018
+Episode 800 ended with score: 3 (14 frames in 1.542424s for 9 fps)
+epsilon 0.2473931190631267
+Episode 801 ended with score: 15 (27 frames in 3.006213s for 8 fps)
+epsilon 0.24692597131142363
+Episode 802 ended with score: 7 (20 frames in 2.225346s for 8 fps)
+epsilon 0.2465805047431426
+Episode 803 ended with score: 8 (18 frames in 1.983027s for 9 fps)
+epsilon 0.24626999809957376
+Episode 804 ended with score: 1 (7 frames in 0.854506s for 8 fps)
+epsilon 0.2461493511387315
+Episode 805 ended with score: 0 (3 frames in 0.362156s for 8 fps)
+epsilon 0.24609766339330338
+Episode 806 ended with score: 3 (10 frames in 1.223394s for 8 fps)
+epsilon 0.24592544928333465
+Episode 807 ended with score: 2 (14 frames in 1.609306s for 8 fps)
+epsilon 0.2456845519704964
+Episode 808 ended with score: 1 (51 frames in 5.418507s for 9 fps)
+epsilon 0.24480899128075453
+Episode 809 ended with score: 1 (6 frames in 0.793602s for 7 fps)
+epsilon 0.24470618949619816
+Episode 810 ended with score: 0 (5 frames in 0.812240s for 6 fps)
+epsilon 0.24462055431963844
+Episode 811 ended with score: 0 (3 frames in 0.412419s for 7 fps)
+epsilon 0.24456918759906957
+Episode 812 ended with score: 18 (59 frames in 6.209000s for 9 fps)
+epsilon 0.2435611645734775
+Episode 813 ended with score: 1 (11 frames in 1.306373s for 8 fps)
+epsilon 0.2433736881027074
+Episode 814 ended with score: 0 (3 frames in 0.508577s for 5 fps)
+epsilon 0.24332258320571554
+Episode 815 ended with score: 0 (5 frames in 0.685083s for 7 fps)
+epsilon 0.2432374322235655
+Episode 816 ended with score: 2 (11 frames in 3.572197s for 3 fps)
+epsilon 0.2430502049394772
+Episode 817 ended with score: 16 (56 frames in 5.906654s for 9 fps)
+epsilon 0.2420992798841909
+Episode 818 ended with score: 13 (57 frames in 5.984883s for 9 fps)
+epsilon 0.24113519464320365
+Episode 819 ended with score: 0 (6 frames in 0.793797s for 7 fps)
+epsilon 0.24103393558323621
+Episode 820 ended with score: 1 (3 frames in 0.409626s for 7 fps)
+epsilon 0.2409833219998799
+Episode 821 ended with score: 0 (15 frames in 1.690299s for 8 fps)
+epsilon 0.24073041346009796
+Episode 822 ended with score: -2 (30 frames in 3.186447s for 9 fps)
+epsilon 0.24022539237363
+Episode 823 ended with score: 0 (3 frames in 0.484131s for 6 fps)
+epsilon 0.2401749485724624
+Episode 824 ended with score: -2 (29 frames in 3.142804s for 9 fps)
+epsilon 0.23968787093002325
+Episode 825 ended with score: 0 (3 frames in 0.440436s for 6 fps)
+epsilon 0.23963754000045742
+Episode 826 ended with score: -1 (29 frames in 3.107430s for 9 fps)
+epsilon 0.23915155222897208
+Episode 827 ended with score: 6 (25 frames in 2.653484s for 9 fps)
+epsilon 0.23873338837675892
+Episode 828 ended with score: 2 (16 frames in 1.826291s for 8 fps)
+epsilon 0.23846614731116386
+Episode 829 ended with score: 0 (3 frames in 0.442583s for 6 fps)
+epsilon 0.23841607292559908
+Episode 830 ended with score: 0 (11 frames in 1.161880s for 9 fps)
+epsilon 0.23823255678908667
+Episode 831 ended with score: 0 (11 frames in 3.767961s for 2 fps)
+epsilon 0.23804918191055216
+Episode 832 ended with score: 12 (45 frames in 4.767766s for 9 fps)
+epsilon 0.23730048060634049
+Episode 833 ended with score: 0 (3 frames in 0.507048s for 5 fps)
+epsilon 0.2372506509936488
+Episode 834 ended with score: 1 (4 frames in 0.611557s for 6 fps)
+epsilon 0.2371842277862142
+Episode 835 ended with score: 0 (4 frames in 0.551318s for 7 fps)
+epsilon 0.23711782317532493
+Episode 836 ended with score: 0 (6 frames in 0.812121s for 7 fps)
+epsilon 0.23701825111612473
+Episode 837 ended with score: 2 (16 frames in 1.785469s for 8 fps)
+epsilon 0.23675292999609013
+Episode 838 ended with score: 8 (36 frames in 3.921839s for 9 fps)
+epsilon 0.23615704288931685
+Episode 839 ended with score: 4 (14 frames in 1.555365s for 9 fps)
+epsilon 0.23592571426023165
+Episode 840 ended with score: 51 (98 frames in 10.311281s for 9 fps)
+epsilon 0.23431274621195722
+Episode 841 ended with score: 1 (3 frames in 0.474530s for 6 fps)
+epsilon 0.2342635439795697
+Episode 842 ended with score: 0 (3 frames in 0.464709s for 6 fps)
+epsilon 0.2342143520789277
+Episode 843 ended with score: 32 (109 frames in 13.937528s for 7 fps)
+epsilon 0.23243403480846034
+Episode 844 ended with score: 1 (7 frames in 0.903758s for 7 fps)
+epsilon 0.23232016604607614
+Episode 845 ended with score: 32 (127 frames in 13.238492s for 9 fps)
+epsilon 0.23026392135109222
+Episode 846 ended with score: 1 (16 frames in 1.751511s for 9 fps)
+epsilon 0.23000616111014568
+Episode 847 ended with score: 3 (15 frames in 1.665067s for 9 fps)
+epsilon 0.22976477294326147
+Episode 848 ended with score: 0 (3 frames in 0.399518s for 7 fps)
+epsilon 0.22971652571840673
+Episode 849 ended with score: 0 (3 frames in 0.471075s for 6 fps)
+epsilon 0.22966828862476
+Episode 850 ended with score: 0 (10 frames in 1.191006s for 8 fps)
+epsilon 0.2295075714551283
+Episode 851 ended with score: 9 (37 frames in 3.909740s for 9 fps)
+epsilon 0.22891389520876892
+Episode 852 ended with score: 5 (22 frames in 2.433158s for 9 fps)
+epsilon 0.22856162679690867
+Episode 853 ended with score: 19 (72 frames in 9.967091s for 7 fps)
+epsilon 0.22741253412515555
+Episode 854 ended with score: 1 (3 frames in 0.453219s for 6 fps)
+epsilon 0.2273647808358755
+Episode 855 ended with score: 0 (3 frames in 0.485649s for 6 fps)
+epsilon 0.22731703757408425
+Episode 856 ended with score: 17 (65 frames in 6.759848s for 9 fps)
+epsilon 0.2262850584663426
+Episode 857 ended with score: 0 (3 frames in 0.542448s for 5 fps)
+epsilon 0.2262375419303774
+Episode 858 ended with score: 1 (22 frames in 2.367638s for 9 fps)
+epsilon 0.22588939207461473
+Episode 859 ended with score: 7 (39 frames in 4.263844s for 9 fps)
+epsilon 0.22527353350840018
+Episode 860 ended with score: 1 (23 frames in 2.594294s for 8 fps)
+epsilon 0.22491112225425594
+Episode 861 ended with score: 0 (3 frames in 0.510722s for 5 fps)
+epsilon 0.22486389422469888
+Episode 862 ended with score: 5 (39 frames in 4.142436s for 9 fps)
+epsilon 0.22425083154734712
+Episode 863 ended with score: 0 (3 frames in 0.510371s for 5 fps)
+epsilon 0.22420374216913247
+Episode 864 ended with score: 5 (23 frames in 2.651713s for 8 fps)
+epsilon 0.22384305195347368
+Episode 865 ended with score: 2 (5 frames in 0.775399s for 6 fps)
+epsilon 0.22376471785283172
+Episode 866 ended with score: 0 (3 frames in 1.136836s for 2 fps)
+epsilon 0.22371773055134722
+Episode 867 ended with score: 4 (15 frames in 4.287814s for 3 fps)
+epsilon 0.22348294200213348
+Episode 868 ended with score: 4 (14 frames in 1.558027s for 8 fps)
+epsilon 0.22326402834211825
+Episode 869 ended with score: 1 (3 frames in 0.522448s for 5 fps)
+epsilon 0.22321714617807104
+Episode 870 ended with score: 1 (13 frames in 1.454505s for 8 fps)
+epsilon 0.22301410386674891
+Episode 871 ended with score: 0 (14 frames in 1.587210s for 8 fps)
+epsilon 0.22279564945910998
+Episode 872 ended with score: 1 (6 frames in 0.782557s for 7 fps)
+epsilon 0.22270209166028906
+Episode 873 ended with score: 7 (37 frames in 4.095752s for 9 fps)
+epsilon 0.22212601941572216
+Episode 874 ended with score: 2 (15 frames in 1.663089s for 9 fps)
+epsilon 0.22189290134451378
+Episode 875 ended with score: 1 (11 frames in 1.202593s for 9 fps)
+epsilon 0.22172210359805916
+Episode 876 ended with score: 0 (16 frames in 1.795752s for 8 fps)
+epsilon 0.22147390517204746
+Episode 877 ended with score: 8 (24 frames in 2.640855s for 9 fps)
+epsilon 0.22110212837896986
+Episode 878 ended with score: 1 (3 frames in 0.497059s for 6 fps)
+epsilon 0.22105570018213572
+Episode 879 ended with score: 3 (12 frames in 1.427918s for 8 fps)
+epsilon 0.22087008486671791
+Episode 880 ended with score: 0 (6 frames in 0.784586s for 7 fps)
+epsilon 0.22077733566351004
+Episode 881 ended with score: 1 (11 frames in 1.258890s for 8 fps)
+epsilon 0.22060739660204792
+Episode 882 ended with score: 0 (3 frames in 0.479900s for 6 fps)
+epsilon 0.22056107229161456
+Episode 883 ended with score: 1 (10 frames in 1.248803s for 8 fps)
+epsilon 0.22040672816564966
+Episode 884 ended with score: 2 (10 frames in 1.202624s for 8 fps)
+epsilon 0.22025249204654637
+Episode 885 ended with score: 1 (8 frames in 1.030765s for 7 fps)
+epsilon 0.22012918086541197
+Episode 886 ended with score: 2 (46 frames in 4.817356s for 9 fps)
+epsilon 0.21942148014287258
+Episode 887 ended with score: 0 (1 frames in 0.046699s for 21 fps)
+epsilon 0.21940612063926257
+Episode 888 ended with score: 0 (1 frames in 0.068782s for 14 fps)
+epsilon 0.21939076221081782
+Episode 889 ended with score: 4 (17 frames in 1.948807s for 8 fps)
+epsilon 0.21912983335463265
+Episode 890 ended with score: 1 (3 frames in 0.344342s for 8 fps)
+epsilon 0.2190838193107616
+Episode 891 ended with score: 29 (113 frames in 14.518155s for 7 fps)
+epsilon 0.2173576419153074
+Episode 892 ended with score: 0 (2 frames in 0.290964s for 6 fps)
+epsilon 0.2173272129104917
+Episode 893 ended with score: 7 (15 frames in 1.649421s for 9 fps)
+epsilon 0.21709913111787663
+Episode 894 ended with score: 4 (13 frames in 1.475875s for 8 fps)
+epsilon 0.21690165386255394
+Episode 895 ended with score: 0 (3 frames in 0.505508s for 5 fps)
+epsilon 0.2168561077036227
+Episode 896 ended with score: 2 (8 frames in 0.898394s for 8 fps)
+epsilon 0.21673469803180165
+Episode 897 ended with score: 0 (3 frames in 0.496898s for 6 fps)
+epsilon 0.21668918693114067
+Episode 898 ended with score: 3 (7 frames in 0.974210s for 7 fps)
+epsilon 0.21658303152426056
+Episode 899 ended with score: 6 (21 frames in 2.420411s for 8 fps)
+epsilon 0.21626487723308738
+Episode 900 ended with score: 2 (10 frames in 1.234044s for 8 fps)
+epsilon 0.21611353949652926
+Episode 901 ended with score: 0 (3 frames in 0.544378s for 5 fps)
+epsilon 0.2160681588300299
+Episode 902 ended with score: 6 (27 frames in 2.863039s for 9 fps)
+epsilon 0.21566016140878258
+Episode 903 ended with score: 0 (3 frames in 0.513578s for 5 fps)
+epsilon 0.21561487594501713
+Episode 904 ended with score: 1 (11 frames in 1.339601s for 8 fps)
+epsilon 0.21544891058654747
+Episode 905 ended with score: 0 (3 frames in 0.468591s for 6 fps)
+epsilon 0.21540366948234935
+Episode 906 ended with score: 1 (3 frames in 0.493940s for 6 fps)
+epsilon 0.2153584378781181
+Episode 907 ended with score: 1 (3 frames in 0.453002s for 6 fps)
+epsilon 0.21531321577185886
+Episode 908 ended with score: 4 (12 frames in 1.473749s for 8 fps)
+epsilon 0.21513242228665946
+Episode 909 ended with score: 0 (27 frames in 3.025016s for 8 fps)
+epsilon 0.21472619179904434
+Episode 910 ended with score: 0 (4 frames in 0.562884s for 7 fps)
+epsilon 0.214666074777996
+Episode 911 ended with score: 9 (28 frames in 5.307735s for 5 fps)
+epsilon 0.21424572663482697
+Episode 912 ended with score: 0 (2 frames in 0.214795s for 9 fps)
+epsilon 0.21421573328290214
+Episode 913 ended with score: 3 (10 frames in 1.179294s for 8 fps)
+epsilon 0.21406582949535724
+Episode 914 ended with score: 0 (3 frames in 0.422241s for 7 fps)
+epsilon 0.21402087881785747
+Episode 915 ended with score: 15 (47 frames in 5.011946s for 9 fps)
+epsilon 0.213317882584326
+Episode 916 ended with score: 7 (20 frames in 2.158235s for 9 fps)
+epsilon 0.21301943606426985
+Episode 917 ended with score: 22 (54 frames in 5.795217s for 9 fps)
+epsilon 0.21221571445622606
+Episode 918 ended with score: 1 (3 frames in 0.527929s for 5 fps)
+epsilon 0.21217115227568845
+Episode 919 ended with score: 0 (6 frames in 0.796781s for 7 fps)
+epsilon 0.21208205598485688
+Episode 920 ended with score: 13 (53 frames in 5.758501s for 9 fps)
+epsilon 0.2112966618749971
+Episode 921 ended with score: 9 (41 frames in 4.563159s for 8 fps)
+epsilon 0.21069108867333586
+Episode 922 ended with score: 5 (11 frames in 1.324784s for 8 fps)
+epsilon 0.2105289133043833
+Episode 923 ended with score: 11 (54 frames in 8.331064s for 6 fps)
+epsilon 0.20973458843024528
+Episode 924 ended with score: 1 (3 frames in 0.468562s for 6 fps)
+epsilon 0.20969054724970143
+Episode 925 ended with score: 1 (5 frames in 0.651363s for 7 fps)
+epsilon 0.20961716583228163
+Episode 926 ended with score: 1 (3 frames in 0.454831s for 6 fps)
+epsilon 0.20957314930875728
+Episode 927 ended with score: 5 (17 frames in 1.938736s for 8 fps)
+epsilon 0.20932389687175765
+Episode 928 ended with score: 0 (3 frames in 0.486142s for 6 fps)
+epsilon 0.20927994193040406
+Episode 929 ended with score: 1 (3 frames in 0.502732s for 5 fps)
+epsilon 0.20923599621894204
+Episode 930 ended with score: 5 (14 frames in 1.687439s for 8 fps)
+epsilon 0.2090310382148597
+Episode 931 ended with score: 17 (41 frames in 4.369890s for 9 fps)
+epsilon 0.20843195825810554
+Episode 932 ended with score: 0 (3 frames in 0.365311s for 8 fps)
+epsilon 0.20838819061074962
+Episode 933 ended with score: 0 (23 frames in 2.581127s for 8 fps)
+epsilon 0.2080529438361644
+Episode 934 ended with score: 0 (3 frames in 0.375370s for 7 fps)
+epsilon 0.20800925577626572
+Episode 935 ended with score: 0 (16 frames in 1.685183s for 9 fps)
+epsilon 0.20777640767929334
+Episode 936 ended with score: 0 (13 frames in 1.530333s for 8 fps)
+epsilon 0.20758741054006924
+Episode 937 ended with score: 10 (43 frames in 4.539161s for 9 fps)
+epsilon 0.2069634900682638
+Episode 938 ended with score: 0 (16 frames in 1.826906s for 8 fps)
+epsilon 0.206731812614175
+Episode 939 ended with score: 1 (10 frames in 1.206402s for 8 fps)
+epsilon 0.20658714592120167
+Episode 940 ended with score: 22 (64 frames in 6.827153s for 9 fps)
+epsilon 0.2056636733088
+Episode 941 ended with score: 1 (6 frames in 3.419736s for 1 fps)
+epsilon 0.20557730968087953
+Episode 942 ended with score: 11 (44 frames in 4.797266s for 9 fps)
+epsilon 0.20494508356691885
+Episode 943 ended with score: 13 (35 frames in 3.766796s for 9 fps)
+epsilon 0.2044435651697401
+Episode 944 ended with score: 21 (69 frames in 7.329349s for 9 fps)
+epsilon 0.20345844924068454
+Episode 945 ended with score: 1 (7 frames in 0.934949s for 7 fps)
+epsilon 0.20335877553398868
+Episode 946 ended with score: 0 (6 frames in 0.816442s for 7 fps)
+epsilon 0.20327337979373938
+Episode 947 ended with score: 12 (31 frames in 3.373071s for 9 fps)
+epsilon 0.20283273940473243
+Episode 948 ended with score: 3 (30 frames in 3.276609s for 9 fps)
+epsilon 0.20240722270763897
+Episode 949 ended with score: 6 (18 frames in 2.036257s for 8 fps)
+epsilon 0.20215234129508566
+Episode 950 ended with score: 10 (35 frames in 3.690756s for 9 fps)
+epsilon 0.20165765698049887
+Episode 951 ended with score: 1 (4 frames in 0.590591s for 6 fps)
+epsilon 0.20160119876500276
+Episode 952 ended with score: 1 (21 frames in 4.594782s for 4 fps)
+epsilon 0.20130505235851215
+Episode 953 ended with score: 51 (112 frames in 11.789592s for 9 fps)
+epsilon 0.19973293647046486
+Episode 954 ended with score: 21 (78 frames in 8.131880s for 9 fps)
+epsilon 0.19864532844256477
+Episode 955 ended with score: 0 (3 frames in 0.513510s for 5 fps)
+epsilon 0.19860361584361
+Episode 956 ended with score: 0 (3 frames in 0.497927s for 6 fps)
+epsilon 0.19856191200368786
+Episode 957 ended with score: 0 (11 frames in 1.247303s for 8 fps)
+epsilon 0.1984090728326442
+Episode 958 ended with score: 4 (45 frames in 4.794447s for 9 fps)
+epsilon 0.19778504577065223
+Episode 959 ended with score: 1 (5 frames in 0.664788s for 7 fps)
+epsilon 0.19771583069542134
+Episode 960 ended with score: 0 (3 frames in 0.485810s for 6 fps)
+epsilon 0.1976743132773302
+Episode 961 ended with score: 2 (15 frames in 1.633842s for 9 fps)
+epsilon 0.19746685692097954
+Episode 962 ended with score: 2 (14 frames in 1.640733s for 8 fps)
+epsilon 0.19727342742701906
+Episode 963 ended with score: 14 (61 frames in 9.147322s for 6 fps)
+epsilon 0.19643283640994347
+Episode 964 ended with score: 1 (4 frames in 0.607267s for 6 fps)
+epsilon 0.19637784099060457
+Episode 965 ended with score: 0 (4 frames in 0.550360s for 7 fps)
+epsilon 0.1963228609683663
+Episode 966 ended with score: 12 (66 frames in 6.919335s for 9 fps)
+epsilon 0.19541790972409612
+Episode 967 ended with score: 7 (66 frames in 6.863310s for 9 fps)
+epsilon 0.1945171298572726
+Average training score: 5
+Eval 968 ended with score: 10 (18 frames in 2.588541s for 6 fps)
+Eval 969 ended with score: 0 (4 frames in 0.618073s for 6 fps)
+Eval 970 ended with score: 1 (3 frames in 0.495376s for 6 fps)
+Eval 971 ended with score: 2 (4 frames in 0.539753s for 7 fps)
+Eval 972 ended with score: 14 (49 frames in 6.831693s for 7 fps)
+Eval 973 ended with score: 18 (172 frames in 23.636150s for 7 fps)
+Eval 974 ended with score: 0 (3 frames in 0.310405s for 9 fps)
+Eval 975 ended with score: 0 (3 frames in 0.359837s for 8 fps)
+Eval 976 ended with score: -8 (90 frames in 12.383425s for 7 fps)
+Eval 977 ended with score: 3 (11 frames in 1.471680s for 7 fps)
+Eval 978 ended with score: 0 (46 frames in 6.347888s for 7 fps)
+Eval 979 ended with score: 0 (3 frames in 0.443612s for 6 fps)
+Eval 980 ended with score: 0 (6 frames in 0.854903s for 7 fps)
+Eval 981 ended with score: 2 (12 frames in 1.725161s for 6 fps)
+  ...frame 436
+Eval 982 ended with score: -58 (634 frames in 87.208470s for 7 fps)
+Average eval score: 0
+Episode 983 ended with score: 0 (5 frames in 0.712049s for 7 fps)
+epsilon 0.18056803391519846
+Episode 984 ended with score: 3 (48 frames in 5.068757s for 9 fps)
+epsilon 0.1799623222864986
+Episode 985 ended with score: 5 (20 frames in 2.253073s for 8 fps)
+epsilon 0.1797105425098716
+Episode 986 ended with score: 0 (2 frames in 0.322930s for 6 fps)
+epsilon 0.17968538391450187
+Episode 987 ended with score: 56 (148 frames in 15.342454s for 9 fps)
+epsilon 0.17783338841826385
+Episode 988 ended with score: 3 (9 frames in 1.096990s for 8 fps)
+epsilon 0.17772138474824684
+Episode 989 ended with score: 5 (13 frames in 1.558094s for 8 fps)
+epsilon 0.17755972619580807
+Episode 990 ended with score: 1 (6 frames in 3.043968s for 1 fps)
+epsilon 0.17748516416022772
+Episode 991 ended with score: 16 (52 frames in 5.608809s for 9 fps)
+epsilon 0.17684027001055205
+Episode 992 ended with score: 1 (4 frames in 0.610582s for 6 fps)
+epsilon 0.1767907599338104
+Episode 993 ended with score: 2 (7 frames in 0.938015s for 7 fps)
+epsilon 0.1767041506510898
+Episode 994 ended with score: 9 (24 frames in 2.779981s for 8 fps)
+epsilon 0.17640752653006067
+Episode 995 ended with score: 6 (18 frames in 4.657438s for 3 fps)
+epsilon 0.176185385249994
+Episode 996 ended with score: 22 (75 frames in 7.952294s for 9 fps)
+epsilon 0.17526280358270102
+Episode 997 ended with score: 20 (75 frames in 7.888223s for 9 fps)
+epsilon 0.17434505294569808
+Episode 998 ended with score: 0 (5 frames in 0.653821s for 7 fps)
+epsilon 0.17428404071947667
+Episode 999 ended with score: 1 (3 frames in 0.531208s for 5 fps)
+epsilon 0.1742474436328412
+Episode 1000 ended with score: 1 (3 frames in 0.419060s for 7 fps)
+epsilon 0.17421085423105595
+Episode 1001 ended with score: 1 (16 frames in 1.799659s for 8 fps)
+epsilon 0.17401584047684462
+Episode 1002 ended with score: 0 (3 frames in 0.454988s for 6 fps)
+epsilon 0.17397929970831763
+Episode 1003 ended with score: 4 (33 frames in 6.125533s for 5 fps)
+epsilon 0.17357785731982017
+Episode 1004 ended with score: 0 (4 frames in 0.549073s for 7 fps)
+epsilon 0.17352926062272148
+Episode 1005 ended with score: 1 (6 frames in 0.811494s for 7 fps)
+epsilon 0.17345639108647024
+Episode 1006 ended with score: 39 (112 frames in 11.751905s for 9 fps)
+epsilon 0.17210176265009725
+Episode 1007 ended with score: 1 (7 frames in 0.862816s for 8 fps)
+epsilon 0.1720174504936041
+Episode 1008 ended with score: 0 (3 frames in 0.474651s for 6 fps)
+epsilon 0.17198132935759794
+Episode 1009 ended with score: 0 (14 frames in 1.595324s for 8 fps)
+epsilon 0.1718128643198342
+Episode 1010 ended with score: 6 (24 frames in 2.599348s for 9 fps)
+epsilon 0.17152445094826038
+Episode 1011 ended with score: 5 (22 frames in 2.444528s for 8 fps)
+epsilon 0.1712604973517535
+Episode 1012 ended with score: 6 (31 frames in 3.359244s for 9 fps)
+epsilon 0.17088925202562574
+Episode 1013 ended with score: 1 (3 frames in 0.464593s for 6 fps)
+epsilon 0.17085336779471375
+Episode 1014 ended with score: 8 (21 frames in 2.426334s for 8 fps)
+epsilon 0.17060238907425387
+Episode 1015 ended with score: 2 (6 frames in 0.738161s for 8 fps)
+epsilon 0.170530748608948
+Episode 1016 ended with score: 0 (3 frames in 0.530862s for 5 fps)
+epsilon 0.17049493965848364
+Episode 1017 ended with score: 0 (3 frames in 0.456005s for 6 fps)
+epsilon 0.1704591382273725
+Episode 1018 ended with score: 5 (23 frames in 5.156537s for 4 fps)
+epsilon 0.17018491022951035
+Episode 1019 ended with score: 0 (1 frames in 0.092771s for 10 fps)
+epsilon 0.17017299728579427
+Episode 1020 ended with score: 0 (3 frames in 0.533611s for 5 fps)
+epsilon 0.17013726345784896
+Episode 1021 ended with score: 0 (14 frames in 1.634410s for 8 fps)
+epsilon 0.16997060478262818
+Episode 1022 ended with score: 6 (33 frames in 3.619371s for 9 fps)
+epsilon 0.16957841211561153
+Episode 1023 ended with score: 3 (38 frames in 4.135636s for 9 fps)
+epsilon 0.1691279171957573
+Episode 1024 ended with score: 2 (10 frames in 1.235044s for 8 fps)
+epsilon 0.16900956493946553
+Episode 1025 ended with score: 3 (18 frames in 1.996003s for 9 fps)
+epsilon 0.16879673954682134
+Episode 1026 ended with score: 0 (3 frames in 0.483900s for 6 fps)
+epsilon 0.16876129471277065
+Episode 1027 ended with score: 0 (30 frames in 3.190547s for 9 fps)
+epsilon 0.16840725547367089
+Episode 1028 ended with score: 1 (26 frames in 2.885026s for 9 fps)
+epsilon 0.1681010223071379
+Episode 1029 ended with score: 1 (27 frames in 2.938722s for 9 fps)
+epsilon 0.16778360032334486
+Episode 1030 ended with score: 0 (10 frames in 1.159176s for 8 fps)
+epsilon 0.16766618879249723
+Episode 1031 ended with score: 1 (7 frames in 0.942983s for 7 fps)
+epsilon 0.16758404961082704
+Episode 1032 ended with score: 0 (3 frames in 0.455581s for 6 fps)
+epsilon 0.16754885942383682
+Episode 1033 ended with score: 0 (6 frames in 0.831951s for 7 fps)
+epsilon 0.16747850121657062
+Episode 1034 ended with score: 1 (12 frames in 1.437806s for 8 fps)
+epsilon 0.16733787342546005
+Episode 1035 ended with score: 6 (52 frames in 5.502473s for 9 fps)
+epsilon 0.16672984955990572
+Episode 1036 ended with score: 6 (18 frames in 4.232997s for 4 fps)
+epsilon 0.16651989490017496
+Episode 1037 ended with score: 1 (6 frames in 0.712401s for 8 fps)
+epsilon 0.16644996878238685
+Episode 1038 ended with score: 0 (7 frames in 0.809789s for 8 fps)
+epsilon 0.16636842542338715
+Episode 1039 ended with score: 1 (3 frames in 0.442578s for 6 fps)
+epsilon 0.16633349049960702
+Episode 1040 ended with score: 3 (9 frames in 1.199655s for 7 fps)
+epsilon 0.1662287297370281
+Episode 1041 ended with score: 1 (3 frames in 0.346771s for 8 fps)
+epsilon 0.16619382414728864
+Episode 1042 ended with score: 2 (5 frames in 0.693441s for 7 fps)
+epsilon 0.16613566445176442
+Episode 1043 ended with score: 3 (20 frames in 2.364100s for 8 fps)
+epsilon 0.16590322912889244
+Episode 1044 ended with score: 18 (52 frames in 5.408867s for 9 fps)
+epsilon 0.1653004180579856
+Episode 1045 ended with score: 0 (1 frames in 0.050446s for 19 fps)
+epsilon 0.16528884702872154
+Episode 1046 ended with score: 0 (1 frames in 0.069253s for 14 fps)
+epsilon 0.16527727680942952
+Episode 1047 ended with score: 0 (2 frames in 0.245982s for 8 fps)
+epsilon 0.16525413880053486
+Episode 1048 ended with score: 0 (3 frames in 0.466619s for 6 fps)
+epsilon 0.1652194378605659
+Episode 1049 ended with score: 1 (9 frames in 1.029657s for 8 fps)
+epsilon 0.16511537875466278
+Episode 1050 ended with score: 1 (8 frames in 1.038146s for 7 fps)
+epsilon 0.16502293679321886
+Episode 1051 ended with score: 0 (3 frames in 0.450465s for 6 fps)
+epsilon 0.16498828440227284
+Episode 1052 ended with score: 0 (3 frames in 0.420240s for 7 fps)
+epsilon 0.16495363928781953
+Episode 1053 ended with score: 0 (3 frames in 0.502535s for 5 fps)
+epsilon 0.164919001448331
+Episode 1054 ended with score: 0 (4 frames in 0.622242s for 6 fps)
+epsilon 0.16487282897631783
+Episode 1055 ended with score: 0 (3 frames in 0.497654s for 6 fps)
+epsilon 0.16483820810580682
+Episode 1056 ended with score: 13 (61 frames in 6.496309s for 9 fps)
+epsilon 0.16413582502861385
+Episode 1057 ended with score: 15 (47 frames in 4.939954s for 9 fps)
+epsilon 0.16359668666314206
+Episode 1058 ended with score: 1 (3 frames in 0.332538s for 9 fps)
+epsilon 0.163562333763758
+Episode 1059 ended with score: 0 (2 frames in 0.333977s for 5 fps)
+epsilon 0.1635394358384865
+Episode 1060 ended with score: 2 (12 frames in 1.400736s for 8 fps)
+epsilon 0.16340211558869694
+Episode 1061 ended with score: 0 (10 frames in 1.218880s for 8 fps)
+epsilon 0.1632877701312265
+Episode 1062 ended with score: 0 (3 frames in 0.490585s for 6 fps)
+epsilon 0.16325348209977314
+Episode 1063 ended with score: 1 (3 frames in 0.479238s for 6 fps)
+epsilon 0.16321920126830236
+Episode 1064 ended with score: 12 (87 frames in 11.825296s for 7 fps)
+epsilon 0.1622281823621039
+Episode 1065 ended with score: 0 (3 frames in 0.498817s for 6 fps)
+epsilon 0.16219411682850648
+Episode 1066 ended with score: 1 (8 frames in 1.031055s for 7 fps)
+epsilon 0.1621033103730002
+Episode 1067 ended with score: 1 (3 frames in 0.436306s for 6 fps)
+epsilon 0.16206927106068492
+Episode 1068 ended with score: 1 (3 frames in 0.376980s for 7 fps)
+epsilon 0.16203523889612487
+Episode 1069 ended with score: 3 (22 frames in 2.484904s for 8 fps)
+epsilon 0.1617858879503499
+Episode 1070 ended with score: 4 (17 frames in 1.784049s for 9 fps)
+epsilon 0.16159347052007905
+Episode 1071 ended with score: 1 (10 frames in 1.064292s for 9 fps)
+epsilon 0.16148039071542486
+Episode 1072 ended with score: 3 (19 frames in 2.110028s for 9 fps)
+epsilon 0.16126575704653695
+Episode 1073 ended with score: 10 (19 frames in 2.158332s for 8 fps)
+epsilon 0.16105140866065837
+Episode 1074 ended with score: 0 (3 frames in 0.366204s for 8 fps)
+epsilon 0.16101759023224008
+Episode 1075 ended with score: 15 (55 frames in 5.792475s for 9 fps)
+epsilon 0.16039884270672505
+Episode 1076 ended with score: 2 (7 frames in 0.965442s for 7 fps)
+epsilon 0.1603202637769142
+Episode 1077 ended with score: 0 (10 frames in 1.216220s for 8 fps)
+epsilon 0.16020807493629052
+Episode 1078 ended with score: 3 (18 frames in 2.091327s for 8 fps)
+epsilon 0.160006332825036
+Episode 1079 ended with score: 3 (13 frames in 1.642096s for 7 fps)
+epsilon 0.15986078820089208
+Episode 1080 ended with score: 10 (47 frames in 7.345512s for 6 fps)
+epsilon 0.15933569208589932
+Episode 1081 ended with score: 0 (4 frames in 0.646134s for 6 fps)
+epsilon 0.159291082776366
+Episode 1082 ended with score: 4 (24 frames in 2.596968s for 9 fps)
+epsilon 0.15902368907201767
+Episode 1083 ended with score: 3 (17 frames in 1.806952s for 9 fps)
+epsilon 0.15883455681832667
+Episode 1084 ended with score: 2 (9 frames in 1.086881s for 8 fps)
+epsilon 0.1587345190613711
+Episode 1085 ended with score: 2 (14 frames in 1.553483s for 9 fps)
+epsilon 0.15857902999259846
+Episode 1086 ended with score: 0 (3 frames in 0.472513s for 6 fps)
+epsilon 0.15854573072735734
+Episode 1087 ended with score: 3 (23 frames in 2.465240s for 9 fps)
+epsilon 0.15829066855375326
+Episode 1088 ended with score: 0 (3 frames in 0.453929s for 6 fps)
+epsilon 0.15825742984017552
+Episode 1089 ended with score: 13 (52 frames in 5.539819s for 9 fps)
+epsilon 0.1576823998587711
+Episode 1090 ended with score: 1 (5 frames in 0.762190s for 6 fps)
+epsilon 0.15762721874471727
+Episode 1091 ended with score: 0 (3 frames in 0.488719s for 6 fps)
+epsilon 0.15759411934584694
+Episode 1092 ended with score: 1 (7 frames in 0.868523s for 8 fps)
+epsilon 0.15751691444191054
+Episode 1093 ended with score: 0 (3 frames in 0.481299s for 6 fps)
+epsilon 0.15748383820532233
+Episode 1094 ended with score: 0 (8 frames in 1.070981s for 7 fps)
+epsilon 0.15739566885968526
+Episode 1095 ended with score: 1 (3 frames in 0.512229s for 5 fps)
+epsilon 0.15736261808288707
+Episode 1096 ended with score: 0 (3 frames in 0.416243s for 7 fps)
+epsilon 0.15732957424626617
+Episode 1097 ended with score: 38 (128 frames in 15.850172s for 8 fps)
+epsilon 0.1559261488756377
+Episode 1098 ended with score: 0 (3 frames in 0.462220s for 6 fps)
+epsilon 0.1558934066764347
+Episode 1099 ended with score: 5 (20 frames in 2.166699s for 9 fps)
+epsilon 0.15567530098290994
+Episode 1100 ended with score: 1 (3 frames in 0.440947s for 6 fps)
+epsilon 0.15564261145807703
+Episode 1101 ended with score: 1 (6 frames in 0.673386s for 8 fps)
+epsilon 0.15557725299992892
+Episode 1102 ended with score: 0 (3 frames in 0.489541s for 6 fps)
+epsilon 0.1555445840637312
+Episode 1103 ended with score: 1 (15 frames in 1.786753s for 8 fps)
+epsilon 0.1553813422538828
+Episode 1104 ended with score: 3 (18 frames in 2.038615s for 8 fps)
+epsilon 0.1551856782085572
+Episode 1105 ended with score: 6 (88 frames in 9.311487s for 9 fps)
+epsilon 0.1542326394471707
+Episode 1106 ended with score: 5 (17 frames in 2.045644s for 8 fps)
+epsilon 0.15404920535089509
+Episode 1107 ended with score: -1 (25 frames in 2.819687s for 8 fps)
+epsilon 0.1537798455723802
+Episode 1108 ended with score: 0 (3 frames in 0.478263s for 6 fps)
+epsilon 0.15374755406532095
+Episode 1109 ended with score: 42 (140 frames in 17.318157s for 8 fps)
+epsilon 0.15224813471078175
+Episode 1110 ended with score: 0 (3 frames in 0.432097s for 6 fps)
+epsilon 0.15221616484048783
+Episode 1111 ended with score: 9 (66 frames in 6.973429s for 9 fps)
+epsilon 0.15151452364042078
+Episode 1112 ended with score: 0 (3 frames in 0.495028s for 6 fps)
+epsilon 0.15148270781766782
+Episode 1113 ended with score: 1 (6 frames in 0.824061s for 7 fps)
+epsilon 0.15141909621332428
+Episode 1114 ended with score: 1 (4 frames in 0.604526s for 6 fps)
+epsilon 0.1513767033178982
+Episode 1115 ended with score: 11 (41 frames in 4.465312s for 9 fps)
+epsilon 0.15094285985784683
+Episode 1116 ended with score: 4 (15 frames in 1.604139s for 9 fps)
+epsilon 0.1507844474915455
+Episode 1117 ended with score: 0 (2 frames in 0.303983s for 6 fps)
+epsilon 0.15076333840774048
+Episode 1118 ended with score: 1 (5 frames in 0.681056s for 7 fps)
+epsilon 0.15071057862618423
+Episode 1119 ended with score: 0 (3 frames in 0.433723s for 6 fps)
+epsilon 0.15067893162006654
+Episode 1120 ended with score: 19 (49 frames in 5.261339s for 9 fps)
+epsilon 0.15016297020544606
+Episode 1121 ended with score: 0 (1 frames in 0.059004s for 16 fps)
+epsilon 0.15015245879753167
+Episode 1122 ended with score: 7 (18 frames in 4.331431s for 4 fps)
+epsilon 0.14996337922673025
+Episode 1123 ended with score: 1 (3 frames in 0.499489s for 6 fps)
+epsilon 0.14993188912150288
+Episode 1124 ended with score: 1 (4 frames in 0.554507s for 7 fps)
+epsilon 0.14988991260034068
+Episode 1125 ended with score: 23 (73 frames in 7.644364s for 9 fps)
+epsilon 0.14912590211561286
+Episode 1126 ended with score: 0 (11 frames in 1.171276s for 9 fps)
+epsilon 0.14901111535197584
+Episode 1127 ended with score: 0 (2 frames in 0.244449s for 8 fps)
+epsilon 0.14899025452598103
+Episode 1128 ended with score: 15 (41 frames in 4.524392s for 9 fps)
+epsilon 0.1485632505939311
+Episode 1129 ended with score: 0 (4 frames in 0.604329s for 6 fps)
+epsilon 0.14852165725132055
+Episode 1130 ended with score: 29 (79 frames in 11.654996s for 6 fps)
+epsilon 0.14770257068016443
+Episode 1131 ended with score: 10 (30 frames in 3.271957s for 9 fps)
+epsilon 0.14739270990417494
+Episode 1132 ended with score: 4 (21 frames in 2.369679s for 8 fps)
+epsilon 0.14717619422049635
+Episode 1133 ended with score: 3 (11 frames in 1.151039s for 9 fps)
+epsilon 0.1470629082066026
+Episode 1134 ended with score: 0 (1 frames in 0.021902s for 45 fps)
+epsilon 0.14705261380302811
+Episode 1135 ended with score: 0 (1 frames in 0.068956s for 14 fps)
+epsilon 0.1470423201200619
+Episode 1136 ended with score: 0 (1 frames in 0.068482s for 14 fps)
+epsilon 0.1470320271576535
+Episode 1137 ended with score: 0 (2 frames in 0.334064s for 5 fps)
+epsilon 0.14701144339430836
+Episode 1138 ended with score: 10 (57 frames in 8.627716s for 6 fps)
+epsilon 0.14642601594941682
+Episode 1139 ended with score: 0 (3 frames in 0.432787s for 6 fps)
+epsilon 0.14639526863847963
+Episode 1140 ended with score: 0 (3 frames in 0.472984s for 6 fps)
+epsilon 0.14636452778402578
+Episode 1141 ended with score: 0 (4 frames in 0.610778s for 6 fps)
+epsilon 0.14632355001916256
+Episode 1142 ended with score: 0 (5 frames in 0.657597s for 7 fps)
+epsilon 0.14627234394600794
+Episode 1143 ended with score: 3 (14 frames in 1.529160s for 9 fps)
+epsilon 0.14612906225352018
+Episode 1144 ended with score: 1 (3 frames in 0.503381s for 5 fps)
+epsilon 0.14609837729849404
+Episode 1145 ended with score: 1 (6 frames in 0.761099s for 7 fps)
+epsilon 0.14603702671725724
+Episode 1146 ended with score: 1 (3 frames in 0.512852s for 5 fps)
+epsilon 0.1460063610883408
+Episode 1147 ended with score: 0 (4 frames in 0.492934s for 8 fps)
+epsilon 0.14596548359962275
+Episode 1148 ended with score: 0 (3 frames in 0.507279s for 5 fps)
+epsilon 0.14593483299370938
+Episode 1149 ended with score: 6 (31 frames in 3.248748s for 9 fps)
+epsilon 0.14561848669374006
+Episode 1150 ended with score: 1 (3 frames in 0.463894s for 6 fps)
+epsilon 0.14558790895207618
+Episode 1151 ended with score: 13 (49 frames in 5.253098s for 9 fps)
+epsilon 0.1450893804408443
+Episode 1152 ended with score: 0 (3 frames in 0.489085s for 6 fps)
+epsilon 0.14505891380371583
+Episode 1153 ended with score: 0 (37 frames in 4.060229s for 9 fps)
+epsilon 0.14468368421585534
+Episode 1154 ended with score: 11 (34 frames in 3.677340s for 9 fps)
+epsilon 0.14433973447159715
+Episode 1155 ended with score: 0 (9 frames in 0.944059s for 9 fps)
+epsilon 0.1442488258962509
+Episode 1156 ended with score: 0 (3 frames in 0.484326s for 6 fps)
+epsilon 0.14421853576322094
+Episode 1157 ended with score: 27 (107 frames in 13.369513s for 8 fps)
+epsilon 0.14314233665999895
+Episode 1158 ended with score: 0 (3 frames in 0.506522s for 5 fps)
+epsilon 0.1431122788734436
+Episode 1159 ended with score: 0 (3 frames in 0.504013s for 5 fps)
+epsilon 0.14308222739858156
+Episode 1160 ended with score: 50 (127 frames in 13.320863s for 9 fps)
+epsilon 0.14181581959575454
+Episode 1161 ended with score: 13 (45 frames in 4.883212s for 9 fps)
+epsilon 0.14136978702283393
+Episode 1162 ended with score: 1 (3 frames in 0.398775s for 7 fps)
+epsilon 0.14134010144564652
+Episode 1163 ended with score: 3 (9 frames in 1.049930s for 8 fps)
+epsilon 0.14125108211005777
+Episode 1164 ended with score: 2 (23 frames in 2.598276s for 8 fps)
+epsilon 0.14102384289105366
+Episode 1165 ended with score: 1 (5 frames in 0.707802s for 7 fps)
+epsilon 0.14097449145572635
+Episode 1166 ended with score: 0 (4 frames in 0.533983s for 7 fps)
+epsilon 0.14093502274257538
+Episode 1167 ended with score: 17 (69 frames in 9.970470s for 6 fps)
+epsilon 0.14025592415734842
+Episode 1168 ended with score: 6 (18 frames in 2.040152s for 8 fps)
+epsilon 0.14007930680353078
+Episode 1169 ended with score: 0 (3 frames in 0.340352s for 8 fps)
+epsilon 0.14004989220821978
+Episode 1170 ended with score: 0 (2 frames in 0.349710s for 5 fps)
+epsilon 0.1400302859095551
+Episode 1171 ended with score: 4 (17 frames in 1.887843s for 9 fps)
+epsilon 0.13986374315285255
+Episode 1172 ended with score: 13 (30 frames in 3.388171s for 8 fps)
+epsilon 0.13957032721712054
+Episode 1173 ended with score: 3 (12 frames in 1.499872s for 8 fps)
+epsilon 0.13945313326877165
+Episode 1174 ended with score: 1 (7 frames in 0.804418s for 8 fps)
+epsilon 0.13938481558152332
+Episode 1175 ended with score: 0 (2 frames in 0.216238s for 9 fps)
+epsilon 0.1393653023903275
+Episode 1176 ended with score: 1 (7 frames in 0.897974s for 7 fps)
+epsilon 0.13929702773117283
+Episode 1177 ended with score: 19 (55 frames in 5.850659s for 9 fps)
+epsilon 0.13876174651689094
+Episode 1178 ended with score: 0 (3 frames in 0.480569s for 6 fps)
+epsilon 0.13873260858987246
+Episode 1179 ended with score: 14 (93 frames in 12.429717s for 7 fps)
+epsilon 0.13783236128340134
+Episode 1180 ended with score: 0 (7 frames in 0.936914s for 7 fps)
+epsilon 0.13776483760766786
+Episode 1181 ended with score: 16 (50 frames in 5.292677s for 9 fps)
+epsilon 0.13728348668407453
+Episode 1182 ended with score: 0 (14 frames in 1.539185s for 9 fps)
+epsilon 0.13714901006469402
+Episode 1183 ended with score: 72 (196 frames in 20.348700s for 9 fps)
+epsilon 0.1352801102048801
+Episode 1184 ended with score: 7 (22 frames in 4.656519s for 4 fps)
+epsilon 0.13507193188728736
+Episode 1185 ended with score: 65 (263 frames in 27.447897s for 9 fps)
+epsilon 0.13260792218476128
+Episode 1186 ended with score: 1 (5 frames in 0.643896s for 7 fps)
+epsilon 0.13256151590932994
+Episode 1187 ended with score: 1 (3 frames in 0.441380s for 6 fps)
+epsilon 0.13253367993959778
+Episode 1188 ended with score: 3 (18 frames in 1.947684s for 9 fps)
+epsilon 0.13236678682628877
+Episode 1189 ended with score: -1 (94 frames in 12.507313s for 7 fps)
+epsilon 0.13149864231141487
+Episode 1190 ended with score: 0 (22 frames in 2.431846s for 9 fps)
+epsilon 0.13129628317613135
+Episode 1191 ended with score: 7 (50 frames in 5.277621s for 9 fps)
+epsilon 0.13083753340900148
+Episode 1192 ended with score: 21 (59 frames in 6.284510s for 9 fps)
+epsilon 0.13029826986733173
+Episode 1193 ended with score: 6 (19 frames in 2.058251s for 9 fps)
+epsilon 0.1301250823020337
+Episode 1194 ended with score: 1 (3 frames in 0.518692s for 5 fps)
+epsilon 0.13009775794754433
+Episode 1195 ended with score: 1 (3 frames in 0.424192s for 7 fps)
+epsilon 0.13007043933076776
+Episode 1196 ended with score: 2 (21 frames in 2.355350s for 8 fps)
+epsilon 0.1298793695681154
+Episode 1197 ended with score: 9 (43 frames in 7.222567s for 5 fps)
+epsilon 0.12948900679357192
+Episode 1198 ended with score: 2 (9 frames in 0.985304s for 9 fps)
+epsilon 0.12940745155742234
+Episode 1199 ended with score: 0 (2 frames in 0.290185s for 6 fps)
+epsilon 0.1293893351483008
+Episode 1200 ended with score: 2 (8 frames in 1.069091s for 7 fps)
+epsilon 0.12931689487034945
+Episode 1201 ended with score: 27 (58 frames in 6.150226s for 9 fps)
+epsilon 0.1287929143379061
+Episode 1202 ended with score: 1 (12 frames in 1.580802s for 7 fps)
+epsilon 0.12868476993177355
+Episode 1203 ended with score: 1 (3 frames in 0.584634s for 5 fps)
+epsilon 0.12865774802170984
+Episode 1204 ended with score: 3 (9 frames in 1.093263s for 8 fps)
+epsilon 0.12857671633197645
+Episode 1205 ended with score: 0 (3 frames in 0.372160s for 8 fps)
+epsilon 0.12854971711158036
+Episode 1206 ended with score: 50 (105 frames in 10.974291s for 9 fps)
+epsilon 0.12760830765908493
+Episode 1207 ended with score: 0 (7 frames in 0.898766s for 7 fps)
+epsilon 0.127545792717695
+Episode 1208 ended with score: -2 (73 frames in 7.694222s for 9 fps)
+epsilon 0.12689567343195596
+Average training score: 5
+Eval 1209 ended with score: 22 (55 frames in 7.635507s for 7 fps)
+Eval 1210 ended with score: 13 (35 frames in 4.831112s for 7 fps)
+Eval 1211 ended with score: 23 (50 frames in 6.973033s for 7 fps)
+Eval 1212 ended with score: 1 (73 frames in 10.088899s for 7 fps)
+Eval 1213 ended with score: 12 (27 frames in 3.878346s for 6 fps)
+Eval 1214 ended with score: 0 (16 frames in 2.239227s for 7 fps)
+Eval 1215 ended with score: -32 (387 frames in 53.262212s for 7 fps)
+Average eval score: 5
+Episode 1216 ended with score: 87 (223 frames in 23.239670s for 9 fps)
+epsilon 0.11943152063411239
+Episode 1217 ended with score: 28 (77 frames in 10.302124s for 7 fps)
+epsilon 0.11878949408266432
+Episode 1218 ended with score: 19 (46 frames in 4.830274s for 9 fps)
+epsilon 0.11840759373459644
+Episode 1219 ended with score: 1 (8 frames in 1.001037s for 7 fps)
+epsilon 0.11834130172535273
+Episode 1220 ended with score: 2 (12 frames in 1.433835s for 8 fps)
+epsilon 0.11824193329455178
+Episode 1221 ended with score: 1 (7 frames in 0.832500s for 8 fps)
+epsilon 0.11818400691291299
+Episode 1222 ended with score: 5 (62 frames in 6.463120s for 9 fps)
+epsilon 0.11767218187256849
+Episode 1223 ended with score: 1 (6 frames in 0.832138s for 7 fps)
+epsilon 0.11762276820428019
+Episode 1224 ended with score: 2 (18 frames in 1.993855s for 9 fps)
+epsilon 0.1174746516652195
+Episode 1225 ended with score: 8 (18 frames in 1.982846s for 9 fps)
+epsilon 0.11732672164199652
+Episode 1226 ended with score: 1 (6 frames in 0.881377s for 6 fps)
+epsilon 0.11727745304161609
+Episode 1227 ended with score: 0 (3 frames in 0.456455s for 6 fps)
+epsilon 0.11725282650041569
+Episode 1228 ended with score: 0 (2 frames in 0.325475s for 6 fps)
+epsilon 0.11723641167924446
+Episode 1229 ended with score: 1 (12 frames in 1.520725s for 7 fps)
+epsilon 0.11713797099884414
+Episode 1230 ended with score: 14 (73 frames in 10.214059s for 7 fps)
+epsilon 0.11654090188024732
+Episode 1231 ended with score: 0 (3 frames in 0.492619s for 6 fps)
+epsilon 0.11651643000396375
+Episode 1232 ended with score: 9 (36 frames in 3.874851s for 9 fps)
+epsilon 0.11622316800138678
+Episode 1233 ended with score: 0 (7 frames in 0.901708s for 7 fps)
+epsilon 0.11616623060703493
+Episode 1234 ended with score: 1 (3 frames in 0.459465s for 6 fps)
+epsilon 0.1161418374062112
+Episode 1235 ended with score: 0 (3 frames in 0.523135s for 5 fps)
+epsilon 0.11611744932760105
+Episode 1236 ended with score: 1 (5 frames in 0.684030s for 7 fps)
+epsilon 0.11607681390969314
+Episode 1237 ended with score: 3 (9 frames in 1.293426s for 6 fps)
+epsilon 0.11600370598953595
+Episode 1238 ended with score: 1 (5 frames in 0.758333s for 6 fps)
+epsilon 0.11596311037622332
+Episode 1239 ended with score: 2 (6 frames in 0.801603s for 7 fps)
+epsilon 0.11591441439235844
+Episode 1240 ended with score: 0 (4 frames in 0.508389s for 7 fps)
+epsilon 0.11588196176405333
+Episode 1241 ended with score: 0 (4 frames in 0.617457s for 6 fps)
+epsilon 0.11584951822153007
+Episode 1242 ended with score: 7 (22 frames in 2.303673s for 9 fps)
+epsilon 0.11567124103236487
+Episode 1243 ended with score: 0 (2 frames in 0.267259s for 7 fps)
+epsilon 0.11565504762540942
+Episode 1244 ended with score: 0 (3 frames in 0.450132s for 6 fps)
+epsilon 0.11563076176549761
+Episode 1245 ended with score: 5 (26 frames in 2.707399s for 9 fps)
+epsilon 0.11542049781799447
+Episode 1246 ended with score: 8 (32 frames in 3.679415s for 8 fps)
+epsilon 0.11516223622459704
+Episode 1247 ended with score: 3 (19 frames in 2.033478s for 9 fps)
+epsilon 0.11500916690659063
+Episode 1248 ended with score: 1 (12 frames in 1.225789s for 9 fps)
+epsilon 0.11491259639167642
+Episode 1249 ended with score: 0 (10 frames in 1.091559s for 9 fps)
+epsilon 0.11483218290770052
+Episode 1250 ended with score: 0 (17 frames in 1.981502s for 8 fps)
+epsilon 0.11469560910743012
+Episode 1251 ended with score: 1 (13 frames in 1.498919s for 8 fps)
+epsilon 0.11459127992855471
+Episode 1252 ended with score: 11 (31 frames in 3.455144s for 8 fps)
+epsilon 0.11434287777075243
+Episode 1253 ended with score: 7 (20 frames in 4.933151s for 4 fps)
+epsilon 0.11418290415039549
+Episode 1254 ended with score: 3 (11 frames in 1.213077s for 9 fps)
+epsilon 0.11409501408003106
+Episode 1255 ended with score: 0 (2 frames in 0.308599s for 6 fps)
+epsilon 0.11407904133712543
+Episode 1256 ended with score: 1 (4 frames in 0.551262s for 7 fps)
+epsilon 0.11404710255931833
+Episode 1257 ended with score: 11 (49 frames in 5.200130s for 9 fps)
+epsilon 0.11365657746243045
+Episode 1258 ended with score: 1 (3 frames in 0.545340s for 5 fps)
+epsilon 0.11363271125187605
+Episode 1259 ended with score: 1 (6 frames in 0.729144s for 8 fps)
+epsilon 0.11358499386437505
+Episode 1260 ended with score: 0 (14 frames in 1.586059s for 8 fps)
+epsilon 0.11347373120375812
+Episode 1261 ended with score: 0 (3 frames in 0.466559s for 6 fps)
+epsilon 0.11344990338823024
+Episode 1262 ended with score: -4 (62 frames in 6.551214s for 9 fps)
+epsilon 0.11295858055280168
+Episode 1263 ended with score: 0 (3 frames in 0.489801s for 6 fps)
+epsilon 0.11293486091133799
+Episode 1264 ended with score: 17 (37 frames in 3.973579s for 9 fps)
+epsilon 0.11264272787239785
+Episode 1265 ended with score: 4 (15 frames in 1.720927s for 8 fps)
+epsilon 0.1125245109452394
+Episode 1266 ended with score: 1 (3 frames in 0.396817s for 7 fps)
+epsilon 0.11250088245201259
+Episode 1267 ended with score: 2 (12 frames in 1.449877s for 8 fps)
+epsilon 0.11240641808505028
+Episode 1268 ended with score: 10 (38 frames in 4.093619s for 9 fps)
+epsilon 0.11210780389427813
+Episode 1269 ended with score: 12 (46 frames in 7.279135s for 6 fps)
+epsilon 0.11174738473718876
+Episode 1270 ended with score: 32 (166 frames in 17.206011s for 9 fps)
+epsilon 0.11045635037668443
+Episode 1271 ended with score: 25 (90 frames in 9.477960s for 9 fps)
+epsilon 0.10976263857581817
+Episode 1272 ended with score: 0 (16 frames in 1.760434s for 9 fps)
+epsilon 0.10963976893996631
+Episode 1273 ended with score: 0 (17 frames in 1.871336s for 9 fps)
+epsilon 0.10950937065330361
+Episode 1274 ended with score: 1 (3 frames in 3.144971s for 0 fps)
+epsilon 0.10948637529521661
+Episode 1275 ended with score: 6 (17 frames in 1.990453s for 8 fps)
+epsilon 0.10935615944480541
+Episode 1276 ended with score: 32 (111 frames in 11.731240s for 9 fps)
+epsilon 0.10850972511635734
+Episode 1277 ended with score: 12 (63 frames in 6.619246s for 9 fps)
+epsilon 0.10803223415766397
+Episode 1278 ended with score: 0 (27 frames in 2.839156s for 9 fps)
+epsilon 0.107828238931405
+Episode 1279 ended with score: 1 (3 frames in 0.456165s for 6 fps)
+epsilon 0.10780559658626754
+Episode 1280 ended with score: 3 (24 frames in 2.584193s for 9 fps)
+epsilon 0.10762462890547682
+Episode 1281 ended with score: 0 (2 frames in 0.218035s for 9 fps)
+epsilon 0.10760956198479073
+Episode 1282 ended with score: 0 (4 frames in 0.614487s for 6 fps)
+epsilon 0.10757943447100846
+Episode 1283 ended with score: 76 (196 frames in 22.775877s for 8 fps)
+epsilon 0.10611347281436295
+Episode 1284 ended with score: 6 (36 frames in 3.860528s for 9 fps)
+epsilon 0.10584639417543729
+Episode 1285 ended with score: 0 (3 frames in 0.488382s for 6 fps)
+epsilon 0.10582416798856613
+Episode 1286 ended with score: 0 (32 frames in 3.553173s for 9 fps)
+epsilon 0.10558737886738438
+Episode 1287 ended with score: 1 (9 frames in 1.073394s for 8 fps)
+epsilon 0.10552087744126969
+Episode 1288 ended with score: 0 (8 frames in 1.044198s for 7 fps)
+epsilon 0.10546180022534028
+Episode 1289 ended with score: -1 (30 frames in 3.261986s for 9 fps)
+epsilon 0.10524055508989957
+Episode 1290 ended with score: 1 (7 frames in 0.861444s for 8 fps)
+epsilon 0.10518899804589531
+Episode 1291 ended with score: 8 (50 frames in 8.002123s for 6 fps)
+epsilon 0.10482146724311203
+Episode 1292 ended with score: 5 (23 frames in 2.410831s for 9 fps)
+epsilon 0.10465283456437169
+Episode 1293 ended with score: 15 (67 frames in 9.835207s for 6 fps)
+epsilon 0.10416314485093914
+Episode 1294 ended with score: 9 (40 frames in 4.298437s for 9 fps)
+epsilon 0.10387188580413229
+Episode 1295 ended with score: 4 (11 frames in 1.330372s for 8 fps)
+epsilon 0.10379193243965851
+Episode 1296 ended with score: 10 (26 frames in 2.769532s for 9 fps)
+epsilon 0.10360319631874626
+Episode 1297 ended with score: 1 (3 frames in 0.522198s for 5 fps)
+epsilon 0.10358144117045077
+Episode 1298 ended with score: 13 (85 frames in 8.898229s for 9 fps)
+epsilon 0.10296694004152329
+Episode 1299 ended with score: 18 (46 frames in 7.354454s for 6 fps)
+epsilon 0.10263590815570704
+Episode 1300 ended with score: 3 (8 frames in 0.989650s for 8 fps)
+epsilon 0.10257844612681517
+Episode 1301 ended with score: 0 (4 frames in 0.514079s for 7 fps)
+epsilon 0.10254972717756523
+Episode 1302 ended with score: 1 (16 frames in 1.896543s for 8 fps)
+epsilon 0.10243493176267265
+Episode 1303 ended with score: 2 (10 frames in 1.220919s for 8 fps)
+epsilon 0.10236324989312551
+Episode 1304 ended with score: 0 (13 frames in 1.437156s for 9 fps)
+epsilon 0.10227013844891698
+Episode 1305 ended with score: 0 (3 frames in 0.454038s for 6 fps)
+epsilon 0.10224866322317867
+Episode 1306 ended with score: 5 (56 frames in 5.983895s for 9 fps)
+epsilon 0.10184861906048125
+Episode 1307 ended with score: 1 (3 frames in 0.534941s for 5 fps)
+epsilon 0.10182723234761831
+Episode 1308 ended with score: 3 (21 frames in 2.210320s for 9 fps)
+epsilon 0.10167765104985142
+Episode 1309 ended with score: 1 (3 frames in 0.407138s for 7 fps)
+epsilon 0.10165630023775754
+Episode 1310 ended with score: 0 (2 frames in 0.360165s for 5 fps)
+epsilon 0.10164206885384013
+Episode 1311 ended with score: 36 (109 frames in 11.419770s for 9 fps)
+epsilon 0.1008694640626293
+Episode 1312 ended with score: 22 (90 frames in 12.169044s for 7 fps)
+epsilon 0.10023596189341337
+Episode 1313 ended with score: 0 (3 frames in 0.507722s for 5 fps)
+epsilon 0.10021491381485001
+Episode 1314 ended with score: 0 (3 frames in 0.454793s for 6 fps)
+epsilon 0.10019387015607376
+Episode 1315 ended with score: 1 (5 frames in 0.693215s for 7 fps)
+epsilon 0.10015880721067509
+Episode 1316 ended with score: 19 (93 frames in 9.675696s for 9 fps)
+epsilon 0.1
+Episode 1317 ended with score: 1 (4 frames in 0.638169s for 6 fps)
+epsilon 0.1
+Episode 1318 ended with score: 0 (56 frames in 5.908478s for 9 fps)
+epsilon 0.1
+Episode 1319 ended with score: 3 (10 frames in 1.201976s for 8 fps)
+epsilon 0.1
+Episode 1320 ended with score: 1 (13 frames in 1.559875s for 8 fps)
+epsilon 0.1
+Episode 1321 ended with score: 1 (16 frames in 1.816784s for 8 fps)
+epsilon 0.1
+Episode 1322 ended with score: 0 (3 frames in 0.491594s for 6 fps)
+epsilon 0.1
+Episode 1323 ended with score: 6 (21 frames in 2.325687s for 9 fps)
+epsilon 0.1
+Episode 1324 ended with score: 2 (22 frames in 5.220696s for 4 fps)
+epsilon 0.1
+Episode 1325 ended with score: 3 (12 frames in 1.438931s for 8 fps)
+epsilon 0.1
+Episode 1326 ended with score: 14 (46 frames in 4.785202s for 9 fps)
+epsilon 0.1
+Episode 1327 ended with score: 0 (3 frames in 0.467195s for 6 fps)
+epsilon 0.1
+Episode 1328 ended with score: 1 (11 frames in 1.301517s for 8 fps)
+epsilon 0.1
+Episode 1329 ended with score: 0 (3 frames in 0.487103s for 6 fps)
+epsilon 0.1
+Episode 1330 ended with score: 0 (3 frames in 0.507686s for 5 fps)
+epsilon 0.1
+Episode 1331 ended with score: 29 (116 frames in 12.186529s for 9 fps)
+epsilon 0.1
+Episode 1332 ended with score: 17 (52 frames in 5.562497s for 9 fps)
+epsilon 0.1
+Episode 1333 ended with score: 1 (3 frames in 0.483897s for 6 fps)
+epsilon 0.1
+Episode 1334 ended with score: 0 (3 frames in 0.375312s for 7 fps)
+epsilon 0.1
+Episode 1335 ended with score: 7 (20 frames in 2.270718s for 8 fps)
+epsilon 0.1
+Episode 1336 ended with score: 10 (87 frames in 11.325923s for 7 fps)
+epsilon 0.1
+Episode 1337 ended with score: 0 (53 frames in 5.638729s for 9 fps)
+epsilon 0.1
+Episode 1338 ended with score: 0 (23 frames in 2.679962s for 8 fps)
+epsilon 0.1
+Episode 1339 ended with score: 0 (11 frames in 1.294679s for 8 fps)
+epsilon 0.1
+Episode 1340 ended with score: 7 (31 frames in 3.504345s for 8 fps)
+epsilon 0.1
+Episode 1341 ended with score: 11 (50 frames in 5.385005s for 9 fps)
+epsilon 0.1
+Episode 1342 ended with score: 2 (6 frames in 0.878332s for 6 fps)
+epsilon 0.1
+Episode 1343 ended with score: 1 (6 frames in 0.820870s for 7 fps)
+epsilon 0.1
+Episode 1344 ended with score: 5 (16 frames in 1.950539s for 8 fps)
+epsilon 0.1
+Episode 1345 ended with score: 1 (5 frames in 0.649833s for 7 fps)
+epsilon 0.1
+Episode 1346 ended with score: 4 (22 frames in 2.411325s for 9 fps)
+epsilon 0.1
+Episode 1347 ended with score: 0 (5 frames in 0.614821s for 8 fps)
+epsilon 0.1
+Episode 1348 ended with score: 1 (3 frames in 2.993132s for 1 fps)
+epsilon 0.1
+Episode 1349 ended with score: 1 (6 frames in 0.771619s for 7 fps)
+epsilon 0.1
+Episode 1350 ended with score: 9 (41 frames in 4.296488s for 9 fps)
+epsilon 0.1
+Episode 1351 ended with score: 15 (46 frames in 4.982198s for 9 fps)
+epsilon 0.1
+Episode 1352 ended with score: 12 (24 frames in 2.764847s for 8 fps)
+epsilon 0.1
+Episode 1353 ended with score: 13 (38 frames in 4.223459s for 8 fps)
+epsilon 0.1
+Episode 1354 ended with score: 0 (7 frames in 0.973834s for 7 fps)
+epsilon 0.1
+Episode 1355 ended with score: 12 (35 frames in 3.903689s for 8 fps)
+epsilon 0.1
+Episode 1356 ended with score: 2 (22 frames in 2.516326s for 8 fps)
+epsilon 0.1
+Episode 1357 ended with score: 4 (20 frames in 2.293403s for 8 fps)
+epsilon 0.1
+Episode 1358 ended with score: 12 (34 frames in 3.705185s for 9 fps)
+epsilon 0.1
+Episode 1359 ended with score: 4 (17 frames in 1.945000s for 8 fps)
+epsilon 0.1
+Episode 1360 ended with score: 1 (3 frames in 0.542799s for 5 fps)
+epsilon 0.1
+Episode 1361 ended with score: 29 (83 frames in 10.897748s for 7 fps)
+epsilon 0.1
+Episode 1362 ended with score: 0 (2 frames in 0.335520s for 5 fps)
+epsilon 0.1
+Episode 1363 ended with score: 0 (3 frames in 0.537749s for 5 fps)
+epsilon 0.1
+Episode 1364 ended with score: 0 (27 frames in 2.903431s for 9 fps)
+epsilon 0.1
+Episode 1365 ended with score: 0 (6 frames in 0.763265s for 7 fps)
+epsilon 0.1
+Episode 1366 ended with score: 0 (3 frames in 0.419672s for 7 fps)
+epsilon 0.1
+Episode 1367 ended with score: 0 (3 frames in 0.481658s for 6 fps)
+epsilon 0.1
+Episode 1368 ended with score: -2 (43 frames in 4.686042s for 9 fps)
+epsilon 0.1
+Episode 1369 ended with score: 13 (121 frames in 12.894556s for 9 fps)
+epsilon 0.1
+Episode 1370 ended with score: 5 (16 frames in 4.672369s for 3 fps)
+epsilon 0.1
+Episode 1371 ended with score: 26 (82 frames in 8.739657s for 9 fps)
+epsilon 0.1
+Episode 1372 ended with score: 9 (84 frames in 8.878244s for 9 fps)
+epsilon 0.1
+Episode 1373 ended with score: 2 (5 frames in 0.898013s for 5 fps)
+epsilon 0.1
+Episode 1374 ended with score: 17 (85 frames in 8.923981s for 9 fps)
+epsilon 0.1
+Episode 1375 ended with score: 5 (29 frames in 3.347512s for 8 fps)
+epsilon 0.1
+Episode 1376 ended with score: 1 (5 frames in 0.642201s for 7 fps)
+epsilon 0.1
+Episode 1377 ended with score: 7 (27 frames in 5.419541s for 4 fps)
+epsilon 0.1
+Episode 1378 ended with score: 10 (40 frames in 4.387252s for 9 fps)
+epsilon 0.1
+Episode 1379 ended with score: 1 (3 frames in 0.428038s for 7 fps)
+epsilon 0.1
+Episode 1380 ended with score: 3 (20 frames in 2.268970s for 8 fps)
+epsilon 0.1
+Episode 1381 ended with score: 1 (3 frames in 0.470469s for 6 fps)
+epsilon 0.1
+Episode 1382 ended with score: 2 (12 frames in 1.504467s for 7 fps)
+epsilon 0.1
+Episode 1383 ended with score: 4 (15 frames in 1.733876s for 8 fps)
+epsilon 0.1
+Episode 1384 ended with score: 0 (3 frames in 0.459297s for 6 fps)
+epsilon 0.1
+Episode 1385 ended with score: 0 (3 frames in 0.497921s for 6 fps)
+epsilon 0.1
+Episode 1386 ended with score: 0 (3 frames in 0.433294s for 6 fps)
+epsilon 0.1
+Episode 1387 ended with score: 1 (6 frames in 0.798961s for 7 fps)
+epsilon 0.1
+Episode 1388 ended with score: 1 (6 frames in 0.807204s for 7 fps)
+epsilon 0.1
+Episode 1389 ended with score: 47 (113 frames in 14.417044s for 7 fps)
+epsilon 0.1
+Episode 1390 ended with score: 0 (3 frames in 0.473420s for 6 fps)
+epsilon 0.1
+Episode 1391 ended with score: -6 (67 frames in 9.735927s for 6 fps)
+epsilon 0.1
+Episode 1392 ended with score: 1 (14 frames in 1.702846s for 8 fps)
+epsilon 0.1
+Episode 1393 ended with score: 3 (14 frames in 1.619003s for 8 fps)
+epsilon 0.1
+Episode 1394 ended with score: 0 (3 frames in 0.499839s for 6 fps)
+epsilon 0.1
+Episode 1395 ended with score: 7 (16 frames in 1.816230s for 8 fps)
+epsilon 0.1
+Episode 1396 ended with score: 1 (7 frames in 0.937315s for 7 fps)
+epsilon 0.1
+Episode 1397 ended with score: 4 (8 frames in 1.071077s for 7 fps)
+epsilon 0.1
+Episode 1398 ended with score: 4 (11 frames in 1.222913s for 8 fps)
+epsilon 0.1
+Episode 1399 ended with score: 2 (7 frames in 0.935833s for 7 fps)
+epsilon 0.1
+Episode 1400 ended with score: 5 (23 frames in 2.582173s for 8 fps)
+epsilon 0.1
+Episode 1401 ended with score: 1 (4 frames in 0.719430s for 5 fps)
+epsilon 0.1
+Episode 1402 ended with score: 8 (61 frames in 6.512115s for 9 fps)
+epsilon 0.1
+Episode 1403 ended with score: -1 (34 frames in 3.607783s for 9 fps)
+epsilon 0.1
+Episode 1404 ended with score: 24 (100 frames in 12.735703s for 7 fps)
+epsilon 0.1
+Average training score: 6
+  ...frame 437
+Eval 1405 ended with score: -45 (650 frames in 89.265006s for 7 fps)
+Average eval score: -45
+Episode 1406 ended with score: 3 (34 frames in 3.686318s for 9 fps)
+epsilon 0.1
+Episode 1407 ended with score: 20 (51 frames in 5.564142s for 9 fps)
+epsilon 0.1
+Episode 1408 ended with score: 5 (27 frames in 3.132594s for 8 fps)
+epsilon 0.1
+Episode 1409 ended with score: 23 (56 frames in 5.862262s for 9 fps)
+epsilon 0.1
+Episode 1410 ended with score: 9 (34 frames in 3.711239s for 9 fps)
+epsilon 0.1
+Episode 1411 ended with score: 6 (32 frames in 6.169780s for 5 fps)
+epsilon 0.1
+Episode 1412 ended with score: 3 (10 frames in 1.391637s for 7 fps)
+epsilon 0.1
+Episode 1413 ended with score: 11 (33 frames in 3.524170s for 9 fps)
+epsilon 0.1
+Episode 1414 ended with score: 12 (44 frames in 4.791344s for 9 fps)
+epsilon 0.1
+Episode 1415 ended with score: 27 (73 frames in 7.746640s for 9 fps)
+epsilon 0.1
+Episode 1416 ended with score: 18 (55 frames in 5.919816s for 9 fps)
+epsilon 0.1
+Episode 1417 ended with score: 1 (9 frames in 1.187333s for 7 fps)
+epsilon 0.1
+Episode 1418 ended with score: 6 (18 frames in 2.011140s for 8 fps)
+epsilon 0.1
+Episode 1419 ended with score: 0 (5 frames in 0.770877s for 6 fps)
+epsilon 0.1
+Episode 1420 ended with score: 0 (5 frames in 0.557681s for 8 fps)
+epsilon 0.1
+Episode 1421 ended with score: 0 (4 frames in 0.602899s for 6 fps)
+epsilon 0.1
+Episode 1422 ended with score: -5 (53 frames in 8.444045s for 6 fps)
+epsilon 0.1
+Episode 1423 ended with score: 39 (108 frames in 11.254843s for 9 fps)
+epsilon 0.1
+Episode 1424 ended with score: 7 (30 frames in 3.212063s for 9 fps)
+epsilon 0.1
+Episode 1425 ended with score: 11 (34 frames in 3.546269s for 9 fps)
+epsilon 0.1
+Episode 1426 ended with score: 0 (2 frames in 0.421654s for 4 fps)
+epsilon 0.1
+Episode 1427 ended with score: 0 (7 frames in 0.968583s for 7 fps)
+epsilon 0.1
+Episode 1428 ended with score: 10 (26 frames in 2.809747s for 9 fps)
+epsilon 0.1
+Episode 1429 ended with score: 8 (14 frames in 1.740360s for 8 fps)
+epsilon 0.1
+Episode 1430 ended with score: 33 (111 frames in 14.059384s for 7 fps)
+epsilon 0.1
+Episode 1431 ended with score: 14 (28 frames in 3.023438s for 9 fps)
+epsilon 0.1
+Episode 1432 ended with score: 2 (7 frames in 1.009403s for 6 fps)
+epsilon 0.1
+Episode 1433 ended with score: 0 (1 frames in 0.065188s for 15 fps)
+epsilon 0.1
+Episode 1434 ended with score: 2 (34 frames in 3.689312s for 9 fps)
+epsilon 0.1
+Episode 1435 ended with score: -6 (72 frames in 7.681954s for 9 fps)
+epsilon 0.1
+Episode 1436 ended with score: 1 (3 frames in 0.391548s for 7 fps)
+epsilon 0.1
+Episode 1437 ended with score: 58 (138 frames in 17.177058s for 8 fps)
+epsilon 0.1
+Episode 1438 ended with score: 0 (3 frames in 0.470188s for 6 fps)
+epsilon 0.1
+Episode 1439 ended with score: 4 (26 frames in 2.893528s for 8 fps)
+epsilon 0.1
+Episode 1440 ended with score: 1 (7 frames in 0.952851s for 7 fps)
+epsilon 0.1
+Episode 1441 ended with score: 15 (36 frames in 3.814909s for 9 fps)
+epsilon 0.1
+Episode 1442 ended with score: 1 (7 frames in 0.874217s for 8 fps)
+epsilon 0.1
+Episode 1443 ended with score: 1 (4 frames in 0.556089s for 7 fps)
+epsilon 0.1
+Episode 1444 ended with score: 3 (12 frames in 1.329379s for 9 fps)
+epsilon 0.1
+Episode 1445 ended with score: 12 (36 frames in 3.820304s for 9 fps)
+epsilon 0.1
+Episode 1446 ended with score: 1 (3 frames in 0.430811s for 6 fps)
+epsilon 0.1
+Episode 1447 ended with score: 4 (24 frames in 2.618214s for 9 fps)
+epsilon 0.1
+Episode 1448 ended with score: 17 (35 frames in 3.905198s for 8 fps)
+epsilon 0.1
+Episode 1449 ended with score: 7 (17 frames in 1.953608s for 8 fps)
+epsilon 0.1
+Episode 1450 ended with score: 6 (16 frames in 1.756781s for 9 fps)
+epsilon 0.1
+Episode 1451 ended with score: 0 (3 frames in 0.374145s for 8 fps)
+epsilon 0.1
+Episode 1452 ended with score: 31 (141 frames in 17.062120s for 8 fps)
+epsilon 0.1
+Episode 1453 ended with score: 56 (183 frames in 19.082582s for 9 fps)
+epsilon 0.1
+Episode 1454 ended with score: 0 (4 frames in 0.556865s for 7 fps)
+epsilon 0.1
+Episode 1455 ended with score: 0 (3 frames in 0.514093s for 5 fps)
+epsilon 0.1
+Episode 1456 ended with score: 51 (154 frames in 18.614461s for 8 fps)
+epsilon 0.1
+Episode 1457 ended with score: 11 (42 frames in 4.576749s for 9 fps)
+epsilon 0.1
+Episode 1458 ended with score: 2 (4 frames in 0.512942s for 7 fps)
+epsilon 0.1
+Episode 1459 ended with score: 1 (3 frames in 0.504380s for 5 fps)
+epsilon 0.1
+Episode 1460 ended with score: 6 (16 frames in 1.795977s for 8 fps)
+epsilon 0.1
+Episode 1461 ended with score: 1 (3 frames in 0.411281s for 7 fps)
+epsilon 0.1
+Episode 1462 ended with score: 13 (28 frames in 3.287175s for 8 fps)
+epsilon 0.1
+Episode 1463 ended with score: 1 (6 frames in 0.884198s for 6 fps)
+epsilon 0.1
+Episode 1464 ended with score: 1 (4 frames in 0.666636s for 6 fps)
+epsilon 0.1
+Episode 1465 ended with score: 73 (191 frames in 22.682110s for 8 fps)
+epsilon 0.1
+Episode 1466 ended with score: 27 (65 frames in 6.864156s for 9 fps)
+epsilon 0.1
+Episode 1467 ended with score: 0 (1 frames in 0.028303s for 35 fps)
+epsilon 0.1
+Episode 1468 ended with score: 1 (12 frames in 1.319674s for 9 fps)
+epsilon 0.1
+Episode 1469 ended with score: 0 (3 frames in 0.564569s for 5 fps)
+epsilon 0.1
+Episode 1470 ended with score: 1 (4 frames in 0.543406s for 7 fps)
+epsilon 0.1
+Episode 1471 ended with score: 1 (3 frames in 0.527548s for 5 fps)
+epsilon 0.1
+Episode 1472 ended with score: 1 (3 frames in 0.547047s for 5 fps)
+epsilon 0.1
+Episode 1473 ended with score: 0 (11 frames in 1.298825s for 8 fps)
+epsilon 0.1
+Episode 1474 ended with score: 12 (45 frames in 4.855194s for 9 fps)
+epsilon 0.1
+Episode 1475 ended with score: 10 (22 frames in 4.553831s for 4 fps)
+epsilon 0.1
+Episode 1476 ended with score: 1 (3 frames in 0.461916s for 6 fps)
+epsilon 0.1
+Episode 1477 ended with score: 0 (3 frames in 0.509797s for 5 fps)
+epsilon 0.1
+Episode 1478 ended with score: -1 (30 frames in 3.282684s for 9 fps)
+epsilon 0.1
+Episode 1479 ended with score: 51 (168 frames in 17.503438s for 9 fps)
+epsilon 0.1
+Episode 1480 ended with score: 5 (16 frames in 1.704681s for 9 fps)
+epsilon 0.1
+Episode 1481 ended with score: 113 (364 frames in 40.436327s for 9 fps)
+epsilon 0.1
+Episode 1482 ended with score: 11 (42 frames in 6.768441s for 6 fps)
+epsilon 0.1
+Episode 1483 ended with score: 63 (121 frames in 12.603325s for 9 fps)
+epsilon 0.1
+Episode 1484 ended with score: 0 (3 frames in 0.477991s for 6 fps)
+epsilon 0.1
+Episode 1485 ended with score: 15 (23 frames in 2.578060s for 8 fps)
+epsilon 0.1
+Episode 1486 ended with score: 11 (28 frames in 2.943983s for 9 fps)
+epsilon 0.1
+Episode 1487 ended with score: 0 (2 frames in 0.328038s for 6 fps)
+epsilon 0.1
+Episode 1488 ended with score: 0 (3 frames in 0.493140s for 6 fps)
+epsilon 0.1
+Episode 1489 ended with score: 0 (16 frames in 1.890627s for 8 fps)
+epsilon 0.1
+Episode 1490 ended with score: 31 (67 frames in 7.005113s for 9 fps)
+epsilon 0.1
+Episode 1491 ended with score: 0 (5 frames in 0.592544s for 8 fps)
+epsilon 0.1
+Episode 1492 ended with score: 0 (3 frames in 0.513002s for 5 fps)
+epsilon 0.1
+Episode 1493 ended with score: 0 (14 frames in 1.517201s for 9 fps)
+epsilon 0.1
+Episode 1494 ended with score: 0 (14 frames in 1.613161s for 8 fps)
+epsilon 0.1
+Episode 1495 ended with score: 0 (3 frames in 0.492595s for 6 fps)
+epsilon 0.1
+Episode 1496 ended with score: 0 (3 frames in 0.504633s for 5 fps)
+epsilon 0.1
+Episode 1497 ended with score: 5 (42 frames in 4.406278s for 9 fps)
+epsilon 0.1
+Episode 1498 ended with score: 10 (41 frames in 4.275906s for 9 fps)
+epsilon 0.1
+Episode 1499 ended with score: 0 (3 frames in 0.425580s for 7 fps)
+epsilon 0.1
+Episode 1500 ended with score: 3 (14 frames in 1.600508s for 8 fps)
+epsilon 0.1
+Episode 1501 ended with score: 7 (18 frames in 2.018691s for 8 fps)
+epsilon 0.1
+Episode 1502 ended with score: 1 (6 frames in 0.882564s for 6 fps)
+epsilon 0.1
+Episode 1503 ended with score: 10 (23 frames in 2.689208s for 8 fps)
+epsilon 0.1
+Episode 1504 ended with score: 18 (49 frames in 5.250409s for 9 fps)
+epsilon 0.1
+Episode 1505 ended with score: 0 (3 frames in 0.472731s for 6 fps)
+epsilon 0.1
+Episode 1506 ended with score: 6 (11 frames in 1.532599s for 7 fps)
+epsilon 0.1
+Episode 1507 ended with score: 2 (18 frames in 1.865669s for 9 fps)
+epsilon 0.1
+Episode 1508 ended with score: 2 (8 frames in 1.086192s for 7 fps)
+epsilon 0.1
+Episode 1509 ended with score: 0 (32 frames in 6.181329s for 5 fps)
+epsilon 0.1
+Episode 1510 ended with score: 1 (3 frames in 0.430612s for 6 fps)
+epsilon 0.1
+Episode 1511 ended with score: 0 (3 frames in 0.511990s for 5 fps)
+epsilon 0.1
+Episode 1512 ended with score: 2 (10 frames in 1.193118s for 8 fps)
+epsilon 0.1
+Episode 1513 ended with score: 2 (6 frames in 0.853404s for 7 fps)
+epsilon 0.1
+Episode 1514 ended with score: 8 (21 frames in 2.404117s for 8 fps)
+epsilon 0.1
+Episode 1515 ended with score: 1 (3 frames in 0.522594s for 5 fps)
+epsilon 0.1
+Episode 1516 ended with score: 6 (12 frames in 1.434466s for 8 fps)
+epsilon 0.1
+Episode 1517 ended with score: 30 (61 frames in 6.521145s for 9 fps)
+epsilon 0.1
+Episode 1518 ended with score: 0 (2 frames in 0.326154s for 6 fps)
+epsilon 0.1
+Episode 1519 ended with score: 18 (44 frames in 4.709466s for 9 fps)
+epsilon 0.1
+Episode 1520 ended with score: 10 (67 frames in 7.095307s for 9 fps)
+epsilon 0.1
+Episode 1521 ended with score: 13 (35 frames in 3.872439s for 9 fps)
+epsilon 0.1
+Episode 1522 ended with score: 16 (46 frames in 7.658039s for 6 fps)
+epsilon 0.1
+Episode 1523 ended with score: 5 (21 frames in 2.240070s for 9 fps)
+epsilon 0.1
+Episode 1524 ended with score: 7 (17 frames in 1.916146s for 8 fps)
+epsilon 0.1
+Episode 1525 ended with score: 2 (11 frames in 1.391697s for 7 fps)
+epsilon 0.1
+Episode 1526 ended with score: 5 (15 frames in 2.082005s for 7 fps)
+epsilon 0.1
+Episode 1527 ended with score: 1 (3 frames in 0.554953s for 5 fps)
+epsilon 0.1
+Episode 1528 ended with score: 3 (17 frames in 4.265456s for 3 fps)
+epsilon 0.1
+Episode 1529 ended with score: 3 (13 frames in 1.446523s for 8 fps)
+epsilon 0.1
+Episode 1530 ended with score: 1 (5 frames in 0.715609s for 6 fps)
+epsilon 0.1
+Episode 1531 ended with score: 0 (3 frames in 0.497617s for 6 fps)
+epsilon 0.1
+Episode 1532 ended with score: 3 (17 frames in 2.066538s for 8 fps)
+epsilon 0.1
+Episode 1533 ended with score: 17 (38 frames in 4.057195s for 9 fps)
+epsilon 0.1
+Episode 1534 ended with score: 0 (3 frames in 0.495786s for 6 fps)
+epsilon 0.1
+Episode 1535 ended with score: 1 (3 frames in 0.410101s for 7 fps)
+epsilon 0.1
+Episode 1536 ended with score: 0 (3 frames in 0.440739s for 6 fps)
+epsilon 0.1
+Episode 1537 ended with score: 25 (59 frames in 6.340939s for 9 fps)
+epsilon 0.1
+Episode 1538 ended with score: 2 (10 frames in 1.221759s for 8 fps)
+epsilon 0.1
+Episode 1539 ended with score: 0 (7 frames in 0.827278s for 8 fps)
+epsilon 0.1
+Episode 1540 ended with score: 15 (43 frames in 7.453348s for 5 fps)
+epsilon 0.1
+Episode 1541 ended with score: 50 (103 frames in 10.813637s for 9 fps)
+epsilon 0.1
+Episode 1542 ended with score: 19 (116 frames in 12.158110s for 9 fps)
+epsilon 0.1
+Episode 1543 ended with score: 0 (16 frames in 1.821940s for 8 fps)
+epsilon 0.1
+Episode 1544 ended with score: 1 (11 frames in 1.334555s for 8 fps)
+epsilon 0.1
+Episode 1545 ended with score: 1 (6 frames in 0.799200s for 7 fps)
+epsilon 0.1
+Episode 1546 ended with score: 0 (3 frames in 0.499343s for 6 fps)
+epsilon 0.1
+Episode 1547 ended with score: 0 (9 frames in 1.103055s for 8 fps)
+epsilon 0.1
+Episode 1548 ended with score: 2 (25 frames in 2.714847s for 9 fps)
+epsilon 0.1
+Episode 1549 ended with score: 0 (3 frames in 0.482882s for 6 fps)
+epsilon 0.1
+Episode 1550 ended with score: 14 (40 frames in 6.435688s for 6 fps)
+epsilon 0.1
+Episode 1551 ended with score: 0 (3 frames in 0.518814s for 5 fps)
+epsilon 0.1
+Episode 1552 ended with score: 1 (4 frames in 0.543985s for 7 fps)
+epsilon 0.1
+Episode 1553 ended with score: 2 (5 frames in 0.742134s for 6 fps)
+epsilon 0.1
+Episode 1554 ended with score: 19 (38 frames in 4.099728s for 9 fps)
+epsilon 0.1
+Episode 1555 ended with score: 0 (3 frames in 0.444143s for 6 fps)
+epsilon 0.1
+Episode 1556 ended with score: 17 (45 frames in 4.853004s for 9 fps)
+epsilon 0.1
+Episode 1557 ended with score: 11 (27 frames in 2.945655s for 9 fps)
+epsilon 0.1
+Episode 1558 ended with score: 25 (66 frames in 6.973343s for 9 fps)
+epsilon 0.1
+Episode 1559 ended with score: 16 (49 frames in 5.204183s for 9 fps)
+epsilon 0.1
+Episode 1560 ended with score: 0 (5 frames in 0.636450s for 7 fps)
+epsilon 0.1
+Episode 1561 ended with score: 0 (3 frames in 0.563288s for 5 fps)
+epsilon 0.1
+Episode 1562 ended with score: 8 (33 frames in 6.298067s for 5 fps)
+epsilon 0.1
+Episode 1563 ended with score: 0 (2 frames in 0.232989s for 8 fps)
+epsilon 0.1
+Episode 1564 ended with score: 0 (3 frames in 0.509342s for 5 fps)
+epsilon 0.1
+Episode 1565 ended with score: 2 (9 frames in 1.196315s for 7 fps)
+epsilon 0.1
+Episode 1566 ended with score: 11 (39 frames in 4.296457s for 9 fps)
+epsilon 0.1
+Episode 1567 ended with score: 13 (39 frames in 4.157851s for 9 fps)
+epsilon 0.1
+Episode 1568 ended with score: 12 (45 frames in 4.838660s for 9 fps)
+epsilon 0.1
+Episode 1569 ended with score: 3 (49 frames in 5.266896s for 9 fps)
+epsilon 0.1
+Episode 1570 ended with score: 7 (37 frames in 3.844827s for 9 fps)
+epsilon 0.1
+Episode 1571 ended with score: 13 (55 frames in 5.891112s for 9 fps)
+epsilon 0.1
+Average training score: 9
+Eval 1572 ended with score: 2 (8 frames in 1.166280s for 6 fps)
+Eval 1573 ended with score: 2 (11 frames in 1.473168s for 7 fps)
+Eval 1574 ended with score: 3 (10 frames in 1.413591s for 7 fps)
+Eval 1575 ended with score: 8 (22 frames in 2.939841s for 7 fps)
+Eval 1576 ended with score: -24 (252 frames in 34.696990s for 7 fps)
+Eval 1577 ended with score: 0 (3 frames in 0.427069s for 7 fps)
+Eval 1578 ended with score: 0 (5 frames in 0.723722s for 6 fps)
+Eval 1579 ended with score: 7 (23 frames in 3.155923s for 7 fps)
+Eval 1580 ended with score: 7 (20 frames in 2.744897s for 7 fps)
+Eval 1581 ended with score: 12 (57 frames in 7.920446s for 7 fps)
+Eval 1582 ended with score: 6 (18 frames in 2.374298s for 7 fps)
+Eval 1583 ended with score: 0 (3 frames in 0.481559s for 6 fps)
+Eval 1584 ended with score: 1 (6 frames in 0.870503s for 6 fps)
+Eval 1585 ended with score: 0 (3 frames in 0.409644s for 7 fps)
+Eval 1586 ended with score: 0 (3 frames in 0.426304s for 7 fps)
+Eval 1587 ended with score: -41 (427 frames in 58.781273s for 7 fps)
+Average eval score: 0
+Episode 1588 ended with score: 0 (9 frames in 1.153136s for 7 fps)
+epsilon 0.1
+Episode 1589 ended with score: 1 (15 frames in 1.792110s for 8 fps)
+epsilon 0.1
+Episode 1590 ended with score: 1 (16 frames in 4.051474s for 3 fps)
+epsilon 0.1
+Episode 1591 ended with score: 1 (4 frames in 0.524391s for 7 fps)
+epsilon 0.1
+Episode 1592 ended with score: 2 (10 frames in 1.229583s for 8 fps)
+epsilon 0.1
+Episode 1593 ended with score: 3 (11 frames in 1.356652s for 8 fps)
+epsilon 0.1
+Episode 1594 ended with score: 17 (33 frames in 3.522248s for 9 fps)
+epsilon 0.1
+Episode 1595 ended with score: 12 (39 frames in 4.089170s for 9 fps)
+epsilon 0.1
+Episode 1596 ended with score: 5 (16 frames in 1.829820s for 8 fps)
+epsilon 0.1
+Episode 1597 ended with score: 38 (101 frames in 10.598610s for 9 fps)
+epsilon 0.1
+Episode 1598 ended with score: 1 (4 frames in 0.610952s for 6 fps)
+epsilon 0.1
+Episode 1599 ended with score: 10 (25 frames in 2.797860s for 8 fps)
+epsilon 0.1
+Episode 1600 ended with score: -1 (23 frames in 2.518019s for 9 fps)
+epsilon 0.1
+Episode 1601 ended with score: 16 (87 frames in 11.635973s for 7 fps)
+epsilon 0.1
+Episode 1602 ended with score: 2 (19 frames in 2.158912s for 8 fps)
+epsilon 0.1
+Episode 1603 ended with score: 10 (55 frames in 5.858581s for 9 fps)
+epsilon 0.1
+Episode 1604 ended with score: 1 (5 frames in 0.696778s for 7 fps)
+epsilon 0.1
+Episode 1605 ended with score: 1 (3 frames in 0.471599s for 6 fps)
+epsilon 0.1
+Episode 1606 ended with score: 2 (6 frames in 0.854155s for 7 fps)
+epsilon 0.1
+Episode 1607 ended with score: 1 (5 frames in 0.691160s for 7 fps)
+epsilon 0.1
+Episode 1608 ended with score: 1 (5 frames in 0.737265s for 6 fps)
+epsilon 0.1
+Episode 1609 ended with score: 1 (4 frames in 0.527514s for 7 fps)
+epsilon 0.1
+Episode 1610 ended with score: 0 (3 frames in 0.534223s for 5 fps)
+epsilon 0.1
+Episode 1611 ended with score: 2 (6 frames in 0.809649s for 7 fps)
+epsilon 0.1
+Episode 1612 ended with score: 1 (11 frames in 1.251860s for 8 fps)
+epsilon 0.1
+Episode 1613 ended with score: 1 (3 frames in 0.483699s for 6 fps)
+epsilon 0.1
+Episode 1614 ended with score: 2 (16 frames in 4.452320s for 3 fps)
+epsilon 0.1
+Episode 1615 ended with score: 0 (10 frames in 1.234526s for 8 fps)
+epsilon 0.1
+Episode 1616 ended with score: 1 (3 frames in 0.445359s for 6 fps)
+epsilon 0.1
+Episode 1617 ended with score: 1 (13 frames in 1.487662s for 8 fps)
+epsilon 0.1
+Episode 1618 ended with score: 27 (60 frames in 6.374283s for 9 fps)
+epsilon 0.1
+Episode 1619 ended with score: 1 (6 frames in 0.653501s for 9 fps)
+epsilon 0.1
+Episode 1620 ended with score: 0 (1 frames in 0.090029s for 11 fps)
+epsilon 0.1
+Episode 1621 ended with score: 1 (4 frames in 0.710017s for 5 fps)
+epsilon 0.1
+Episode 1622 ended with score: 0 (2 frames in 2.510329s for 0 fps)
+epsilon 0.1
+Episode 1623 ended with score: 28 (78 frames in 8.110590s for 9 fps)
+epsilon 0.1
+Episode 1624 ended with score: 8 (25 frames in 2.789996s for 8 fps)
+epsilon 0.1
+Episode 1625 ended with score: 1 (4 frames in 0.662957s for 6 fps)
+epsilon 0.1
+Episode 1626 ended with score: 0 (2 frames in 0.506588s for 3 fps)
+epsilon 0.1
+Episode 1627 ended with score: 0 (3 frames in 0.504597s for 5 fps)
+epsilon 0.1
+Episode 1628 ended with score: -3 (66 frames in 6.966945s for 9 fps)
+epsilon 0.1
+Episode 1629 ended with score: -2 (12 frames in 1.512700s for 7 fps)
+epsilon 0.1
+Episode 1630 ended with score: -3 (42 frames in 4.558160s for 9 fps)
+epsilon 0.1
+Episode 1631 ended with score: 11 (46 frames in 4.854813s for 9 fps)
+epsilon 0.1
+Episode 1632 ended with score: 0 (3 frames in 0.506538s for 5 fps)
+epsilon 0.1
+Episode 1633 ended with score: 3 (16 frames in 1.732866s for 9 fps)
+epsilon 0.1
+Episode 1634 ended with score: 0 (4 frames in 3.227139s for 1 fps)
+epsilon 0.1
+Episode 1635 ended with score: 7 (31 frames in 3.368340s for 9 fps)
+epsilon 0.1
+Episode 1636 ended with score: 47 (246 frames in 25.639414s for 9 fps)
+epsilon 0.1
+Episode 1637 ended with score: 2 (12 frames in 1.435359s for 8 fps)
+epsilon 0.1
+Episode 1638 ended with score: 5 (85 frames in 11.222335s for 7 fps)
+epsilon 0.1
+Episode 1639 ended with score: -3 (46 frames in 4.849815s for 9 fps)
+epsilon 0.1
+Episode 1640 ended with score: 10 (23 frames in 2.645008s for 8 fps)
+epsilon 0.1
+Episode 1641 ended with score: 10 (26 frames in 2.861490s for 9 fps)
+epsilon 0.1
+Episode 1642 ended with score: 1 (14 frames in 1.605159s for 8 fps)
+epsilon 0.1
+Episode 1643 ended with score: 69 (174 frames in 20.731637s for 8 fps)
+epsilon 0.1
+Episode 1644 ended with score: 0 (2 frames in 0.207660s for 9 fps)
+epsilon 0.1
+Episode 1645 ended with score: 1 (3 frames in 0.559596s for 5 fps)
+epsilon 0.1
+Episode 1646 ended with score: 0 (4 frames in 0.496390s for 8 fps)
+epsilon 0.1
+Episode 1647 ended with score: 22 (94 frames in 9.974599s for 9 fps)
+epsilon 0.1
+Episode 1648 ended with score: 1 (3 frames in 0.543000s for 5 fps)
+epsilon 0.1
+Episode 1649 ended with score: 1 (3 frames in 0.465861s for 6 fps)
+epsilon 0.1
+Episode 1650 ended with score: 6 (18 frames in 1.990702s for 9 fps)
+epsilon 0.1
+Episode 1651 ended with score: 0 (3 frames in 0.398458s for 7 fps)
+epsilon 0.1
+Episode 1652 ended with score: 0 (3 frames in 0.482253s for 6 fps)
+epsilon 0.1
+Episode 1653 ended with score: 5 (27 frames in 2.899319s for 9 fps)
+epsilon 0.1
+Episode 1654 ended with score: 11 (42 frames in 4.501999s for 9 fps)
+epsilon 0.1
+Episode 1655 ended with score: 11 (19 frames in 2.219447s for 8 fps)
+epsilon 0.1
+Episode 1656 ended with score: 1 (3 frames in 0.366826s for 8 fps)
+epsilon 0.1
+Episode 1657 ended with score: 0 (2 frames in 0.275753s for 7 fps)
+epsilon 0.1
+Episode 1658 ended with score: 1 (4 frames in 0.541725s for 7 fps)
+epsilon 0.1
+Episode 1659 ended with score: 5 (13 frames in 3.764201s for 3 fps)
+epsilon 0.1
+Episode 1660 ended with score: 3 (9 frames in 1.052095s for 8 fps)
+epsilon 0.1
+Episode 1661 ended with score: 1 (15 frames in 1.656537s for 9 fps)
+epsilon 0.1
+Episode 1662 ended with score: 0 (8 frames in 0.956920s for 8 fps)
+epsilon 0.1
+Episode 1663 ended with score: 0 (9 frames in 1.040709s for 8 fps)
+epsilon 0.1
+Episode 1664 ended with score: 0 (3 frames in 0.492008s for 6 fps)
+epsilon 0.1
+Episode 1665 ended with score: 0 (12 frames in 1.357740s for 8 fps)
+epsilon 0.1
+Episode 1666 ended with score: 10 (24 frames in 2.701227s for 8 fps)
+epsilon 0.1
+Episode 1667 ended with score: 1 (5 frames in 0.566181s for 8 fps)
+epsilon 0.1
+Episode 1668 ended with score: 5 (30 frames in 3.295061s for 9 fps)
+epsilon 0.1
+Episode 1669 ended with score: 1 (3 frames in 0.515548s for 5 fps)
+epsilon 0.1
+Episode 1670 ended with score: 0 (5 frames in 0.693062s for 7 fps)
+epsilon 0.1
+Episode 1671 ended with score: 2 (15 frames in 1.803849s for 8 fps)
+epsilon 0.1
+Episode 1672 ended with score: 11 (64 frames in 6.757533s for 9 fps)
+epsilon 0.1
+Episode 1673 ended with score: 19 (53 frames in 5.630881s for 9 fps)
+epsilon 0.1
+Episode 1674 ended with score: 0 (3 frames in 0.486799s for 6 fps)
+epsilon 0.1
+Episode 1675 ended with score: 8 (30 frames in 3.260197s for 9 fps)
+epsilon 0.1
+Episode 1676 ended with score: 1 (3 frames in 0.491795s for 6 fps)
+epsilon 0.1
+Episode 1677 ended with score: 1 (3 frames in 0.523513s for 5 fps)
+epsilon 0.1
+Episode 1678 ended with score: 3 (18 frames in 4.764625s for 3 fps)
+epsilon 0.1
+Episode 1679 ended with score: 0 (3 frames in 0.495440s for 6 fps)
+epsilon 0.1
+Episode 1680 ended with score: 0 (3 frames in 0.471792s for 6 fps)
+epsilon 0.1
+Episode 1681 ended with score: 0 (4 frames in 0.440964s for 9 fps)
+epsilon 0.1
+Episode 1682 ended with score: 0 (4 frames in 0.467974s for 8 fps)
+epsilon 0.1
+Episode 1683 ended with score: 3 (23 frames in 2.408507s for 9 fps)
+epsilon 0.1
+Episode 1684 ended with score: 0 (1 frames in 0.051833s for 19 fps)
+epsilon 0.1
+Episode 1685 ended with score: 1 (3 frames in 0.494657s for 6 fps)
+epsilon 0.1
+Episode 1686 ended with score: 0 (3 frames in 0.467065s for 6 fps)
+epsilon 0.1
+Episode 1687 ended with score: 5 (35 frames in 3.757113s for 9 fps)
+epsilon 0.1
+Episode 1688 ended with score: 19 (41 frames in 4.444612s for 9 fps)
+epsilon 0.1
+Episode 1689 ended with score: 19 (49 frames in 5.231037s for 9 fps)
+epsilon 0.1
+Episode 1690 ended with score: 0 (3 frames in 0.488954s for 6 fps)
+epsilon 0.1
+Episode 1691 ended with score: 0 (19 frames in 2.145716s for 8 fps)
+epsilon 0.1
+Episode 1692 ended with score: 38 (110 frames in 14.230706s for 7 fps)
+epsilon 0.1
+Episode 1693 ended with score: 85 (201 frames in 20.946249s for 9 fps)
+epsilon 0.1
+Episode 1694 ended with score: 9 (32 frames in 3.558278s for 8 fps)
+epsilon 0.1
+Episode 1695 ended with score: 9 (31 frames in 3.293127s for 9 fps)
+epsilon 0.1
+Episode 1696 ended with score: 2 (4 frames in 0.616194s for 6 fps)
+epsilon 0.1
+Episode 1697 ended with score: 18 (79 frames in 10.449967s for 7 fps)
+epsilon 0.1
+Episode 1698 ended with score: -2 (28 frames in 3.044012s for 9 fps)
+epsilon 0.1
+Episode 1699 ended with score: 0 (3 frames in 0.509551s for 5 fps)
+epsilon 0.1
+Episode 1700 ended with score: 14 (31 frames in 3.356308s for 9 fps)
+epsilon 0.1
+Episode 1701 ended with score: 0 (4 frames in 0.533640s for 7 fps)
+epsilon 0.1
+Episode 1702 ended with score: 0 (19 frames in 2.160038s for 8 fps)
+epsilon 0.1
+Episode 1703 ended with score: 0 (23 frames in 2.525750s for 9 fps)
+epsilon 0.1
+Episode 1704 ended with score: 0 (3 frames in 0.496670s for 6 fps)
+epsilon 0.1
+Episode 1705 ended with score: 18 (57 frames in 5.994510s for 9 fps)
+epsilon 0.1
+Episode 1706 ended with score: 7 (29 frames in 3.191236s for 9 fps)
+epsilon 0.1
+Episode 1707 ended with score: 4 (55 frames in 8.444994s for 6 fps)
+epsilon 0.1
+Episode 1708 ended with score: 1 (8 frames in 0.945635s for 8 fps)
+epsilon 0.1
+Episode 1709 ended with score: 1 (4 frames in 0.640367s for 6 fps)
+epsilon 0.1
+Episode 1710 ended with score: 1 (8 frames in 0.942528s for 8 fps)
+epsilon 0.1
+Episode 1711 ended with score: 1 (3 frames in 0.528348s for 5 fps)
+epsilon 0.1
+Episode 1712 ended with score: 7 (21 frames in 2.318470s for 9 fps)
+epsilon 0.1
+Episode 1713 ended with score: 85 (263 frames in 29.839009s for 8 fps)
+epsilon 0.1
+Episode 1714 ended with score: 20 (80 frames in 8.426238s for 9 fps)
+epsilon 0.1
+Episode 1715 ended with score: 53 (189 frames in 19.593084s for 9 fps)
+epsilon 0.1
+Episode 1716 ended with score: -10 (134 frames in 16.657399s for 8 fps)
+epsilon 0.1
+Episode 1717 ended with score: 0 (3 frames in 0.453081s for 6 fps)
+epsilon 0.1
+Episode 1718 ended with score: 8 (64 frames in 6.770905s for 9 fps)
+epsilon 0.1
+Episode 1719 ended with score: 43 (104 frames in 10.831871s for 9 fps)
+epsilon 0.1
+Episode 1720 ended with score: 0 (2 frames in 0.282071s for 7 fps)
+epsilon 0.1
+Episode 1721 ended with score: 0 (3 frames in 0.485130s for 6 fps)
+epsilon 0.1
+Episode 1722 ended with score: 2 (19 frames in 2.073199s for 9 fps)
+epsilon 0.1
+Episode 1723 ended with score: 0 (11 frames in 1.297559s for 8 fps)
+epsilon 0.1
+Episode 1724 ended with score: 58 (130 frames in 13.575350s for 9 fps)
+epsilon 0.1
+Episode 1725 ended with score: 20 (63 frames in 6.637576s for 9 fps)
+epsilon 0.1
+Episode 1726 ended with score: 1 (13 frames in 1.416193s for 9 fps)
+epsilon 0.1
+Episode 1727 ended with score: 0 (22 frames in 2.305647s for 9 fps)
+epsilon 0.1
+Episode 1728 ended with score: 0 (12 frames in 1.351280s for 8 fps)
+epsilon 0.1
+Episode 1729 ended with score: 16 (37 frames in 6.168766s for 5 fps)
+epsilon 0.1
+Episode 1730 ended with score: 30 (83 frames in 8.758340s for 9 fps)
+epsilon 0.1
+Episode 1731 ended with score: 0 (3 frames in 0.485347s for 6 fps)

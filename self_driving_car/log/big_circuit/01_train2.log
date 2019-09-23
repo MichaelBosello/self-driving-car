@@ -1,0 +1,1183 @@
+Arguments:  Namespace(compress_replay=False, epsilon=0.1, epsilon_decay=1, epsilon_min=0.1, eval_epoch_steps=500, frame=2, gamma=0.996, learning_rate=0.0002, model='train1/models/', normalize_weights=False, observation_steps=350, prioritized_replay=False, replay_capacity=100000, save_model_freq=2000, target_model_update_freq=300, tensorboard_logging_freq=300, train_epoch_steps=5000)
+Building network for policy trainable=True
+Tensor("screens:0", shape=(?, 84, 84, 2), dtype=uint8)
+Tensor("truediv:0", shape=(?, 84, 84, 2), dtype=float32)
+Tensor("cnn1_policy/h_conv1:0", shape=(?, 20, 20, 16), dtype=float32)
+Tensor("cnn2_policy/h_conv2:0", shape=(?, 9, 9, 32), dtype=float32)
+Tensor("cnn3_policy/h_conv3:0", shape=(?, 7, 7, 32), dtype=float32)
+Tensor("h_conv3_flat:0", shape=(?, 1568), dtype=float32)
+Tensor("fc1_policy/h_fc1:0", shape=(?, 256), dtype=float32)
+Tensor("fc2_policy/add:0", shape=(?, 4), dtype=float32)
+Building network for target trainable=False
+Tensor("screens_1:0", shape=(?, 84, 84, 2), dtype=uint8)
+Tensor("truediv_1:0", shape=(?, 84, 84, 2), dtype=float32)
+Tensor("cnn1_target/h_conv1:0", shape=(?, 20, 20, 16), dtype=float32)
+Tensor("cnn2_target/h_conv2:0", shape=(?, 9, 9, 32), dtype=float32)
+Tensor("cnn3_target/h_conv3:0", shape=(?, 7, 7, 32), dtype=float32)
+Tensor("h_conv3_flat_1:0", shape=(?, 1568), dtype=float32)
+Tensor("fc1_target/h_fc1:0", shape=(?, 256), dtype=float32)
+Tensor("fc2_target/add:0", shape=(?, 4), dtype=float32)
+a (?, 4)
+y_ (?,)
+y_a (?,)
+Loading from model file train1/models/
+Episode 0 ended with score: 0 (0:00:07.628864 elapsed)
+epsilon 0.1
+Episode 1 ended with score: 7 (0:00:12.360441 elapsed)
+epsilon 0.1
+Episode 2 ended with score: 5 (0:00:16.711255 elapsed)
+epsilon 0.1
+Episode 3 ended with score: 0 (0:00:19.372818 elapsed)
+epsilon 0.1
+Episode 4 ended with score: 0 (0:00:19.947045 elapsed)
+epsilon 0.1
+Episode 5 ended with score: 4 (0:00:24.392537 elapsed)
+epsilon 0.1
+Episode 6 ended with score: 10 (0:00:34.645893 elapsed)
+epsilon 0.1
+Episode 7 ended with score: 5 (0:00:37.605194 elapsed)
+epsilon 0.1
+Episode 8 ended with score: 15 (0:00:50.820774 elapsed)
+epsilon 0.1
+Episode 9 ended with score: 0 (0:00:51.981943 elapsed)
+epsilon 0.1
+Episode 10 ended with score: 0 (0:00:52.446993 elapsed)
+epsilon 0.1
+Episode 11 ended with score: 0 (0:00:53.204540 elapsed)
+epsilon 0.1
+Episode 12 ended with score: 0 (0:00:53.782469 elapsed)
+epsilon 0.1
+Episode 13 ended with score: 0 (0:00:55.155857 elapsed)
+epsilon 0.1
+Episode 14 ended with score: 0 (0:00:55.611933 elapsed)
+epsilon 0.1
+Episode 15 ended with score: 1 (0:00:58.135096 elapsed)
+epsilon 0.1
+Episode 16 ended with score: 1 (0:01:04.459584 elapsed)
+epsilon 0.1
+Episode 17 ended with score: 6 (0:01:08.969205 elapsed)
+epsilon 0.1
+Episode 18 ended with score: 0 (0:01:10.639922 elapsed)
+epsilon 0.1
+Episode 19 ended with score: 5 (0:01:13.699768 elapsed)
+epsilon 0.1
+Episode 20 ended with score: 0 (0:01:14.331481 elapsed)
+epsilon 0.1
+Episode 21 ended with score: 0 (0:01:15.309955 elapsed)
+epsilon 0.1
+Episode 22 ended with score: 1 (0:01:18.932811 elapsed)
+epsilon 0.1
+Episode 23 ended with score: -1 (0:01:20.763354 elapsed)
+epsilon 0.1
+Episode 24 ended with score: 0 (0:01:22.154090 elapsed)
+epsilon 0.1
+Episode 25 ended with score: 0 (0:01:23.144477 elapsed)
+epsilon 0.1
+Episode 26 ended with score: 9 (0:01:27.262364 elapsed)
+epsilon 0.1
+Episode 27 ended with score: 2 (0:01:29.932314 elapsed)
+epsilon 0.1
+Episode 28 ended with score: 8 (0:01:36.643462 elapsed)
+epsilon 0.1
+Episode 29 ended with score: 2 (0:01:38.771621 elapsed)
+epsilon 0.1
+Episode 30 ended with score: 0 (0:01:40.222877 elapsed)
+epsilon 0.1
+Episode 31 ended with score: 0 (0:01:40.798486 elapsed)
+epsilon 0.1
+Episode 32 ended with score: 0 (0:01:41.505120 elapsed)
+epsilon 0.1
+Episode 33 ended with score: 1 (0:01:43.201320 elapsed)
+epsilon 0.1
+Episode 34 ended with score: 10 (0:01:52.646331 elapsed)
+epsilon 0.1
+Episode 35 ended with score: 2 (0:01:57.679231 elapsed)
+epsilon 0.1
+Episode 36 ended with score: 0 (0:01:57.912263 elapsed)
+epsilon 0.1
+Episode 37 ended with score: 0 (0:01:59.570412 elapsed)
+epsilon 0.1
+Episode 38 ended with score: 0 (0:02:00.845016 elapsed)
+epsilon 0.1
+Episode 39 ended with score: 0 (0:02:01.393810 elapsed)
+epsilon 0.1
+Episode 40 ended with score: 1 (0:02:04.634594 elapsed)
+epsilon 0.1
+Episode 41 ended with score: 2 (0:02:07.359692 elapsed)
+epsilon 0.1
+Episode 42 ended with score: 1 (0:02:09.468816 elapsed)
+epsilon 0.1
+Episode 43 ended with score: 5 (0:02:13.701087 elapsed)
+epsilon 0.1
+Episode 44 ended with score: 1 (0:02:16.025970 elapsed)
+epsilon 0.1
+Episode 45 ended with score: 0 (0:02:16.964715 elapsed)
+epsilon 0.1
+Episode 46 ended with score: 0 (0:02:17.250973 elapsed)
+epsilon 0.1
+Episode 47 ended with score: 0 (0:02:18.120576 elapsed)
+epsilon 0.1
+Episode 48 ended with score: 3 (0:02:20.472115 elapsed)
+epsilon 0.1
+Episode 49 ended with score: 17 (0:02:30.588665 elapsed)
+epsilon 0.1
+Episode 50 ended with score: 15 (0:02:39.972396 elapsed)
+epsilon 0.1
+Episode 51 ended with score: 0 (0:02:40.533831 elapsed)
+epsilon 0.1
+Episode 52 ended with score: 0 (0:02:41.186347 elapsed)
+epsilon 0.1
+Episode 53 ended with score: 2 (0:02:43.938521 elapsed)
+epsilon 0.1
+Episode 54 ended with score: 5 (0:02:46.956671 elapsed)
+epsilon 0.1
+Episode 55 ended with score: 0 (0:02:47.731349 elapsed)
+epsilon 0.1
+Episode 56 ended with score: 2 (0:02:50.431982 elapsed)
+epsilon 0.1
+Episode 57 ended with score: 1 (0:02:51.145356 elapsed)
+epsilon 0.1
+Episode 58 ended with score: 0 (0:02:51.679828 elapsed)
+epsilon 0.1
+Episode 59 ended with score: 1 (0:03:01.913644 elapsed)
+epsilon 0.1
+Episode 60 ended with score: 3 (0:03:04.085131 elapsed)
+epsilon 0.1
+Episode 61 ended with score: 0 (0:03:04.778162 elapsed)
+epsilon 0.1
+Episode 62 ended with score: 9 (0:03:09.307477 elapsed)
+epsilon 0.1
+Episode 63 ended with score: 7 (0:03:16.166525 elapsed)
+epsilon 0.1
+Episode 64 ended with score: 23 (0:03:28.740377 elapsed)
+epsilon 0.1
+Episode 65 ended with score: 0 (0:03:28.964226 elapsed)
+epsilon 0.1
+Episode 66 ended with score: 0 (0:03:29.569279 elapsed)
+epsilon 0.1
+Episode 67 ended with score: 8 (0:03:35.093123 elapsed)
+epsilon 0.1
+Episode 68 ended with score: 0 (0:03:35.618960 elapsed)
+epsilon 0.1
+Episode 69 ended with score: 0 (0:03:36.459318 elapsed)
+epsilon 0.1
+Episode 70 ended with score: 1 (0:03:40.064254 elapsed)
+epsilon 0.1
+Episode 71 ended with score: 0 (0:03:44.446934 elapsed)
+epsilon 0.1
+Episode 72 ended with score: 3 (0:03:47.386696 elapsed)
+epsilon 0.1
+Episode 73 ended with score: 0 (0:03:47.944675 elapsed)
+epsilon 0.1
+Episode 74 ended with score: 0 (0:03:48.692346 elapsed)
+epsilon 0.1
+Episode 75 ended with score: 0 (0:03:49.834886 elapsed)
+epsilon 0.1
+Episode 76 ended with score: 1 (0:03:53.026616 elapsed)
+epsilon 0.1
+Episode 77 ended with score: 2 (0:04:03.464079 elapsed)
+epsilon 0.1
+Episode 78 ended with score: 0 (0:04:04.174321 elapsed)
+epsilon 0.1
+Episode 79 ended with score: 0 (0:04:04.828646 elapsed)
+epsilon 0.1
+Episode 80 ended with score: 0 (0:04:05.433825 elapsed)
+epsilon 0.1
+Episode 81 ended with score: 2 (0:04:08.205669 elapsed)
+epsilon 0.1
+Episode 82 ended with score: 0 (0:04:09.615774 elapsed)
+epsilon 0.1
+Episode 83 ended with score: 0 (0:04:10.996236 elapsed)
+epsilon 0.1
+Episode 84 ended with score: 6 (0:04:15.696857 elapsed)
+epsilon 0.1
+Episode 85 ended with score: 0 (0:04:16.534088 elapsed)
+epsilon 0.1
+Episode 86 ended with score: 0 (0:04:17.547298 elapsed)
+epsilon 0.1
+Episode 87 ended with score: 0 (0:04:18.637497 elapsed)
+epsilon 0.1
+Episode 88 ended with score: 0 (0:04:23.913720 elapsed)
+epsilon 0.1
+Episode 89 ended with score: 0 (0:04:24.353431 elapsed)
+epsilon 0.1
+Episode 90 ended with score: 0 (0:04:24.858651 elapsed)
+epsilon 0.1
+Episode 91 ended with score: 0 (0:04:25.552015 elapsed)
+epsilon 0.1
+Episode 92 ended with score: 0 (0:04:26.445870 elapsed)
+epsilon 0.1
+Episode 93 ended with score: 4 (0:04:30.523701 elapsed)
+epsilon 0.1
+Episode 94 ended with score: 18 (0:04:48.564108 elapsed)
+epsilon 0.1
+Episode 95 ended with score: 0 (0:04:49.309776 elapsed)
+epsilon 0.1
+Episode 96 ended with score: 0 (0:04:50.273876 elapsed)
+epsilon 0.1
+Episode 97 ended with score: 0 (0:04:52.277421 elapsed)
+epsilon 0.1
+Episode 98 ended with score: 0 (0:04:52.844401 elapsed)
+epsilon 0.1
+Episode 99 ended with score: 0 (0:04:53.716878 elapsed)
+epsilon 0.1
+Episode 100 ended with score: 0 (0:04:54.495764 elapsed)
+epsilon 0.1
+Episode 101 ended with score: 0 (0:04:54.989457 elapsed)
+epsilon 0.1
+Episode 102 ended with score: 0 (0:04:55.809600 elapsed)
+epsilon 0.1
+Episode 103 ended with score: 3 (0:05:00.834909 elapsed)
+epsilon 0.1
+Episode 104 ended with score: 0 (0:05:01.645668 elapsed)
+epsilon 0.1
+Episode 105 ended with score: 1 (0:05:02.554625 elapsed)
+epsilon 0.1
+Episode 106 ended with score: 0 (0:05:03.597908 elapsed)
+epsilon 0.1
+Episode 107 ended with score: 2 (0:05:07.842601 elapsed)
+epsilon 0.1
+Episode 108 ended with score: 0 (0:05:09.152454 elapsed)
+epsilon 0.1
+Episode 109 ended with score: 6 (0:05:13.458784 elapsed)
+epsilon 0.1
+Episode 110 ended with score: 0 (0:05:14.117157 elapsed)
+epsilon 0.1
+Episode 111 ended with score: 0 (0:05:14.721577 elapsed)
+epsilon 0.1
+Episode 112 ended with score: 0 (0:05:15.284203 elapsed)
+epsilon 0.1
+Episode 113 ended with score: 6 (0:05:20.792053 elapsed)
+epsilon 0.1
+Episode 114 ended with score: 7 (0:05:25.982913 elapsed)
+epsilon 0.1
+Episode 115 ended with score: 0 (0:05:27.291956 elapsed)
+epsilon 0.1
+Episode 116 ended with score: 6 (0:05:31.552889 elapsed)
+epsilon 0.1
+Episode 117 ended with score: 5 (0:05:38.271790 elapsed)
+epsilon 0.1
+Episode 118 ended with score: 0 (0:05:39.944088 elapsed)
+epsilon 0.1
+Episode 119 ended with score: 0 (0:05:41.574366 elapsed)
+epsilon 0.1
+Episode 120 ended with score: 0 (0:05:42.182611 elapsed)
+epsilon 0.1
+Episode 121 ended with score: 0 (0:05:44.705651 elapsed)
+epsilon 0.1
+Episode 122 ended with score: 0 (0:05:45.436375 elapsed)
+epsilon 0.1
+Episode 123 ended with score: 1 (0:05:46.835981 elapsed)
+epsilon 0.1
+Episode 124 ended with score: 18 (0:06:02.012653 elapsed)
+epsilon 0.1
+Episode 125 ended with score: 1 (0:06:03.137604 elapsed)
+epsilon 0.1
+Episode 126 ended with score: 1 (0:06:04.298342 elapsed)
+epsilon 0.1
+Episode 127 ended with score: 0 (0:06:05.712339 elapsed)
+epsilon 0.1
+Episode 128 ended with score: 0 (0:06:06.583261 elapsed)
+epsilon 0.1
+Episode 129 ended with score: 19 (0:06:21.657632 elapsed)
+epsilon 0.1
+Episode 130 ended with score: 6 (0:06:27.111947 elapsed)
+epsilon 0.1
+Episode 131 ended with score: 9 (0:06:32.122785 elapsed)
+epsilon 0.1
+Episode 132 ended with score: 0 (0:06:32.817375 elapsed)
+epsilon 0.1
+Episode 133 ended with score: 6 (0:06:39.253624 elapsed)
+epsilon 0.1
+Episode 134 ended with score: 0 (0:06:40.975702 elapsed)
+epsilon 0.1
+Episode 135 ended with score: 0 (0:06:42.276783 elapsed)
+epsilon 0.1
+Episode 136 ended with score: 0 (0:06:42.990690 elapsed)
+epsilon 0.1
+Episode 137 ended with score: 0 (0:06:45.074393 elapsed)
+epsilon 0.1
+Episode 138 ended with score: 5 (0:06:49.483160 elapsed)
+epsilon 0.1
+Episode 139 ended with score: 0 (0:06:50.846933 elapsed)
+epsilon 0.1
+Episode 140 ended with score: 0 (0:06:51.411286 elapsed)
+epsilon 0.1
+Episode 141 ended with score: 0 (0:06:51.967110 elapsed)
+epsilon 0.1
+Episode 142 ended with score: 0 (0:06:52.552059 elapsed)
+epsilon 0.1
+Episode 143 ended with score: 0 (0:06:54.841004 elapsed)
+epsilon 0.1
+Episode 144 ended with score: 5 (0:06:59.257808 elapsed)
+epsilon 0.1
+Episode 145 ended with score: 9 (0:07:03.930008 elapsed)
+epsilon 0.1
+Episode 146 ended with score: 0 (0:07:04.138684 elapsed)
+epsilon 0.1
+Episode 147 ended with score: 0 (0:07:04.841787 elapsed)
+epsilon 0.1
+Episode 148 ended with score: 0 (0:07:05.369542 elapsed)
+epsilon 0.1
+Episode 149 ended with score: 0 (0:07:06.396269 elapsed)
+epsilon 0.1
+Episode 150 ended with score: 0 (0:07:06.593292 elapsed)
+epsilon 0.1
+Episode 151 ended with score: 0 (0:07:06.736585 elapsed)
+epsilon 0.1
+Episode 152 ended with score: 0 (0:07:06.866908 elapsed)
+epsilon 0.1
+Episode 153 ended with score: 0 (0:07:07.974417 elapsed)
+epsilon 0.1
+Episode 154 ended with score: 0 (0:07:08.173668 elapsed)
+epsilon 0.1
+Episode 155 ended with score: 0 (0:07:08.438728 elapsed)
+epsilon 0.1
+Episode 156 ended with score: 0 (0:07:08.690615 elapsed)
+epsilon 0.1
+Episode 157 ended with score: 4 (0:07:12.728828 elapsed)
+epsilon 0.1
+Episode 158 ended with score: 0 (0:07:13.404308 elapsed)
+epsilon 0.1
+Episode 159 ended with score: 0 (0:07:13.948619 elapsed)
+epsilon 0.1
+Episode 160 ended with score: 0 (0:07:17.269733 elapsed)
+epsilon 0.1
+Episode 161 ended with score: 0 (0:07:17.910251 elapsed)
+epsilon 0.1
+Episode 162 ended with score: 2 (0:07:20.819162 elapsed)
+epsilon 0.1
+Episode 163 ended with score: 0 (0:07:21.565367 elapsed)
+epsilon 0.1
+Episode 164 ended with score: 14 (0:07:29.843002 elapsed)
+epsilon 0.1
+Episode 165 ended with score: 1 (0:07:32.963716 elapsed)
+epsilon 0.1
+Episode 166 ended with score: 3 (0:07:36.786954 elapsed)
+epsilon 0.1
+Episode 167 ended with score: 3 (0:07:40.013084 elapsed)
+epsilon 0.1
+Episode 168 ended with score: 0 (0:07:44.484861 elapsed)
+epsilon 0.1
+Episode 169 ended with score: 16 (0:07:56.113440 elapsed)
+epsilon 0.1
+Episode 170 ended with score: 2 (0:08:00.452051 elapsed)
+epsilon 0.1
+Episode 171 ended with score: 0 (0:08:02.079828 elapsed)
+epsilon 0.1
+Episode 172 ended with score: 0 (0:08:02.456694 elapsed)
+epsilon 0.1
+Episode 173 ended with score: 0 (0:08:03.310726 elapsed)
+epsilon 0.1
+Episode 174 ended with score: 10 (0:08:09.675719 elapsed)
+epsilon 0.1
+Episode 175 ended with score: 0 (0:08:10.258230 elapsed)
+epsilon 0.1
+Episode 176 ended with score: 2 (0:08:12.454716 elapsed)
+epsilon 0.1
+Episode 177 ended with score: 0 (0:08:17.554433 elapsed)
+epsilon 0.1
+Episode 178 ended with score: 0 (0:08:18.028340 elapsed)
+epsilon 0.1
+Episode 179 ended with score: -1 (0:08:22.946792 elapsed)
+epsilon 0.1
+Episode 180 ended with score: 0 (0:08:26.961412 elapsed)
+epsilon 0.1
+Episode 181 ended with score: 0 (0:08:28.236357 elapsed)
+epsilon 0.1
+Episode 182 ended with score: 17 (0:08:39.352805 elapsed)
+epsilon 0.1
+Episode 183 ended with score: 0 (0:08:40.043027 elapsed)
+epsilon 0.1
+Episode 184 ended with score: 0 (0:08:40.754085 elapsed)
+epsilon 0.1
+Episode 185 ended with score: 0 (0:08:40.889852 elapsed)
+epsilon 0.1
+Episode 186 ended with score: 1 (0:08:42.496367 elapsed)
+epsilon 0.1
+Episode 187 ended with score: 8 (0:08:50.742592 elapsed)
+epsilon 0.1
+Episode 188 ended with score: 0 (0:08:51.594961 elapsed)
+epsilon 0.1
+Episode 189 ended with score: 2 (0:08:56.464646 elapsed)
+epsilon 0.1
+Episode 190 ended with score: 2 (0:08:59.708476 elapsed)
+epsilon 0.1
+Episode 191 ended with score: 10 (0:09:08.599793 elapsed)
+epsilon 0.1
+Episode 192 ended with score: 1 (0:09:10.914370 elapsed)
+epsilon 0.1
+Episode 193 ended with score: 0 (0:09:11.515274 elapsed)
+epsilon 0.1
+Episode 194 ended with score: 0 (0:09:12.225408 elapsed)
+epsilon 0.1
+Episode 195 ended with score: 6 (0:09:20.698839 elapsed)
+epsilon 0.1
+Episode 196 ended with score: 0 (0:09:20.979070 elapsed)
+epsilon 0.1
+Episode 197 ended with score: 0 (0:09:21.372633 elapsed)
+epsilon 0.1
+Episode 198 ended with score: 1 (0:09:23.934584 elapsed)
+epsilon 0.1
+Episode 199 ended with score: 0 (0:09:25.142461 elapsed)
+epsilon 0.1
+Episode 200 ended with score: 0 (0:09:25.755597 elapsed)
+epsilon 0.1
+Episode 201 ended with score: 3 (0:09:30.459887 elapsed)
+epsilon 0.1
+Episode 202 ended with score: 4 (0:09:32.532935 elapsed)
+epsilon 0.1
+Episode 203 ended with score: 3 (0:09:35.958833 elapsed)
+epsilon 0.1
+Episode 204 ended with score: 1 (0:09:37.572409 elapsed)
+epsilon 0.1
+Episode 205 ended with score: 4 (0:09:40.968460 elapsed)
+epsilon 0.1
+Episode 206 ended with score: 0 (0:09:41.634536 elapsed)
+epsilon 0.1
+Episode 207 ended with score: 0 (0:09:43.315166 elapsed)
+epsilon 0.1
+Episode 208 ended with score: 0 (0:09:44.370232 elapsed)
+epsilon 0.1
+Episode 209 ended with score: 7 (0:09:50.023395 elapsed)
+epsilon 0.1
+Episode 210 ended with score: 7 (0:10:01.249819 elapsed)
+epsilon 0.1
+Episode 211 ended with score: 0 (0:10:02.015895 elapsed)
+epsilon 0.1
+Episode 212 ended with score: 0 (0:10:02.151578 elapsed)
+epsilon 0.1
+Episode 213 ended with score: 0 (0:10:02.289789 elapsed)
+epsilon 0.1
+Episode 214 ended with score: 0 (0:10:02.881056 elapsed)
+epsilon 0.1
+Episode 215 ended with score: 0 (0:10:02.944340 elapsed)
+epsilon 0.1
+Episode 216 ended with score: 0 (0:10:03.080908 elapsed)
+epsilon 0.1
+Episode 217 ended with score: 1 (0:10:06.283159 elapsed)
+epsilon 0.1
+Episode 218 ended with score: 0 (0:10:06.786111 elapsed)
+epsilon 0.1
+Episode 219 ended with score: 0 (0:10:08.364537 elapsed)
+epsilon 0.1
+Episode 220 ended with score: 0 (0:10:08.786823 elapsed)
+epsilon 0.1
+Episode 221 ended with score: 0 (0:10:09.456790 elapsed)
+epsilon 0.1
+Episode 222 ended with score: 9 (0:10:14.853815 elapsed)
+epsilon 0.1
+Episode 223 ended with score: 0 (0:10:15.042292 elapsed)
+epsilon 0.1
+Episode 224 ended with score: 0 (0:10:15.412864 elapsed)
+epsilon 0.1
+Episode 225 ended with score: 39 (0:10:39.702133 elapsed)
+epsilon 0.1
+Episode 226 ended with score: 0 (0:10:40.513895 elapsed)
+epsilon 0.1
+Episode 227 ended with score: 0 (0:10:46.685798 elapsed)
+epsilon 0.1
+Episode 228 ended with score: 0 (0:10:46.913243 elapsed)
+epsilon 0.1
+Episode 229 ended with score: 0 (0:10:47.446889 elapsed)
+epsilon 0.1
+Episode 230 ended with score: 0 (0:10:47.898139 elapsed)
+epsilon 0.1
+Episode 231 ended with score: 21 (0:10:58.091997 elapsed)
+epsilon 0.1
+Episode 232 ended with score: 8 (0:11:10.754654 elapsed)
+epsilon 0.1
+Episode 233 ended with score: 3 (0:11:12.941070 elapsed)
+epsilon 0.1
+Episode 234 ended with score: 5 (0:11:17.465989 elapsed)
+epsilon 0.1
+Episode 235 ended with score: 0 (0:11:18.556171 elapsed)
+epsilon 0.1
+Episode 236 ended with score: 0 (0:11:20.486598 elapsed)
+epsilon 0.1
+Episode 237 ended with score: 0 (0:11:21.174284 elapsed)
+epsilon 0.1
+Episode 238 ended with score: 11 (0:11:32.976027 elapsed)
+epsilon 0.1
+Episode 239 ended with score: 0 (0:11:33.325122 elapsed)
+epsilon 0.1
+Episode 240 ended with score: 0 (0:11:34.879941 elapsed)
+epsilon 0.1
+Episode 241 ended with score: 0 (0:11:35.195583 elapsed)
+epsilon 0.1
+Episode 242 ended with score: 1 (0:11:38.392239 elapsed)
+epsilon 0.1
+Episode 243 ended with score: 0 (0:11:42.405111 elapsed)
+epsilon 0.1
+Episode 244 ended with score: 0 (0:11:43.929516 elapsed)
+epsilon 0.1
+Episode 245 ended with score: 0 (0:11:45.293508 elapsed)
+epsilon 0.1
+Episode 246 ended with score: 0 (0:11:45.958708 elapsed)
+epsilon 0.1
+Episode 247 ended with score: 0 (0:11:47.524636 elapsed)
+epsilon 0.1
+Episode 248 ended with score: 2 (0:11:50.860776 elapsed)
+epsilon 0.1
+Episode 249 ended with score: 0 (0:11:51.483307 elapsed)
+epsilon 0.1
+Episode 250 ended with score: 0 (0:11:52.129354 elapsed)
+epsilon 0.1
+Episode 251 ended with score: 4 (0:11:55.321830 elapsed)
+epsilon 0.1
+Episode 252 ended with score: 0 (0:11:55.933213 elapsed)
+epsilon 0.1
+Episode 253 ended with score: 0 (0:11:56.371628 elapsed)
+epsilon 0.1
+Episode 254 ended with score: 0 (0:11:56.906955 elapsed)
+epsilon 0.1
+Episode 255 ended with score: 13 (0:12:06.728782 elapsed)
+epsilon 0.1
+Episode 256 ended with score: 1 (0:12:08.557284 elapsed)
+epsilon 0.1
+Episode 257 ended with score: 1 (0:12:17.301765 elapsed)
+epsilon 0.1
+Episode 258 ended with score: 0 (0:12:17.840015 elapsed)
+epsilon 0.1
+Episode 259 ended with score: 0 (0:12:19.099925 elapsed)
+epsilon 0.1
+Episode 260 ended with score: 0 (0:12:19.804752 elapsed)
+epsilon 0.1
+Episode 261 ended with score: 42 (0:12:43.853548 elapsed)
+epsilon 0.1
+Episode 262 ended with score: 4 (0:12:48.143054 elapsed)
+epsilon 0.1
+Episode 263 ended with score: 0 (0:12:52.044696 elapsed)
+epsilon 0.1
+Episode 264 ended with score: -2 (0:12:55.334360 elapsed)
+epsilon 0.1
+Episode 265 ended with score: 0 (0:12:58.202697 elapsed)
+epsilon 0.1
+Episode 266 ended with score: 0 (0:13:00.572644 elapsed)
+epsilon 0.1
+Episode 267 ended with score: 0 (0:13:01.248401 elapsed)
+epsilon 0.1
+Episode 268 ended with score: 1 (0:13:03.216552 elapsed)
+epsilon 0.1
+Episode 269 ended with score: 0 (0:13:03.810772 elapsed)
+epsilon 0.1
+Episode 270 ended with score: 0 (0:13:06.509217 elapsed)
+epsilon 0.1
+Episode 271 ended with score: 13 (0:13:14.324410 elapsed)
+epsilon 0.1
+Episode 272 ended with score: 0 (0:13:14.975487 elapsed)
+epsilon 0.1
+Episode 273 ended with score: 10 (0:13:20.577331 elapsed)
+epsilon 0.1
+Episode 274 ended with score: 7 (0:13:25.298948 elapsed)
+epsilon 0.1
+Episode 275 ended with score: 7 (0:13:31.789382 elapsed)
+epsilon 0.1
+Episode 276 ended with score: 22 (0:13:50.350134 elapsed)
+epsilon 0.1
+Episode 277 ended with score: 0 (0:13:50.838368 elapsed)
+epsilon 0.1
+Episode 278 ended with score: 8 (0:13:55.225745 elapsed)
+epsilon 0.1
+Episode 279 ended with score: 0 (0:13:55.744641 elapsed)
+epsilon 0.1
+Episode 280 ended with score: 0 (0:14:04.388928 elapsed)
+epsilon 0.1
+Episode 281 ended with score: 2 (0:14:07.218562 elapsed)
+epsilon 0.1
+Episode 282 ended with score: 6 (0:14:10.353352 elapsed)
+epsilon 0.1
+Episode 283 ended with score: 0 (0:14:10.890558 elapsed)
+epsilon 0.1
+Episode 284 ended with score: 6 (0:14:15.886915 elapsed)
+epsilon 0.1
+Episode 285 ended with score: 0 (0:14:16.451385 elapsed)
+epsilon 0.1
+Episode 286 ended with score: 0 (0:14:17.458862 elapsed)
+epsilon 0.1
+Episode 287 ended with score: 4 (0:14:23.331497 elapsed)
+epsilon 0.1
+Episode 288 ended with score: 3 (0:14:25.834458 elapsed)
+epsilon 0.1
+Episode 289 ended with score: 0 (0:14:26.370536 elapsed)
+epsilon 0.1
+Episode 290 ended with score: 3 (0:14:29.404213 elapsed)
+epsilon 0.1
+Episode 291 ended with score: 1 (0:14:32.226499 elapsed)
+epsilon 0.1
+Episode 292 ended with score: 12 (0:14:39.596178 elapsed)
+epsilon 0.1
+Episode 293 ended with score: 7 (0:14:44.895203 elapsed)
+epsilon 0.1
+Episode 294 ended with score: 0 (0:14:45.920539 elapsed)
+epsilon 0.1
+Episode 295 ended with score: 0 (0:14:49.063560 elapsed)
+epsilon 0.1
+Episode 296 ended with score: 32 (0:15:06.016856 elapsed)
+epsilon 0.1
+Episode 297 ended with score: 7 (0:15:11.201133 elapsed)
+epsilon 0.1
+Episode 298 ended with score: 13 (0:15:18.277336 elapsed)
+epsilon 0.1
+Episode 299 ended with score: 0 (0:15:19.026604 elapsed)
+epsilon 0.1
+Episode 300 ended with score: 0 (0:15:19.599247 elapsed)
+epsilon 0.1
+Episode 301 ended with score: 3 (0:15:24.188129 elapsed)
+epsilon 0.1
+Episode 302 ended with score: 0 (0:15:28.321210 elapsed)
+epsilon 0.1
+Episode 303 ended with score: 0 (0:15:29.007298 elapsed)
+epsilon 0.1
+Episode 304 ended with score: 5 (0:15:34.012951 elapsed)
+epsilon 0.1
+Episode 305 ended with score: 0 (0:15:34.641480 elapsed)
+epsilon 0.1
+Episode 306 ended with score: 0 (0:15:35.187218 elapsed)
+epsilon 0.1
+Episode 307 ended with score: 13 (0:15:43.031239 elapsed)
+epsilon 0.1
+Episode 308 ended with score: 10 (0:15:49.240399 elapsed)
+epsilon 0.1
+Episode 309 ended with score: 1 (0:15:50.452813 elapsed)
+epsilon 0.1
+Episode 310 ended with score: 32 (0:16:07.026305 elapsed)
+epsilon 0.1
+Episode 311 ended with score: 0 (0:16:07.603922 elapsed)
+epsilon 0.1
+Episode 312 ended with score: 9 (0:16:13.042686 elapsed)
+epsilon 0.1
+Episode 313 ended with score: 0 (0:16:14.722709 elapsed)
+epsilon 0.1
+Episode 314 ended with score: 23 (0:16:31.170618 elapsed)
+epsilon 0.1
+Episode 315 ended with score: 6 (0:16:34.994131 elapsed)
+epsilon 0.1
+Episode 316 ended with score: 0 (0:16:35.680551 elapsed)
+epsilon 0.1
+Episode 317 ended with score: 7 (0:16:39.888748 elapsed)
+epsilon 0.1
+Episode 318 ended with score: 2 (0:16:42.296577 elapsed)
+epsilon 0.1
+Episode 319 ended with score: 0 (0:16:43.112880 elapsed)
+epsilon 0.1
+Episode 320 ended with score: 0 (0:16:44.004563 elapsed)
+epsilon 0.1
+Episode 321 ended with score: 0 (0:16:44.807519 elapsed)
+epsilon 0.1
+Episode 322 ended with score: 0 (0:16:45.405876 elapsed)
+epsilon 0.1
+Episode 323 ended with score: 0 (0:16:46.443788 elapsed)
+epsilon 0.1
+Episode 324 ended with score: 5 (0:16:51.086312 elapsed)
+epsilon 0.1
+Episode 325 ended with score: 0 (0:16:52.151046 elapsed)
+epsilon 0.1
+Episode 326 ended with score: 11 (0:16:58.657356 elapsed)
+epsilon 0.1
+Episode 327 ended with score: 0 (0:16:59.175896 elapsed)
+epsilon 0.1
+Episode 328 ended with score: 0 (0:16:59.984947 elapsed)
+epsilon 0.1
+Episode 329 ended with score: 8 (0:17:05.453113 elapsed)
+epsilon 0.1
+Episode 330 ended with score: 18 (0:17:14.620729 elapsed)
+epsilon 0.1
+Episode 331 ended with score: 0 (0:17:16.012131 elapsed)
+epsilon 0.1
+Episode 332 ended with score: 0 (0:17:16.545377 elapsed)
+epsilon 0.1
+Episode 333 ended with score: 0 (0:17:18.282257 elapsed)
+epsilon 0.1
+Episode 334 ended with score: 0 (0:17:18.806984 elapsed)
+epsilon 0.1
+Episode 335 ended with score: 0 (0:17:19.407962 elapsed)
+epsilon 0.1
+Episode 336 ended with score: 13 (0:17:29.505630 elapsed)
+epsilon 0.1
+Episode 337 ended with score: 12 (0:17:35.926091 elapsed)
+epsilon 0.1
+Episode 338 ended with score: 1 (0:17:38.634782 elapsed)
+epsilon 0.1
+Episode 339 ended with score: 0 (0:17:39.335232 elapsed)
+epsilon 0.1
+Episode 340 ended with score: 20 (0:17:54.681671 elapsed)
+epsilon 0.1
+Episode 341 ended with score: 1 (0:18:00.283034 elapsed)
+epsilon 0.1
+Episode 342 ended with score: 0 (0:18:01.661410 elapsed)
+epsilon 0.1
+Episode 343 ended with score: 4 (0:18:03.899866 elapsed)
+epsilon 0.1
+Episode 344 ended with score: 0 (0:18:04.608260 elapsed)
+epsilon 0.1
+Episode 345 ended with score: 3 (0:18:07.185849 elapsed)
+epsilon 0.1
+Episode 346 ended with score: 1 (0:18:13.938262 elapsed)
+epsilon 0.1
+Episode 347 ended with score: 5 (0:18:19.455250 elapsed)
+epsilon 0.1
+Episode 348 ended with score: 0 (0:18:19.888446 elapsed)
+epsilon 0.1
+Episode 349 ended with score: 0 (0:18:21.223224 elapsed)
+epsilon 0.1
+Episode 350 ended with score: 2 (0:18:25.419216 elapsed)
+epsilon 0.1
+Episode 351 ended with score: 3 (0:18:29.233460 elapsed)
+epsilon 0.1
+Episode 352 ended with score: 6 (0:18:35.298250 elapsed)
+epsilon 0.1
+Episode 353 ended with score: 0 (0:18:36.070903 elapsed)
+epsilon 0.1
+Episode 354 ended with score: 0 (0:18:36.205174 elapsed)
+epsilon 0.1
+Episode 355 ended with score: 0 (0:18:36.345052 elapsed)
+epsilon 0.1
+Episode 356 ended with score: 0 (0:18:36.487097 elapsed)
+epsilon 0.1
+Episode 357 ended with score: 0 (0:18:36.622693 elapsed)
+epsilon 0.1
+Episode 358 ended with score: 0 (0:18:36.908839 elapsed)
+epsilon 0.1
+Episode 359 ended with score: 0 (0:18:37.494931 elapsed)
+epsilon 0.1
+Episode 360 ended with score: 0 (0:18:37.865555 elapsed)
+epsilon 0.1
+Episode 361 ended with score: 0 (0:18:38.064361 elapsed)
+epsilon 0.1
+Episode 362 ended with score: 0 (0:18:38.211439 elapsed)
+epsilon 0.1
+Episode 363 ended with score: 0 (0:18:38.342914 elapsed)
+epsilon 0.1
+Episode 364 ended with score: 0 (0:18:38.482950 elapsed)
+epsilon 0.1
+Episode 365 ended with score: 0 (0:18:39.074327 elapsed)
+epsilon 0.1
+Episode 366 ended with score: 0 (0:18:39.104711 elapsed)
+epsilon 0.1
+Episode 367 ended with score: 0 (0:18:39.237071 elapsed)
+epsilon 0.1
+Episode 368 ended with score: 0 (0:18:39.371966 elapsed)
+epsilon 0.1
+Episode 369 ended with score: 0 (0:18:39.514609 elapsed)
+epsilon 0.1
+Episode 370 ended with score: 0 (0:18:39.786481 elapsed)
+epsilon 0.1
+Episode 371 ended with score: 0 (0:18:39.921670 elapsed)
+epsilon 0.1
+Episode 372 ended with score: 0 (0:18:40.200171 elapsed)
+epsilon 0.1
+Episode 373 ended with score: 0 (0:18:40.336478 elapsed)
+epsilon 0.1
+Episode 374 ended with score: 0 (0:18:40.622217 elapsed)
+epsilon 0.1
+Episode 375 ended with score: 0 (0:18:41.446194 elapsed)
+epsilon 0.1
+Episode 376 ended with score: 0 (0:18:43.065450 elapsed)
+epsilon 0.1
+Episode 377 ended with score: 0 (0:18:44.345903 elapsed)
+epsilon 0.1
+Episode 378 ended with score: 2 (0:18:46.502916 elapsed)
+epsilon 0.1
+Episode 379 ended with score: 14 (0:18:55.589324 elapsed)
+epsilon 0.1
+Episode 380 ended with score: 20 (0:19:11.125060 elapsed)
+epsilon 0.1
+Episode 381 ended with score: 27 (0:19:29.843183 elapsed)
+epsilon 0.1
+Episode 382 ended with score: 2 (0:19:31.912097 elapsed)
+epsilon 0.1
+Episode 383 ended with score: 1 (0:19:33.384454 elapsed)
+epsilon 0.1
+Episode 384 ended with score: 7 (0:19:36.744197 elapsed)
+epsilon 0.1
+Episode 385 ended with score: 0 (0:19:38.521987 elapsed)
+epsilon 0.1
+Episode 386 ended with score: 0 (0:19:38.974681 elapsed)
+epsilon 0.1
+Episode 387 ended with score: 0 (0:19:39.657648 elapsed)
+epsilon 0.1
+Episode 388 ended with score: 1 (0:19:40.722625 elapsed)
+epsilon 0.1
+Episode 389 ended with score: 1 (0:19:41.403312 elapsed)
+epsilon 0.1
+Episode 390 ended with score: 13 (0:19:51.974567 elapsed)
+epsilon 0.1
+Episode 391 ended with score: 1 (0:19:54.387681 elapsed)
+epsilon 0.1
+Episode 392 ended with score: 0 (0:19:55.231513 elapsed)
+epsilon 0.1
+Episode 393 ended with score: 0 (0:19:56.816293 elapsed)
+epsilon 0.1
+Episode 394 ended with score: 0 (0:19:57.906657 elapsed)
+epsilon 0.1
+Episode 395 ended with score: 0 (0:19:58.555911 elapsed)
+epsilon 0.1
+Episode 396 ended with score: 0 (0:19:58.874448 elapsed)
+epsilon 0.1
+Episode 397 ended with score: 0 (0:20:00.477143 elapsed)
+epsilon 0.1
+Episode 398 ended with score: 0 (0:20:01.156792 elapsed)
+epsilon 0.1
+Episode 399 ended with score: 0 (0:20:01.851847 elapsed)
+epsilon 0.1
+Episode 400 ended with score: 1 (0:20:05.036629 elapsed)
+epsilon 0.1
+Episode 401 ended with score: 0 (0:20:05.655772 elapsed)
+epsilon 0.1
+Episode 402 ended with score: 5 (0:20:08.794609 elapsed)
+epsilon 0.1
+Episode 403 ended with score: 0 (0:20:09.196349 elapsed)
+epsilon 0.1
+Episode 404 ended with score: 32 (0:20:45.727196 elapsed)
+epsilon 0.1
+Episode 405 ended with score: 0 (0:20:46.917522 elapsed)
+epsilon 0.1
+Episode 406 ended with score: 0 (0:20:47.549696 elapsed)
+epsilon 0.1
+Episode 407 ended with score: 0 (0:20:49.584126 elapsed)
+epsilon 0.1
+Episode 408 ended with score: 0 (0:20:50.408590 elapsed)
+epsilon 0.1
+Episode 409 ended with score: 4 (0:20:53.069335 elapsed)
+epsilon 0.1
+Episode 410 ended with score: 0 (0:20:53.528658 elapsed)
+epsilon 0.1
+Episode 411 ended with score: 0 (0:20:54.189315 elapsed)
+epsilon 0.1
+Episode 412 ended with score: 2 (0:21:03.832891 elapsed)
+epsilon 0.1
+Episode 413 ended with score: 0 (0:21:04.365714 elapsed)
+epsilon 0.1
+Episode 414 ended with score: 0 (0:21:05.749682 elapsed)
+epsilon 0.1
+Episode 415 ended with score: 1 (0:21:09.413230 elapsed)
+epsilon 0.1
+Episode 416 ended with score: 2 (0:21:11.024481 elapsed)
+epsilon 0.1
+Episode 417 ended with score: 0 (0:21:11.637344 elapsed)
+epsilon 0.1
+Episode 418 ended with score: 0 (0:21:12.399495 elapsed)
+epsilon 0.1
+Episode 419 ended with score: 0 (0:21:12.539946 elapsed)
+epsilon 0.1
+Episode 420 ended with score: 0 (0:21:12.961906 elapsed)
+epsilon 0.1
+Episode 421 ended with score: 0 (0:21:13.598135 elapsed)
+epsilon 0.1
+Episode 422 ended with score: 0 (0:21:14.231169 elapsed)
+epsilon 0.1
+Episode 423 ended with score: 17 (0:21:24.882072 elapsed)
+epsilon 0.1
+Episode 424 ended with score: 4 (0:21:28.021049 elapsed)
+epsilon 0.1
+Episode 425 ended with score: 0 (0:21:28.508556 elapsed)
+epsilon 0.1
+Episode 426 ended with score: 11 (0:21:38.632760 elapsed)
+epsilon 0.1
+Episode 427 ended with score: 0 (0:21:41.064800 elapsed)
+epsilon 0.1
+Episode 428 ended with score: 0 (0:21:41.569533 elapsed)
+epsilon 0.1
+Episode 429 ended with score: 0 (0:21:43.931503 elapsed)
+epsilon 0.1
+Episode 430 ended with score: 14 (0:21:56.727055 elapsed)
+epsilon 0.1
+Episode 431 ended with score: 0 (0:21:57.235272 elapsed)
+epsilon 0.1
+Episode 432 ended with score: 9 (0:22:04.114183 elapsed)
+epsilon 0.1
+Episode 433 ended with score: 9 (0:22:09.113263 elapsed)
+epsilon 0.1
+Episode 434 ended with score: 3 (0:22:14.881036 elapsed)
+epsilon 0.1
+Episode 435 ended with score: 23 (0:22:28.855679 elapsed)
+epsilon 0.1
+Episode 436 ended with score: 0 (0:22:29.425260 elapsed)
+epsilon 0.1
+Episode 437 ended with score: 0 (0:22:29.697976 elapsed)
+epsilon 0.1
+Episode 438 ended with score: 0 (0:22:30.306772 elapsed)
+epsilon 0.1
+Episode 439 ended with score: 0 (0:22:30.733328 elapsed)
+epsilon 0.1
+Episode 440 ended with score: 13 (0:22:42.199367 elapsed)
+epsilon 0.1
+Episode 441 ended with score: 4 (0:22:47.141847 elapsed)
+epsilon 0.1
+Episode 442 ended with score: 11 (0:22:55.510658 elapsed)
+epsilon 0.1
+Average training score: 3
+
+Eval 443 ended with score: 0 (0:22:56.050193 elapsed)
+Eval 444 ended with score: 0 (0:22:56.680564 elapsed)
+Eval 445 ended with score: 0 (0:22:57.443483 elapsed)
+Eval 446 ended with score: 11 (0:23:10.420882 elapsed)
+Eval 447 ended with score: 0 (0:23:11.262360 elapsed)
+Eval 448 ended with score: 13 (0:23:19.315309 elapsed)
+Eval 449 ended with score: 0 (0:23:19.453861 elapsed)
+Eval 450 ended with score: 0 (0:23:19.592781 elapsed)
+Eval 451 ended with score: 0 (0:23:19.738754 elapsed)
+Eval 452 ended with score: 0 (0:23:19.867982 elapsed)
+Eval 453 ended with score: 0 (0:23:20.407298 elapsed)
+Eval 454 ended with score: 8 (0:23:26.046122 elapsed)
+Eval 455 ended with score: 2 (0:23:27.473760 elapsed)
+Eval 456 ended with score: 0 (0:23:28.047187 elapsed)
+Eval 457 ended with score: 10 (0:23:34.670815 elapsed)
+Eval 458 ended with score: 0 (0:23:35.362283 elapsed)
+Eval 459 ended with score: 0 (0:23:36.012833 elapsed)
+Eval 460 ended with score: 8 (0:23:42.479650 elapsed)
+Eval 461 ended with score: 0 (0:23:43.027437 elapsed)
+Eval 462 ended with score: 1 (0:23:44.898176 elapsed)
+Eval 463 ended with score: 14 (0:23:51.515638 elapsed)
+Eval 464 ended with score: 0 (0:23:52.167565 elapsed)
+Eval 465 ended with score: 6 (0:23:56.886500 elapsed)
+Eval 466 ended with score: 0 (0:23:57.517510 elapsed)
+Eval 467 ended with score: 3 (0:23:59.176732 elapsed)
+Eval 468 ended with score: 0 (0:23:59.816400 elapsed)
+Eval 469 ended with score: 0 (0:24:00.666653 elapsed)
+Eval 470 ended with score: 0 (0:24:01.195105 elapsed)
+Eval 471 ended with score: 4 (0:24:04.613340 elapsed)
+Eval 472 ended with score: 12 (0:24:13.033462 elapsed)
+Eval 473 ended with score: 0 (0:24:13.575778 elapsed)
+Eval 474 ended with score: 0 (0:24:13.709260 elapsed)
+Eval 475 ended with score: 0 (0:24:13.844633 elapsed)
+Eval 476 ended with score: 0 (0:24:14.123620 elapsed)
+Eval 477 ended with score: 0 (0:24:14.262763 elapsed)
+Eval 478 ended with score: 0 (0:24:14.533775 elapsed)
+Eval 479 ended with score: 0 (0:24:14.813358 elapsed)
+Eval 480 ended with score: 0 (0:24:14.947523 elapsed)
+Eval 481 ended with score: 0 (0:24:15.086353 elapsed)
+Eval 482 ended with score: 0 (0:24:15.225752 elapsed)
+Eval 483 ended with score: 0 (0:24:15.360129 elapsed)
+Eval 484 ended with score: 0 (0:24:15.507942 elapsed)
+Eval 485 ended with score: 0 (0:24:15.637746 elapsed)
+Eval 486 ended with score: 0 (0:24:15.752711 elapsed)
+Eval 487 ended with score: 0 (0:24:15.853178 elapsed)
+Eval 488 ended with score: 0 (0:24:16.117913 elapsed)
+Eval 489 ended with score: 0 (0:24:16.256424 elapsed)
+Eval 490 ended with score: 0 (0:24:16.402191 elapsed)
+Eval 491 ended with score: 0 (0:24:16.502303 elapsed)
+Eval 492 ended with score: 0 (0:24:16.772623 elapsed)
+Eval 493 ended with score: 5 (0:24:19.830384 elapsed)
+Eval 494 ended with score: 0 (0:24:20.312642 elapsed)
+Eval 495 ended with score: 26 (0:24:37.556294 elapsed)
+Eval 496 ended with score: 1 (0:24:38.985862 elapsed)
+Eval 497 ended with score: 0 (0:24:39.387774 elapsed)
+Eval 498 ended with score: 10 (0:24:46.036038 elapsed)
+Eval 499 ended with score: 4 (0:24:49.242843 elapsed)
+Eval 500 ended with score: 0 (0:24:49.863897 elapsed)
+Eval 501 ended with score: 0 (0:24:50.509890 elapsed)
+Eval 502 ended with score: 13 (0:25:07.060657 elapsed)
+Eval 503 ended with score: 15 (0:25:19.702440 elapsed)
+Average eval score: 3
+
+Episode 504 ended with score: 0 (0:25:20.317580 elapsed)
+epsilon 0.1
+Episode 505 ended with score: 6 (0:25:24.598913 elapsed)
+epsilon 0.1
+Episode 506 ended with score: 3 (0:25:27.858379 elapsed)
+epsilon 0.1
+Episode 507 ended with score: 0 (0:25:28.598016 elapsed)
+epsilon 0.1
+Episode 508 ended with score: 0 (0:25:29.295897 elapsed)
+epsilon 0.1
+Episode 509 ended with score: 24 (0:25:42.947220 elapsed)
+epsilon 0.1
+Episode 510 ended with score: 0 (0:25:43.475804 elapsed)
+epsilon 0.1
+Episode 511 ended with score: 0 (0:25:46.826645 elapsed)
+epsilon 0.1
+Episode 512 ended with score: 21 (0:26:06.036999 elapsed)
+epsilon 0.1
+Episode 513 ended with score: 14 (0:26:16.178185 elapsed)
+epsilon 0.1
+Episode 514 ended with score: 0 (0:26:16.551337 elapsed)
+epsilon 0.1
+Episode 515 ended with score: 0 (0:26:16.837780 elapsed)
+epsilon 0.1
+Episode 516 ended with score: 0 (0:26:17.356667 elapsed)
+epsilon 0.1
+Episode 517 ended with score: 5 (0:26:21.753497 elapsed)
+epsilon 0.1
+Episode 518 ended with score: 0 (0:26:22.287452 elapsed)
+epsilon 0.1
+Episode 519 ended with score: 2 (0:26:24.209480 elapsed)
+epsilon 0.1
+Episode 520 ended with score: 14 (0:26:35.402019 elapsed)
+epsilon 0.1
+Episode 521 ended with score: 0 (0:26:37.492174 elapsed)
+epsilon 0.1
+Episode 522 ended with score: 0 (0:26:38.752370 elapsed)
+epsilon 0.1
+Episode 523 ended with score: 0 (0:26:38.823056 elapsed)
+epsilon 0.1
+Episode 524 ended with score: 0 (0:26:39.781886 elapsed)
+epsilon 0.1
+Episode 525 ended with score: 0 (0:26:41.699387 elapsed)
+epsilon 0.1
+Episode 526 ended with score: 3 (0:26:46.174631 elapsed)
+epsilon 0.1
+Episode 527 ended with score: 2 (0:26:48.994905 elapsed)
+epsilon 0.1
+Episode 528 ended with score: 4 (0:26:51.834292 elapsed)
+epsilon 0.1
+Episode 529 ended with score: 0 (0:26:52.392972 elapsed)
+epsilon 0.1
+Episode 530 ended with score: 12 (0:27:00.667133 elapsed)
+epsilon 0.1
+Episode 531 ended with score: 0 (0:27:01.532250 elapsed)
+epsilon 0.1
+Episode 532 ended with score: 0 (0:27:02.168149 elapsed)
+epsilon 0.1
+Episode 533 ended with score: 0 (0:27:02.963912 elapsed)
+epsilon 0.1
+Episode 534 ended with score: 22 (0:27:20.312655 elapsed)
+epsilon 0.1
+Episode 535 ended with score: 12 (0:27:27.272803 elapsed)
+epsilon 0.1
+Episode 536 ended with score: 0 (0:27:27.907606 elapsed)
+epsilon 0.1
+Episode 537 ended with score: 0 (0:27:28.435956 elapsed)
+epsilon 0.1
+Episode 538 ended with score: 0 (0:27:29.151289 elapsed)
+epsilon 0.1
+Episode 539 ended with score: 8 (0:27:34.586259 elapsed)
+epsilon 0.1
+Episode 540 ended with score: 0 (0:27:35.396466 elapsed)
+epsilon 0.1
+Episode 541 ended with score: 5 (0:27:38.015733 elapsed)
+epsilon 0.1
+Episode 542 ended with score: 0 (0:27:38.855257 elapsed)
+epsilon 0.1
+Episode 543 ended with score: 34 (0:27:56.204534 elapsed)
+epsilon 0.1
+Episode 544 ended with score: 0 (0:27:56.754250 elapsed)
+epsilon 0.1
+Episode 545 ended with score: 15 (0:28:05.001815 elapsed)
+epsilon 0.1
+Episode 546 ended with score: 0 (0:28:05.274401 elapsed)
+epsilon 0.1
+Episode 547 ended with score: 0 (0:28:05.872997 elapsed)
+epsilon 0.1
+Episode 548 ended with score: 0 (0:28:06.491194 elapsed)
+epsilon 0.1
+Episode 549 ended with score: 24 (0:28:19.764800 elapsed)
+epsilon 0.1
+Episode 550 ended with score: 0 (0:28:20.341673 elapsed)
+epsilon 0.1
+Episode 551 ended with score: 0 (0:28:21.708734 elapsed)
+epsilon 0.1
+Episode 552 ended with score: 1 (0:28:27.755347 elapsed)
+epsilon 0.1
+Episode 553 ended with score: 0 (0:28:28.346098 elapsed)
+epsilon 0.1
+Episode 554 ended with score: 3 (0:28:31.696447 elapsed)
+epsilon 0.1
+Episode 555 ended with score: 10 (0:28:36.416929 elapsed)
+epsilon 0.1
+Episode 556 ended with score: 0 (0:28:37.199291 elapsed)
+epsilon 0.1
+Episode 557 ended with score: 0 (0:28:37.727902 elapsed)
+epsilon 0.1
+Episode 558 ended with score: 9 (0:28:42.499256 elapsed)
+epsilon 0.1
+Episode 559 ended with score: 2 (0:28:44.387161 elapsed)
+epsilon 0.1
+Episode 560 ended with score: 0 (0:28:44.962899 elapsed)
+epsilon 0.1
+Episode 561 ended with score: 1 (0:28:46.588997 elapsed)
+epsilon 0.1
+Episode 562 ended with score: 7 (0:28:52.896457 elapsed)
+epsilon 0.1
+Episode 563 ended with score: 0 (0:28:53.522096 elapsed)
+epsilon 0.1
+Episode 564 ended with score: 14 (0:29:00.893571 elapsed)
+epsilon 0.1
+Episode 565 ended with score: 18 (0:29:14.633128 elapsed)
+epsilon 0.1
+Episode 566 ended with score: 0 (0:29:15.557827 elapsed)
+epsilon 0.1
+Episode 567 ended with score: 0 (0:29:16.488340 elapsed)
+epsilon 0.1
+Episode 568 ended with score: 0 (0:29:16.760952 elapsed)
+epsilon 0.1
+Episode 569 ended with score: 8 (0:29:20.667927 elapsed)
+epsilon 0.1
+Episode 570 ended with score: 0 (0:29:21.515479 elapsed)
+epsilon 0.1
+Episode 571 ended with score: 0 (0:29:22.210767 elapsed)
+epsilon 0.1
+Episode 572 ended with score: 27 (0:29:38.508413 elapsed)
+epsilon 0.1
+Episode 573 ended with score: 2 (0:29:39.960941 elapsed)
+epsilon 0.1
+Episode 574 ended with score: 0 (0:29:41.044264 elapsed)
+epsilon 0.1
+Episode 575 ended with score: 1 (0:29:42.233253 elapsed)
+epsilon 0.1
+Episode 576 ended with score: 2 (0:29:43.751321 elapsed)
+epsilon 0.1
+Episode 577 ended with score: 1 (0:29:45.702207 elapsed)
+epsilon 0.1
+Episode 578 ended with score: 0 (0:29:46.488842 elapsed)
+epsilon 0.1
+Episode 579 ended with score: 0 (0:29:47.221880 elapsed)
+epsilon 0.1
+Episode 580 ended with score: 9 (0:29:54.363636 elapsed)
+epsilon 0.1
+Episode 581 ended with score: 7 (0:30:07.238676 elapsed)
+epsilon 0.1
+Episode 582 ended with score: 0 (0:30:08.348779 elapsed)
+epsilon 0.1
+Episode 583 ended with score: 4 (0:30:11.894874 elapsed)
+epsilon 0.1
+Episode 584 ended with score: 0 (0:30:12.119843 elapsed)
+epsilon 0.1
+Episode 585 ended with score: 3 (0:30:15.421819 elapsed)
+epsilon 0.1
+Episode 586 ended with score: 4 (0:30:19.367562 elapsed)
+epsilon 0.1
+Episode 587 ended with score: 0 (0:30:20.167672 elapsed)
+epsilon 0.1
+Episode 588 ended with score: 2 (0:30:22.566204 elapsed)
+epsilon 0.1
+Episode 589 ended with score: 1 (0:30:24.776204 elapsed)
+epsilon 0.1
+Episode 590 ended with score: 7 (0:30:32.441570 elapsed)
+epsilon 0.1
+Episode 591 ended with score: 16 (0:30:41.030627 elapsed)
+epsilon 0.1
+Episode 592 ended with score: 0 (0:30:41.437861 elapsed)
+epsilon 0.1
+Episode 593 ended with score: 0 (0:30:42.781965 elapsed)
+epsilon 0.1
+Episode 594 ended with score: 0 (0:30:43.443968 elapsed)
+epsilon 0.1
+Episode 595 ended with score: 0 (0:30:43.942678 elapsed)
+epsilon 0.1
+Episode 596 ended with score: 1 (0:30:45.133904 elapsed)
+epsilon 0.1
+Episode 597 ended with score: 0 (0:30:45.727341 elapsed)
+epsilon 0.1
+Episode 598 ended with score: 1 (0:30:46.427032 elapsed)
+epsilon 0.1
+Episode 599 ended with score: 15 (0:30:56.107916 elapsed)
+epsilon 0.1
+Episode 600 ended with score: 25 (0:31:27.611677 elapsed)
+epsilon 0.1
+Episode 601 ended with score: 1 (0:31:29.313791 elapsed)
+epsilon 0.1
+Episode 602 ended with score: 0 (0:31:30.065408 elapsed)
+epsilon 0.1
+Episode 603 ended with score: 0 (0:31:30.686585 elapsed)
+epsilon 0.1
+Episode 604 ended with score: 46 (0:31:55.365856 elapsed)
+epsilon 0.1
+Episode 605 ended with score: 8 (0:32:02.588797 elapsed)
+epsilon 0.1
+Episode 606 ended with score: 0 (0:32:03.285425 elapsed)
+epsilon 0.1
+Episode 607 ended with score: 9 (0:32:08.987727 elapsed)
+epsilon 0.1
+Episode 608 ended with score: 3 (0:32:11.846574 elapsed)
