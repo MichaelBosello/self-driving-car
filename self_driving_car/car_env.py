@@ -9,6 +9,7 @@ from motor.car_motor import CarMotor
 from sensor.car_sensor import CarSensor
 
 CAR_INSTANCE = 'xiaor'
+MAX_STOP = 3
 
 if CAR_INSTANCE == 'picar':
   from camera.pi_camera import CarCamera
@@ -44,6 +45,8 @@ class CarEnv:
         self.gameScore = 0
         self.episodeStepNumber = 0
         self.frame_number = 0
+        self.car_stop_count = 0
+        self.prev_action = None
         
         self.isTerminal = False
 
@@ -75,10 +78,15 @@ class CarEnv:
             self.isTerminal = True
             self.above_line_lx = False
             self.above_line_rx = False
+            self.car_stop_count = 0
+            self.prev_action = None
             self.state = self.state.stateByAddingScreen(self.camera.capture_as_rgb_array_bottom_half(), self.frame_number)
             return reward, self.state, self.isTerminal
 
           prevScreenRGB = self.camera.capture_as_rgb_array_bottom_half()
+
+          if self.car_stop_count >= MAX_STOP * self.step_frames:
+            action = 0
 
           reward = 0
           if action == 0:
@@ -89,20 +97,28 @@ class CarEnv:
             self.motor.right()
             self.camera.add_note_to_video("action_right")
             reward = 0.2
+            if self.prev_action == 2:
+              reward = -0.2
           elif action == 2:
             self.motor.left()
             self.camera.add_note_to_video("action_left")
             reward = 0.2
+            if self.prev_action == 1:
+              reward = -0.2
           elif action == 3:
             self.motor.stop()
             self.camera.add_note_to_video("action_stop")
-            reward = -0.2
+            reward = 0
+            self.car_stop_count += 1
           #elif action == 4:
           #  self.motor.backward()
           #  self.camera.add_note_to_video("action_backward")
           #  reward = -0.6
           else:
             raise ValueError('`action` should be between 0 and 4.')
+
+          if action != 3:
+            self.car_stop_count = 0
           
           screenRGB = self.camera.capture_as_rgb_array_bottom_half()
 
@@ -115,6 +131,7 @@ class CarEnv:
         self.gameScore += reward
         self.above_line_lx = False
         self.above_line_rx = False
+        self.prev_action = action
         return reward, self.state, self.isTerminal
 
     def resetGame(self):
@@ -127,6 +144,8 @@ class CarEnv:
         self.episode_frame_number = 0
         self.above_line_lx = False
         self.above_line_rx = False
+        self.car_stop_count = 0
+        self.prev_action = None
 
 
     def car_to_safe(self):
