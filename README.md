@@ -9,6 +9,8 @@ Dependencies: TensorFlow 1.14, blosc
 
 Videos of training and results: https://www.youtube.com/watch?v=FGqO2V-BFJ4&list=PL2TKpIF3IShA-fETi5bVuHD17Ww55TU11
 
+Slide: https://www.slideshare.net/MichaelBosello/msn-2019-robot-drivers-learning-to-drive-by-trial-error
+
 ## Introduction
 In our experiment, we want to test *DQN* training directly in the *real world* through small-scale cars models. This allows us to explore the use of RL for autonomous driving in the physical world in a cheap and safe way. In this setting, the driver agent faces all the problems of a not simulated environment, including images and sensors noise and actuators’ unpredictability i.e., the movement of the car is never the same. We start with the implementation of DQN on the car, and then we try various alterations to improve performance like reward function engineering and hyper-parameters tuning. In the end, the agent successfully learned a control policy, based only on raw camera pixel, to drive in two circuits.
 ## Car setting
