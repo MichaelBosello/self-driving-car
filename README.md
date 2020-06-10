@@ -1,15 +1,36 @@
 # Self-Driving Car with Deep Reinforcement Learning in a Real Environment
+
+## Paper
+
+If you use this repo, please cite our *MSN'19* paper.
+
+*Robot Drivers: Learning to Drive by Trial \& Error*
+
+Michael Bosello, Giovanni Pau, Rita Tse.
+[[DOI](https://doi.org/10.1109/MSN48538.2019.00061)]
+[[talk slides](https://www.slideshare.net/MichaelBosello/msn-2019-robot-drivers-learning-to-drive-by-trial-error)]
+
+```
+@INPROCEEDINGS{9066149,
+  author={M. {Bosello} and G. {Pau} and R. {Tse}},
+  booktitle={2019 15th International Conference on Mobile Ad-Hoc and Sensor Networks (MSN)}, 
+  title={Robot Drivers: Learning to Drive by Trial   Error}, 
+  year={2019},
+  pages={284-290}
+}
+```
+
+## Running
+
 To run: *rl_car_driver.py* (it needs sudo) 
 
 To save logs when running, redirect the output with tee, e.g:
 
     sudo python3 rl_car driver.py | tee -a train.log
 
-Dependencies: TensorFlow 1.14, blosc
+Dependencies: TensorFlow 1.14, blosc (optional)
 
 Videos of training and results: https://www.youtube.com/watch?v=FGqO2V-BFJ4&list=PL2TKpIF3IShA-fETi5bVuHD17Ww55TU11
-
-Slide: https://www.slideshare.net/MichaelBosello/msn-2019-robot-drivers-learning-to-drive-by-trial-error
 
 ## Introduction
 In our experiment, we want to test *DQN* training directly in the *real world* through small-scale cars models. This allows us to explore the use of RL for autonomous driving in the physical world in a cheap and safe way. In this setting, the driver agent faces all the problems of a not simulated environment, including images and sensors noise and actuators’ unpredictability i.e., the movement of the car is never the same. We start with the implementation of DQN on the car, and then we try various alterations to improve performance like reward function engineering and hyper-parameters tuning. In the end, the agent successfully learned a control policy, based only on raw camera pixel, to drive in two circuits.
