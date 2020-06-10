@@ -1,6 +1,10 @@
 import numpy as np
-import blosc
 import cv2
+
+try:
+    import blosc
+except ImportError:
+    pass
 
 class State:
 
