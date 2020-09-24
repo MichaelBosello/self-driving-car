@@ -8,7 +8,8 @@ If you use this repo, please cite our *MSN'19* paper.
 
 Michael Bosello, Giovanni Pau, Rita Tse.
 [[DOI](https://doi.org/10.1109/MSN48538.2019.00061)]
-[[talk slides](https://www.slideshare.net/MichaelBosello/msn-2019-robot-drivers-learning-to-drive-by-trial-error)]
+[[Talk Slides](https://www.slideshare.net/MichaelBosello/msn-2019-robot-drivers-learning-to-drive-by-trial-error)]
+[[Video](https://www.youtube.com/watch?v=FGqO2V-BFJ4&list=PL2TKpIF3IShA-fETi5bVuHD17Ww55TU11)]
 
 ```
 @INPROCEEDINGS{9066149,
